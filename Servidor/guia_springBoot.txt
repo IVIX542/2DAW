@@ -1,0 +1,16 @@
+crear el paquete controladoras
+
+crear la clase, contiene la controladora con la que vamos a trabajar
+
+Crear los endpoints que se pidan:
+	primero anotar la clase como @Controller
+
+	crear el endpoint con @GetMapping
+	fijar el endpoint
+	fijar la plantilla
+
+Crear la plantilla en resources --> templates
+	poner contenido en la plantilla
+
+Arrancar el proyecto
+Probar en localhost:8080/ con el endpoint

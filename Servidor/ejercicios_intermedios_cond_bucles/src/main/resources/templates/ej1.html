@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <li>
+        <a th:href="@{/}">Inicio</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+    </li>
+    <h1>Ejercicio 1 - Tabla de usuarios con roles y estados</h1>
+
+    <ul>
+        <li th:each="usuario : ${lista_usuarios}"
+        th:text="${usuario.nombre}">Nombre</li>
+    </ul>
+</body>
+</html>

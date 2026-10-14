@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1>
+        Ejercicio 4. Acceso permitido
+    </h1>
+
+    <p th:text="'¿Mayor de edad?: ' + (${edad} > 18)"></p>
+    <p th:text="'¿Tiene Permiso?: ' + (${permiso} == true)"></p>
+    <p th:utext="'¿Mayor de edad <strong>Y</strong> tiene permiso?: ' + ((${edad} > 18) and (${permiso} == true))"></p>
+    <p th:utext="'¿Mayor de edad <strong>O</strong> tiene permiso?: ' + ((${edad} > 18) or (${permiso} == true))"></p>
+    <p th:utext="'Valor contrario de <code>tienePermiso</code>: ' + (not ${permiso})"></p>
+
+</body>
+</html>

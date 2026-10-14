@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Hecho por Iván López Benítez -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla</title>
+  </head>
+  <body>
+    <header>
+      <h1 th:text="${titulo}"></h1>
+      <br />
+      <a href="/">Inicio</a>
+      <a href="/sobre">Sobre nosotros</a>
+      <a href="/variables">Variables Dinámicas</a>
+    </header>
+
+    <br />
+
+    <table border="1" style="text-align: center;">
+      <!-- 
+            Para la tabla, iteramos por cada una de las posiciones del Array
+            enviado por la controladora:
+            Creamos una fila por cada iteración.
+            Metemos dentro de cada celda la asignatura iterada en la fila.
+        -->
+      <thead>
+        <th th:text="${cabecera}"></th>
+      </thead>
+      <!-- Le pasamos la cabecera -->
+
+      <tbody>
+        <tr th:each="asignatura, estado : ${asignaturas}">
+          <!-- Por cada asignatura en asignaturas -->
+
+          <!-- <td th:text="${estado.index}"></td>
+          <td th:text="${estado.count}"></td> -->
+
+          <td th:text="${asignatura}"></td>
+          <!-- Imprimimos la asignatura dentro de la celda -->
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

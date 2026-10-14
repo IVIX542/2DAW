@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dato</title>
+</head>
+<body>
+    <a th:href="@{/}">Inicio</a>
+    <h1>Datos</h1>
+    <p th:text="${nom}">Nombre recibido por URL del formulario</p>
+    <p th:text="${edad}">Edad recibida por URL del formulario</p>
+    
+</body>
+</html>

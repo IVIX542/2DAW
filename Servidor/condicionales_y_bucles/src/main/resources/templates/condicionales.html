@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales</title>
+</head>
+<body>
+    <h1>Condicionales</h1>
+
+    <h2>IF Básico</h2>
+    <p th:text="|Condición: Edad (${edad}) es mayor que 18|"></p>
+    <p th:if="${edad >= 18}">Eres mayor de edad</p>
+    <p th:unless="${edad >= 18}">Eres menor de edad</p>
+
+    <hr>
+
+    <h2>Switch Básico</h2>
+    <div th:switch="${rol}">
+        <p th:case="ADMIN">Acceso de administrador.</p>
+        <p th:case="USER">Acceso de usuario.</p>
+        <p th:case="*">Rol no reconocido.</p>
+    </div>
+
+    <hr>
+
+    <h2>Condicional ternario</h2>
+
+    <p>[['Edad: ' + ${edad}]]</p>
+    <p th:text="${edad >= 18} ? 'Eres mayor de edad' : 'Eres menor de edad'"></p>
+
+    <h2>Operador NullSafe</h2>
+    <p th:text="${persona1.nombre}">Textto</p>
+    <p th:text="${persona2?.nombre}">Textto</p>
+</body>
+</html>

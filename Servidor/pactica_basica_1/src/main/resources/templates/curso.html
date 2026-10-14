@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Autor: Iván López Benítez -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Curso</title>
+
+    <style>
+        body{
+            margin-left: 2vw;
+            margin-right: 2vw;
+            margin-top: 0;
+        }
+        nav{
+            margin-top: 5vh;
+        }
+        nav > a{
+            text-decoration: none;
+            color: blue;
+        } nav > a:hover{
+            font-weight: bold;
+        }
+        nav, h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/curso/java">Java</a>
+        <a href="/curso/web">Web</a>
+    </nav>
+
+    <h1 th:text="${nombre_curso}">Nombre del curso</h1>
+
+    <p th:text="${aula}">Aula</p>
+    <p>Plazas Totales: <span th:text="${plazas_totales}">Numero plazas totales</span></p>
+    <p>Plazas Ocupadas: <span th:text="${plazas_ocupadas}">Numero plazas ocupadas</span></p>
+    <p>Plazas Disponibles: <span th:text="${plazas_disponibles}">Numero plazas disponibles</span></p>
+
+</body>
+</html>

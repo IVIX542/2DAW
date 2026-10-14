@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Hecho por Iván López Benítez -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/OIP.jpg" type="image/x-icon" />
+    <title>Contacto</title>
+
+    <style>
+      form {
+        padding-left: 1vw;
+        margin-left: 39vw;
+
+        padding-right: 1vw;
+        margin-right: 39vw;
+
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+
+        border-radius: 5px;
+        background-color: rgba(240, 248, 255, 0.8);
+      }
+      label {
+        background-color: rgba(255, 255, 255, 0);
+        color: black;
+      }
+      input {
+        background-color: rgba(156, 156, 156, 0.5);
+        color: rgb(0, 0, 0);
+        border: 1px, solid, rgba(245, 245, 220, 0.5);
+        border-radius: 5px;
+      }
+      #enviar {
+        margin-left: 4vw;
+        height: 5vh;
+        width: 10vh;
+        background-color: rgba(0, 128, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="navbar">Inicio</a>
+      <a href="somos.html" class="navbar">Somos</a>
+      <a href="daw.html" class="navbar">Horario</a>
+      <span id="actual" class="navbar">Contacto</span>
+    </nav>
+
+    <h1>Información de contacto</h1>
+
+    <form action="">
+      <label for="nombre">Nombre: </label>
+      <input type="text" name="nombre" id="nombre" placeholder="Iván" />
+
+      <br /><br />
+
+      <label for="ap1">Apellido 1:</label>
+      <input type="text" name="ap1" id="ap1" placeholder="López" />
+
+      <br /><br />
+
+      <label for="ap2">Apellido 2:</label>
+      <input type="text" name="ap2" id="ap2" placeholder="Benítez" />
+
+      <br /><br />
+
+      <label for="sexo">Sexo:</label><br />
+
+      <input type="radio" name="sexo" id="hombre" />
+      <label for="hombre">Hombre </label><br />
+      <input type="radio" name="sexo" id="mujer" />
+      <label for="mujer">Mujer </label>
+
+      <br /><br />
+
+      <label for="edad">Edad: </label>
+      <input type="number" name="edad" id="edad" max="99" />
+
+      <br /><br />
+
+      <label for="mail">Correo:</label>
+      <input
+        type="email"
+        name="mail"
+        id="mail"
+        placeholder="ejemlpo@dominio.extensión"
+      />
+
+      <br /><br />
+
+      <input type="submit" value="Enviar" id="enviar" />
+    </form>
+
+    <footer>&copy; Hecho por Iván López Benítez</footer>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Hecho por Iván López Benítez -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables</title>
+  </head>
+  <body>
+    <header>
+      <h1 th:text="${titulo}"></h1>
+      <!-- Cargamos la variable recibida de la controladora -->
+      <br />
+      <a href="/">Inicio</a>
+      <a href="/sobre">Sobre Nosotros</a>
+      <a href="/tabla">Tabla de Lista</a>
+    </header>
+
+    <p th:text="${descripcion}"></p>
+  </body>
+</html>

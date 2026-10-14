@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>
+        Ejercicio 2. Comparar una Edad
+    </h1>
+
+    <p> Edad: [[${edad}]] </p>
+    <p> ¿Edad igual a 18?: [[${edad} == 18]] </p>
+    <p> ¿Edad distinta de 18?: [[${edad} != 18]] </p>
+    <p> ¿Edad mayor a 18?: [[${edad} > 18]] </p>
+    <p th:text="'¿Edad menor o igual que 25?: ' + (${edad} <= 25)"></p>
+</body>
+</html>

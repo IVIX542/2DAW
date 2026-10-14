@@ -1,0 +1,105 @@
+/* Selector universal */
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        margin-top: 2vh;
+        margin-bottom: 0;
+      }
+
+      .seccion{
+        width: fit-content;
+      }
+
+      /* Selector de etiqueta */
+      #seccion1 {
+        border:
+          1px,
+          solid gray;
+        
+      }
+
+      /* Combinación de selectores (Efectos que apliquen a varias
+        etiquetas) */
+      h1, h2 {
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      /* Selectores descendentes */
+      #seccion1 h2 {
+        color: darkblue;
+      }
+
+      /* Selector de clase */
+      .resaltado {
+        background-color: yellow;
+        border: 1px, solid, orange;
+      }
+
+      /* Selector de id */
+      #seccion6 {
+        background-color: rgba(250, 235, 215, 0.5);
+        border: 1px, solid, bisque;
+        border-radius: 10px;
+      }
+
+      /* Selector hijo */
+      div > h3{
+        color: blue;
+      }
+
+      /* Selector hermano adyacente */
+      #seccion8 > h2 + .parrafo {
+        color: darkslateblue;
+      }
+
+      /* Selector hermano general */
+      #seccion9 > h2 ~ .parrafo {
+        color: darkgreen;
+      }
+
+      /* Selector de pseudoclase */
+      /* - Primera letra */
+      .parrafo::first-letter {
+        font-size: larger;
+        font-style: italic;
+      }
+      /* - 2º elemento empezando por el final */
+      .seccion:nth-last-child(2) {
+        background-color: blanchedalmond;
+      }
+      /* - Cada 3 elementos */
+      .seccion:nth-child(3n) {
+        border: 5px, dotted, black;
+      }
+      /* - Negación */
+      .seccion .parrafo:not(.diferente){
+        background-color: azure;
+        border: 1px, solid, aquamarine;
+      }
+
+      /* Selector de pseudoelemento */
+      h1::before{
+        content: "Título: ";
+      }
+
+      /* Selector de atributo por tipo */
+      input[type="button"] {
+        background-color: aliceblue;
+        border: 1px solid blue;
+        border-radius: 5px;
+      }
+
+      /* Selector de atributo por palabra */
+      span[class~="final"]{
+        background-color: lightgreen;
+        border: 1px, solid green;
+      }
+
+      /* Selector en cascada usando !important */
+      h1{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+      }

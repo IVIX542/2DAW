@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+</head>
+<body>
+    <h1>Ficha de Producto</h1>
+
+    <div th:object="${producto}">
+        <p th:text="'Producto: ' + *{nombre}">Nombre</p>
+        <p th:text="'Categoría: ' + *{categoria}">Categoría</p>
+        <p th:text="|Precio: *{precio}€|">Precio</p>
+        <p th:text="|Stock disponible: *{stock} unidades|">Stock disponible</p>
+        <p th:text="|Precio de dos unidades: *{precio*2}€|">Stock disponible</p>
+    </div>
+
+    <a th:href="@{/}">Volver al inicio</a>
+    
+</body>
+</html>

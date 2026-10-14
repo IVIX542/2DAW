@@ -1,0 +1,23 @@
+
+/* Variables */
+:root {
+    --ancho-tarjeta: 34rem;
+    --espacio-tarjeta: 1.5rem;
+    --radio-tarjeta: 0.75rem;
+}
+
+/* Modelo de Cajas */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Tarjeta */
+.tarjeta-curso {
+    background-color: beige;
+    width: 100%;
+    max-width: var(--ancho-tarjeta);
+    padding: clamp(1rem, 2vw, var(--espacio-tarjeta));
+    margin: 0, auto;
+    border: 1px, solid, black;
+    border-radius: var(--radio-tarjeta);
+}

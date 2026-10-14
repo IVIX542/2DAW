@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucles</title>
+</head>
+<body>
+    <h1>Bucles</h1>
+    <h2>Bucle Básico</h2>
+
+    <ul >
+        <li th:each="num : ${lista_numeros}" th:text="${num}"></li>
+    </ul>
+</body>
+</html>

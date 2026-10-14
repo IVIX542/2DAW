@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <p th:text="${producto}"></p>
+    <div th:object="${producto}">
+        <h1>Categoría: [[*{categoria}]]</h1>
+
+    </div>
+</body>
+</html>

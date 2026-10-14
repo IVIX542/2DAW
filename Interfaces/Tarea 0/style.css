@@ -1,0 +1,62 @@
+/* Hecho por Iván López Benítez */
+
+* {
+  background-color: rgb(0, 0, 20);
+  color: azure;
+}
+
+body {
+  padding-top: 0;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  text-align: justify;
+  font-size: larger;
+}
+
+nav {
+  text-align: center;
+  border-bottom-width: 3px;
+  border-bottom-style: dashed;
+  border-bottom-color: white;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
+.navbar {
+  padding-left: 1vw;
+}
+
+a {
+  text-decoration: none;
+  color: burlywood;
+  padding-top: 0;
+}
+
+#actual {
+  color: bisque;
+  font-style: oblique;
+  font-size: large;
+}
+
+li {
+  padding-top: 2vh;
+  width: 70vw;
+}
+
+h1 {
+  text-align: center;
+  color: dodgerblue;
+}
+
+footer {
+  text-align: center;
+  color: azure;
+  background-color: rgba(240, 248, 255, 0.1);
+
+  /*                               |||
+    Obtenido con ayuda de internet vvv
+    */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

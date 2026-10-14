@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h1>
+        Ejercicio 5. Notas de un alumno
+    </h1>
+
+    <p>Nota 1: [[${nota1}]]</p>
+    <p>Nota 2: [[${nota2}]]</p>
+    <p>Nota 3: [[${nota3}]]</p>
+    <br>
+    <p>Suma de las Notas: [[ ${nota1} + ${nota2} + ${nota3} ]]</p>
+    <p>Nota Media: [[ (${nota1} + ${nota2} + ${nota3}) / 3 ]]</p>
+    <br>
+    <p>¿Media mayor o igual que 5?: [[ ((${nota1} + ${nota2} + ${nota3}) / 3) >= 5 ]]</p>
+    <p>¿Media mayor o igual que 5 <strong>Y</strong> <code>nota3</code> mayor que 7?: [[ (((${nota1} + ${nota2} + ${nota3}) / 3) >= 5) and (${nota3} > 7) ]]</p>
+
+
+</body>
+</html>
