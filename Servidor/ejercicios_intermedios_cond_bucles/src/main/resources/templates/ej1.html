@@ -3,21 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Ejercicio 1</title>
+
+    <style>
+        .inactivo {
+            background-color: #e0e0e0;
+            color: #666666;
+        }
+        table {
+            border: 1px solid black;
+            border-bottom: none;
+        }
+        th {
+            border-bottom: 1px dotted black;
+        }
+        td {
+            border-bottom: 1px dotted black;
+        }
+        
+    </style>
 </head>
 <body>
     <li>
         <a th:href="@{/}">Inicio</a>
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
+        <a th:href="@{/ejercicio2}">Ejercicio 2</a>
+        <a th:href="@{/ejercicio3}">Ejercicio 3</a>
+        <a th:href="@{/ejercicio4}">Ejercicio 4</a>
+        <a th:href="@{/ejercicio5}">Ejercicio 5</a>
     </li>
     <h1>Ejercicio 1 - Tabla de usuarios con roles y estados</h1>
 
-    <ul>
-        <li th:each="usuario : ${lista_usuarios}"
-        th:text="${usuario.nombre}">Nombre</li>
-    </ul>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Rol</th>
+            <th>Estado</th>
+        </thead>
+        <tbody>
+            <tr th:each="u : ${lista_usuarios}"
+                th:classappend="${!u.activo}? 'inactivo' : ''">
+                <td th:text="${u.nombre + (u.rol == 'ADMIN'? ' ⭐' : '')}"></td>
+                <td th:text="${u.rol}"></td>
+                <td th:text="${u.activo? 'Activo' : 'Inactivo' }"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
-</html>
+</html> 
