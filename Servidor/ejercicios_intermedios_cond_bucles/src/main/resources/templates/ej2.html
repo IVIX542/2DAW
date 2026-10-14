@@ -13,6 +13,23 @@
         <a th:href="@{/ejercicio4}">Ejercicio 4</a>
         <a th:href="@{/ejercicio5}">Ejercicio 5</a>
     </li>
-    <h1>Ejercicio 2</h1>
+    <h1>Ejercicio 2 - Mostrar categorías con productos anidados</h1>
+
+    <div th:each="entrada : ${categorias}">
+
+        <h3 th:text="${entrada.key}"></h3>
+
+        <ul th:unless="${#lists.isEmpty(entrada.value)}">
+
+            <li th:each="prod : ${entrada.value}"
+                th:text="${prod}"></li>
+
+        </ul>
+
+        <p th:if="${#lists.isEmpty(entrada.value)}">
+            No hay productos disponibles.
+        </p>
+    </div>
+
 </body>
 </html>

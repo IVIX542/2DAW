@@ -1,5 +1,9 @@
 package com.daw.ejercicios_intermedios_cond_bucles.controladoras;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +32,15 @@ public class EjerciciosController {
         return "ej1";
     }
     @GetMapping("/ejercicio2")
-    public String getEjercicio2() {
+    public String getEjercicio2(Model modelo) {
+        Map<String, List<String>> categoriasMap = new HashMap<>();
+
+        categoriasMap.put("Frutas", List.of("Manzana", "Naranja"));
+        categoriasMap.put("Electrónica", List.of("Portátil", "Móvil"));
+        categoriasMap.put("Categoría sin cosas", null);
+
+        modelo.addAttribute("categorias", categoriasMap);
+
         return "ej2";
     }
     @GetMapping("/ejercicio3")
