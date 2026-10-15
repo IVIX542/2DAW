@@ -65,5 +65,22 @@ print(f"ID del usuario normalizado: '{id_normalizado}'")
 # Añado comillas simples para poder ver las diferencias entre ambos usuarios a primera
 # vista
 
+# ---------------------------------------------------------------------------------------
+
+print("\n------------------------------Ejercicio 6------------------------------|\n")
+
+codigo = "DAW-2026-MADRID"
+
+primeras_letras = codigo[0:3]
+
+anio = codigo[4:8]
+
+ciudad = codigo[9:15]
+
+print(f"Código: {codigo}\nAño: {anio}\nCiudad: {ciudad}")
+
+# Al usar "codigo[4:8]", se selecciona desde el 5 hasta el 8, dejando la posición 4 fuera
+# de la selección.
+
 
 
