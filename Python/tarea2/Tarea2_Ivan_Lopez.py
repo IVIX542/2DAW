@@ -1,6 +1,6 @@
 # ---------------------------------------------------------------------------------------
 
-print("------------------------------Ejercicio 1------------------------------|")
+print("\n------------------------------Ejercicio 1------------------------------|\n")
 
 nombre = "lucia"
 apellidos = "garcia lopez"
@@ -14,7 +14,7 @@ print(nombre.title(), apellidos.title(), "-", curso.title())
 
 # ---------------------------------------------------------------------------------------
 
-print("------------------------------Ejercicio 2------------------------------|")
+print("\n------------------------------Ejercicio 2------------------------------|\n")
 
 mensaje = " Bienvenido al sistema Python "
 
@@ -28,7 +28,7 @@ print(f"Longitud del mensaje limpio: {len(mensaje_limpio)} caracteres")
 
 # ---------------------------------------------------------------------------------------
 
-print("------------------------------Ejercicio 3------------------------------|")
+print("\n------------------------------Ejercicio 3------------------------------|\n")
 
 frase = "Python es un lenguaje de programación. Python es muy utilizado."
 
@@ -43,7 +43,7 @@ print(f"La frase comienza por 'Python'?: {frase.startswith("Python")}")
 
 # ---------------------------------------------------------------------------------------
 
-print("------------------------------Ejercicio 4------------------------------|")
+print("\n------------------------------Ejercicio 4------------------------------|\n")
 archivo = "informe_final.pdf"
 
 print(f"El nombre termina en '.pdf'?: {archivo.endswith(".pdf")}")
@@ -51,3 +51,19 @@ print(f"Posición del carácter '_': {archivo.find("_")}")
 print(f"El carácter 'i' aparece {archivo.count("i")} veces")
 print(f"La palabra 'final' aparece en el nombre?: {"final" in archivo}")
 print(f"Longitud total del nombre del archivo: {len(archivo)} caracteres")
+
+# ---------------------------------------------------------------------------------------
+
+print("\n------------------------------Ejercicio 5------------------------------|\n")
+id_usuario = " usr-ana-2026 "
+print(f"ID inicial del usuario: '{id_usuario}'")
+
+
+id_normalizado = id_usuario.strip().replace("-", "_")
+print(f"ID del usuario normalizado: '{id_normalizado}'")
+
+# Añado comillas simples para poder ver las diferencias entre ambos usuarios a primera
+# vista
+
+
+
