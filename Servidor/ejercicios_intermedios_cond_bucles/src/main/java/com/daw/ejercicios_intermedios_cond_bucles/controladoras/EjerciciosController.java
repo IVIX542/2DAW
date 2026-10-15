@@ -45,6 +45,9 @@ public class EjerciciosController {
     }
     @GetMapping("/ejercicio3")
     public String getEjercicio3() {
+        String arr_encabezados[] = {"Nº", "Nombre", "Nota", "Resultado"};
+        
+
         return "ej3";
     }
     @GetMapping("/ejercicio4")
