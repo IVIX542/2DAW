@@ -40,3 +40,14 @@ print(frase.find("lenguaje"))
 
 print(f"La palabra 'Python' aparece {frase.count("Python")} veces")
 print(f"La frase comienza por 'Python'?: {frase.startswith("Python")}")
+
+# ---------------------------------------------------------------------------------------
+
+print("------------------------------Ejercicio 4------------------------------|")
+archivo = "informe_final.pdf"
+
+print(f"El nombre termina en '.pdf'?: {archivo.endswith(".pdf")}")
+print(f"Posición del carácter '_': {archivo.find("_")}")
+print(f"El carácter 'i' aparece {archivo.count("i")} veces")
+print(f"La palabra 'final' aparece en el nombre?: {"final" in archivo}")
+print(f"Longitud total del nombre del archivo: {len(archivo)} caracteres")
