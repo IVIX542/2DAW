@@ -82,5 +82,22 @@ print(f"Código: {codigo}\nAño: {anio}\nCiudad: {ciudad}")
 # Al usar "codigo[4:8]", se selecciona desde el 5 hasta el 8, dejando la posición 4 fuera
 # de la selección.
 
+# ---------------------------------------------------------------------------------------
 
+print("\n------------------------------Ejercicio 7------------------------------|\n")
 
+prefijo = "PY"
+
+print(f"Prefijo: {prefijo}")
+
+prefijo_cuatro = prefijo * 4
+
+print(f"Prefijo cuatro veces: {prefijo_cuatro}")
+
+separador = "-"
+
+codigo = prefijo + separador + "2026"
+
+print(f"Código completo: {codigo}")
+
+print(f"Longitud código: {len(codigo)} caracteres")
