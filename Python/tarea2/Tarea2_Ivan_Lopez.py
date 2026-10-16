@@ -103,3 +103,21 @@ print(f"Código completo: {codigo}")
 print(f"Longitud código: {len(codigo)} caracteres")
 
 print(f"El código empieza por 'PY'?: {codigo.startswith("PY")}")
+
+# ---------------------------------------------------------------------------------------
+
+print("\n------------------------------Ejercicio 8------------------------------|\n")
+
+ruta = "C:\\nueva\\temporal"
+print(f"Ruta: {ruta}")
+
+ruta_raw = r"C:\nueva\temporal"
+print(f"Ruta raw: {ruta_raw}")
+
+# Ambas variables muestran la misma ruta. La diferencia está en que la ruta raw no
+# necesita la contrabarra para escribir un carácter especial.
+
+# El prefijo r es más útil porque no necesitas añadir una barra invertida extra a la ruta
+# de Windows.
+
+print(f"Ruta del usuario:\n{ruta_raw}")
