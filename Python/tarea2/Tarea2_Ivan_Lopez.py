@@ -121,3 +121,44 @@ print(f"Ruta raw: {ruta_raw}")
 # de Windows.
 
 print(f"Ruta del usuario:\n{ruta_raw}")
+
+# ---------------------------------------------------------------------------------------
+
+print("\n------------------------------Ejercicio 9------------------------------|\n")
+
+datos = " USUARIO: ana-garcia, EMAIL: ANA.GARCIA@EMPRESA.COM, DEPARTAMENTO: sistemas informaticos "
+
+datos_limpios = datos.strip()
+
+pos_coma1 = datos_limpios.find(",")
+pos_coma2 = datos_limpios.find(",", pos_coma1 + 1)
+
+usuario_bruto = datos_limpios[9:pos_coma1]
+# print(f"Usuario: {usuario_bruto}")
+
+email_bruto = datos_limpios[pos_coma1 + 8:pos_coma2]
+# print(f"Email: {email_bruto}")
+
+dpto_bruto = datos_limpios[pos_coma2 + 15: ]
+# print(f"Departamento: {dpto_bruto}")
+
+usuario = usuario_bruto.strip()
+email = email_bruto.strip()
+dpto = dpto_bruto.strip()
+
+usuario_final = usuario.capitalize().replace("-","_")
+email = email.lower()
+
+dpto = dpto.title()
+correo_corporativo = email.endswith("@empresa.com")
+# print(f"Correo termina con '@empresa.com'?: {correo_corporativo}")
+
+len_usuario_final = len(usuario_final)
+
+informe = f"""*** PERFIL DEL USUARIO ***
+Usuario: {usuario_final}
+Email: {email}
+Departamento: {dpto}
+Correo corporativo: {correo_corporativo}"""
+
+print(informe)
