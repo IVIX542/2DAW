@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 3</title>
+    <style>
+        table {
+            text-align: center;
+            border: 1px solid black;
+            border-bottom: none;
+            border-left: none;
+        }
+        th {
+            border-bottom: 1px dashed black;
+            border-left: 1px solid black;
+        }
+        td {
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+        }
+    </style>
 </head>
 <body>
     <li>
@@ -14,5 +30,23 @@
         <a th:href="@{/ejercicio5}">Ejercicio 5</a>
     </li>
     <h1>Ejercicio 3</h1>
+
+    <table>
+        <thead>
+            <th th:each="e : ${encabezados}"
+                th:text="${e}">
+            </th>
+        </thead>
+        <tbody>
+            <tr th:each="a, estado : ${alumnos}">
+                <td th:text="${estado.count}"></td>
+                <td th:text="${a.nombre}"></td>
+                <td th:text="${a.nota}"></td>
+                <td th:text="${a.nota >= 5? 'Aprobado' : 'Suspenso'}"
+                    th:style="${a.nota >= 5? 'color:green' : 'color:red'}">
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
