@@ -101,3 +101,5 @@ codigo = prefijo + separador + "2026"
 print(f"Código completo: {codigo}")
 
 print(f"Longitud código: {len(codigo)} caracteres")
+
+print(f"El código empieza por 'PY'?: {codigo.startswith("PY")}")
