@@ -60,12 +60,36 @@ public class EjerciciosController {
     }
 
     @GetMapping("/ejercicio4")
-    public String getEjercicio4() {
+    public String getEjercicio4(Model modelo) {
+
+        String arr_encabezados[]  = {
+            "Nombre", "Precio", "Etiqueta"
+        };
+
+        Producto arr_productos[] = {
+            new Producto("Lapiz", 1.5, 50),
+            new Producto("Teclado", 10.5, 100),
+            new Producto("Coche", 10000.0, 100),
+            new Producto("Altavoz", 50.0, 0)
+        };
+
+        modelo.addAttribute("encabezados", arr_encabezados);
+        modelo.addAttribute("productos", arr_productos);
+
         return "ej4";
     }
-    
+
     @GetMapping("/ejercicio5")
-    public String getEjercicio5() {
+    public String getEjercicio5(Model modelo) {
+        Jugador arr_jugadores[] = {
+            new Jugador("Juan", 980),
+            new Jugador("Ana", 920),
+            new Jugador("Mario", 890),
+            new Jugador("Luis", 860)
+        };
+
+        modelo.addAttribute("jugadores", arr_jugadores);
+        
         return "ej5";
     }
 

@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 4</title>
+
+    <style>
+        table {
+            text-align: center;
+            border: 1px solid black;
+            border-bottom: none;
+            border-left: none;
+        }
+        th {
+            border-bottom: 1px dashed black;
+            border-left: 1px solid black;
+        }
+        td {
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+        }
+        .oferta {
+            background-color: green;
+        }
+        .premium {
+            background-color: gold;
+        }
+        .agotado {
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
     <li>
@@ -15,6 +41,31 @@
     </li>
     <h1>Ejercicio 4</h1>
 
-    
+    <table>
+        <thead>
+            <th th:each="e : ${encabezados}"
+                th:text="${e}"></th>
+        </thead>
+
+        <tbody>
+            <tr th:each="p : ${productos}">
+                <td th:text="${p.nombre}">Nombre</td>
+                <td th:text="${p.precio} + ' €'">Precio</td>
+                <td th:if="${p.precio < 10}"
+                    th:classappend="oferta">
+                    Oferta
+                </td>
+                <td th:if="${p.precio > 1000}"
+                    th:classappend="premium">
+                    Premium
+                </td>
+                <td th:if="${p.stock == 0}"
+                    th:classappend="agotado">
+                    Agotado
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
