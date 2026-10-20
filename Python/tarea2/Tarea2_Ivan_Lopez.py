@@ -155,7 +155,7 @@ correo_corporativo = email.endswith("@empresa.com")
 
 len_usuario_final = len(usuario_final)
 
-informe = f"""*** PERFIL DEL USUARIO ***
+informe = f"""--- PERFIL DEL USUARIO ---
 Usuario: {usuario_final}
 Email: {email}
 Departamento: {dpto}
