@@ -9,14 +9,17 @@
     
     <!-- Cabecera -->
 
-    <div th:replace="~{fragmentos/comunes :: cabecera}"></div>
+    <div th:replace="~{fragmentos/comunes :: cabecera(
+        'Supermercado Daw - Inicio',
+        'Bienvenido a nuestra tienda'
+    )}"></div>
     
     <!-- Barra de navegación -->
     <div th:replace="~{fragmentos/comunes :: menu}"></div>
     
     <!-- Cuerpo -->
 
-    <h1>Inicio</h1>
+    <h1>Cuerpo de inicio</h1>
     
     <!-- Pie de página -->
     <div th:replace="~{fragmentos/comunes :: pie}"></div>

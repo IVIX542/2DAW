@@ -9,9 +9,9 @@
     
     <!-- Fragmentos comunes al interfaz -->
 
-    <header th:fragment="cabecera">
-        <h1>Tienda DAW</h1>
-        <p>Tu tienda de informática y pescadería</p>
+    <header th:fragment="cabecera(titulo, subtitulo)">
+        <h1 th:text="${titulo}">Tienda DAW</h1>
+        <p th:text="${subtitulo}">Tu tienda de informática y pescadería</p>
     </header>
 
     <nav th:fragment="menu">
