@@ -1,0 +1,147 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+:root {
+    --color-primario: #db2626;
+}
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+a {
+    text-decoration: none;
+}
+
+/* Cabecera */
+
+.navbar {
+    background: var(--color-primario);
+    height: 58px;
+    position: sticky;
+    top: 0;
+    margin: 0 auto;
+}
+.navbar a {
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 50px;
+    padding: 20px 40px;
+    font-weight: 600;
+}
+.navbar div {
+    width: 820px;
+    margin: 0 auto;
+}
+
+.contenedor-imagen {
+    height: 100vh;
+}
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Botçon fijo */
+
+.btn-fijo{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--color-primario);
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    opacity: 40%;
+}
+
+.btn-fijo:hover {
+    opacity: 100%;
+}
+
+.btn-fijo i {
+    color: white;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+/* Sección principal */
+
+main {
+    height: 1200px;
+}
+.contenedor {
+    height: 100%;
+    position: relative;
+}
+
+.contenido {
+    position: absolute;
+    top: 0;
+    left: 20%;
+}
+
+.contenido p {
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+
+.contenido .titulo {
+    font-weight: normal;
+}
+
+.contenido .fecha {
+    font-size: 14px;
+    font-weight: 600;
+    color: #636363;
+}
+
+/* Aside */
+
+aside {
+    width: 15%;
+    margin: 20px;
+    background: #111 ;
+    padding: 20px;
+    border-radius: 5pxp;
+    text-align: center;
+    position: sticky;
+    top: 20px;
+    left: 20px;
+}
+
+aside .titulo {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+aside .indice a {
+    color: var(--color-primario);
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Footer */
+
+footer{
+    box-sizing: border-box;
+    height: 10%;
+    width: 95vw;
+    position: absolute;
+    left: 20px;
+
+}
+footer img {
+    position: absolute;
+    height: 10%;
+}

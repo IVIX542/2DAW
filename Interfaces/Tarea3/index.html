@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tarea 3 · Selectores y cascada</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="cabecera">
+        
+      <a class="marca" href="#">Aula Abierta</a>
+
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#recursos">Recursos</a>
+      </nav>
+
+    </header>
+    <main class="pagina">
+
+      <section id="inicio" class="presentacion">
+        <p class="eyebrow">CSS · FUNDAMENTOS</p>
+        <h1>Una misma estructura, distintas reglas</h1>
+        <p>
+          Practica selectores, combinadores, cascada, especificidad, herencia y
+          variables sin modificar la estructura HTML.
+        </p>
+        <a class="enlace-externo" href="https://example.com" target="_blank">
+            Documentación de referencia
+        </a>
+      </section>
+
+      <section class="panel-info">
+        <h2>Información del curso</h2>
+        <p>Duración <strong>4 horas semanales</strong></p>
+        <p>Modalidad <span>Presencial</span></p>
+      </section>
+
+      <section id="cursos" class="cursos">
+        <h2 id="titulo-cursos" class="titulo-seccion">Cursos disponibles</h2>
+        <article
+          class="tarjeta destacada"
+          id="curso-destacado"
+          data-nivel="avanzado"
+        >
+          <h3>Diseño de Interfaces Web</h3>
+          <p>Curso destacado para practicar CSS.</p>
+          <span class="nivel">Avanzado</span>
+        </article>
+        <article class="tarjeta" data-nivel="inicial">
+          <h3>HTML semántico</h3>
+          <p>Estructuras claras y mantenibles.</p>
+          <span class="nivel">Inicial</span>
+        </article>
+        <article class="tarjeta" data-nivel="intermedio">
+          <h3>Accesibilidad web</h3>
+          <p>Interfaces utilizables por más personas.</p>
+          <span class="nivel">Intermedio</span>
+        </article>
+      </section>
+      <section id="recursos" class="recursos">
+        <h2>Recursos recomendados</h2>
+        <ul>
+          <li>Guía de selectores</li>
+          <li>Práctica de cascada</li>
+          <li>Ejemplos de herencia</li>
+          <li>Referencia de variables</li>
+        </ul>
+      </section>
+      <section class="laboratorio">
+        <h2>Zona de comprobación</h2>
+        <p class="mensaje prioridad">Este mensaje debe destacar por clase.</p>
+        <p class="mensaje" data-prioridad="alta">
+          Este mensaje debe destacar por atributo.
+        </p>
+        <p class="mensaje secundaria">
+          Este texto debe heredar el color de su contenedor.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
