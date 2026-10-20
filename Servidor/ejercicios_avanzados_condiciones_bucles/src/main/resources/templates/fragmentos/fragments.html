@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragmentos</title>
+</head>
+<body>
+    <head th:switch="${usuario.rol}">
+        <ul th:case="'ADMIN'">
+            <li>
+                <a href="#">Inicio</a>
+            </li>
+            <li>
+                <a href="#">Reportes</a>
+            </li>
+            <li>
+                <a href="#">Gestion usuarios</a>
+            </li>
+            <li>
+                <a href="#">Cerrar sesion</a>
+            </li>
+        </ul>
+        <ul th:case="'USER'">
+            <li>
+                <a href="#">Inicio</a>
+            </li>
+            <li>
+                <a href="#">Sobre nosotros</a>
+            </li>
+            <li>
+                <a href="#">Mi perfil</a>
+            </li>
+            <li>
+                <a href="#">Cerrar sesion</a>
+            </li>
+        </ul>
+        <ul th:case="'INVITADO'">
+            <li>
+                <a href="#">Inicio</a>
+            </li>
+            <li>
+                <a href="#">Sobre nosotros</a>
+            </li>
+            <li>
+                <a href="#">Iniciar sesion</a>
+            </li>
+        </ul>
+    </head>
+</body>
+</html>
