@@ -7,10 +7,21 @@
 </head>
 <body>
     
-    <!-- Cabecera -->
+    <!-- Fragmentos comunes al interfaz -->
 
-    <!-- Cuerpo -->
+    <header th:fragment="cabecera">
+        <h1>Tienda DAW</h1>
+        <p>Tu tienda de informática y pescadería</p>
+    </header>
 
-    <!-- Pie de página -->
+    <nav th:fragment="menu">
+        <a th:href="@{/}">Inicio</a>
+        <a th:href="@{/productos}">Productos</a>
+    </nav>
+
+    <footer th:fragment="pie">
+        <p>Aplicación de ejemplo de 2.º de DAW</p>
+    </footer>
+
 </body>
 </html>
