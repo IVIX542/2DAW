@@ -130,3 +130,22 @@ console.log(`Función suma Declarada:\n${sumarDeclarada}\nResultado: ${sumarDecl
 console.log(`Función suma Expresada:\nContenido: ${sumarExpresada}\nResultado: ${sumarExpresada(1,2)}`);
 console.log(`Función suma Flecha:\nContenido: ${sumarFlecha}\nResultado: ${sumarFlecha(1,2)}`);
 
+// Funciones nativas y de objetos (Math y String)
+function setMayusculas(texto) {
+    console.log(texto.toUpperCase());
+    return texto.length > 5 ? true : false;
+};
+console.log(setMayusculas("hola"));
+
+/* Bloque 5: Colecciones: Arrays, Set y Map */
+
+// Transformaciones en arrays (map, filter, reduce)
+let numeros = [2, 4, 6, 8, 10];
+console.log(`Números: ${numeros}`);
+
+
+let numeros_cuadrados = numeros.map((n) => n**2);
+console.log(`Números al cuadrado: ${numeros_cuadrados}`);
+
+
+
