@@ -143,9 +143,16 @@ console.log(setMayusculas("hola"));
 let numeros = [2, 4, 6, 8, 10];
 console.log(`Números: ${numeros}`);
 
-
+// - map
 let numeros_cuadrados = numeros.map((n) => n**2);
 console.log(`Números al cuadrado: ${numeros_cuadrados}`);
 
+// - filter
+let numeros_mayores_cinco = numeros.filter((n) => n > 5);
+console.log(`Números mayores de 5: ${numeros_mayores_cinco}`);
+
+// - reduce
+let numeros_total = numeros.reduce((i, n) => i+n, 0);
+console.log(`Suma total: ${numeros_total}`);
 
 
