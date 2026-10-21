@@ -50,7 +50,8 @@ console.log(res3);
 /* Bloque 2: Condicionales */
 
 // Calificación de notas (if...else if...else)
-let nota = 10;
+let nota = 4.5;
+/*
 if(nota >= 9) {
     alert("Sobresaliente");
 } else if(nota >= 7 && nota < 9) {
@@ -60,4 +61,35 @@ if(nota >= 9) {
 } else if(nota < 5) {
     alert("Suspenso");
 }
+*/
 
+// Calculadora con switch
+let num1 = 1;
+let num2 = 2;
+let operacion = "+";
+
+switch(operacion) {
+    case "+":
+        console.log(num1+num2);
+        break;
+    case "-":
+        console.log(num1-num2);
+        break;
+    case "*":
+        console.log(num1*num2);
+        break;
+    case "/":
+        console.log(num1/num2);
+        break;
+    default:
+        console.log("Operador no válido.");
+}
+
+// Operador ternario
+let temperatura = 25;
+
+let estado = temperatura >= 25 ? "Hace calor" : "Hace fresco";
+
+console.log(estado);
+
+/* Bloque 3: Bucles y control de flujo */
