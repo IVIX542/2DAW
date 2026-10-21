@@ -175,3 +175,48 @@ console.log(`Hay ${stockProductos.get("camisetas")} camisetas`);
 for (let [producto, cantidad] of stockProductos) {
     console.log(`Producto : ${producto}\nCantidad : ${cantidad}`);
 }
+
+/* Bloque 6: Objetos y Clases */
+
+// Objeto literal y métodos
+let cuentaBancaria = {
+    titular : "Iván",
+    saldo : Number(1000.0),
+
+    ingresar : function(cantidad) {
+        this.saldo += Number(cantidad);
+    },
+
+    retirar : function(cantidad) {
+        this.saldo -= Number(cantidad);
+    }
+}
+
+console.log(`Saldo inicial: ${cuentaBancaria.saldo}`);
+
+cuentaBancaria.ingresar(500.20);
+cuentaBancaria.retirar(5.05);
+
+console.log(`Saldo final: ${cuentaBancaria.saldo}`);
+
+// Creación de clases
+class Rectangulo {
+    constructor(ancho, alto) {
+        this.ancho = Number(ancho);
+        this.alto = Number(alto);
+    }
+
+    calcularArea = function() {
+        return (this.ancho * this.alto);
+    }
+
+    calcularPerimetro = function() {
+        return (2 * (this.ancho + this.alto));
+    }
+}
+
+let rect1 = new Rectangulo(4,2);
+
+console.log(`Área del rectángulo: ${rect1.calcularArea()} cm².`);
+console.log(`Perímetro del rectángulo: ${rect1.calcularPerimetro()} cm.`);
+
