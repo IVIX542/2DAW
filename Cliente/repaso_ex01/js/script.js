@@ -93,3 +93,40 @@ let estado = temperatura >= 25 ? "Hace calor" : "Hace fresco";
 console.log(estado);
 
 /* Bloque 3: Bucles y control de flujo */
+
+// Bucle "for" básico y pares.
+for(let i = 1; i <= 20; i++) {
+    if(i % 2 == 0){
+        console.log(i);
+    }
+}
+
+// Validación con do...while
+let intentos = 0;
+
+do {
+    intentos++;
+} while(intentos < 3);
+
+console.log(`Intentos: ${intentos}`); // Intentos = 3. Peimero ejecuta, luego comprueba.
+
+// Uso de break y continue
+for(let i = 1; i <= 10; i++){
+    if(i == 4) { continue };
+    if(i == 8) { break };
+    console.log(i);
+}
+
+/* Bloque 4: Funciones en JavaScript */
+
+// Tipos de funciones (Declarada, Expresada y Flecha)
+function sumarDeclarada(n1,n2) { return(n1 + n2) };
+
+let sumarExpresada = function(n1, n2) { return(n1 + n2) };
+
+let sumarFlecha = (n1,n2) => { return(n1 + n2) };
+
+console.log(`Función suma Declarada:\n${sumarDeclarada}\nResultado: ${sumarDeclarada(1,2)}`);
+console.log(`Función suma Expresada:\nContenido: ${sumarExpresada}\nResultado: ${sumarExpresada(1,2)}`);
+console.log(`Función suma Flecha:\nContenido: ${sumarFlecha}\nResultado: ${sumarFlecha(1,2)}`);
+
