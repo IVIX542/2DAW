@@ -6,7 +6,8 @@
     <title>Fragmentos</title>
 </head>
 <body>
-    <head th:switch="${usuario.rol}">
+    <head th:fragment="cabecera(cliente)"
+          th:switch="${cliente.rol}">
         <ul th:case="'ADMIN'">
             <li>
                 <a href="#">Inicio</a>
@@ -47,5 +48,7 @@
             </li>
         </ul>
     </head>
+
+    <div th:fr></div>
 </body>
 </html>

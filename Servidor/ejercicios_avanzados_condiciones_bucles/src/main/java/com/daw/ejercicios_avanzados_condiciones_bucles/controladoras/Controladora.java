@@ -20,9 +20,9 @@ public class Controladora {
             new Pedido(3, "entregado")
         };
 
-        Cliente cliente1 = new Cliente("Iván", pedidos);
+        Cliente cliente1 = new Cliente("Iván", "ADMIN", pedidos);
 
-        modelo.addAttribute(cliente1);
+        modelo.addAttribute("cliente1", cliente1);
 
 
         return "pedidos";

@@ -6,7 +6,24 @@
     <title>Pedidos</title>
 </head>
 <body>
+    <div th:replace="~{fragmentos/fragments :: cabecera(${cliente1})}"></div>
     <a th:href="@{/}">Inicio</a>
     <h1>Pedidos</h1>
+
+    <h2 th:text="|Cliente: ${cliente1.nombre}|"></h2>
+
+    <div th:each="pedido : ${cliente1.pedidos}">
+
+        <div th:switch="pedido.estado">
+            <div th:case="'pendiente'"></div>
+            <div th:case="'enviado'"></div>
+            <div th:case="'entregado'"></div>
+        </div>
+
+        <h3 th:text="|Pedido ${pedido.id}|"></h3>
+
+        <p th:text="|Estado: ${pedido.estado}|"></p>
+
+    </div>
 </body>
 </html>
