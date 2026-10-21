@@ -1,0 +1,15 @@
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+label,
+input,
+button {
+  display: block;
+  margin: 0.5rem 0;
+}
+#salida {
+  margin-top: 1rem;
+  font-weight: 600;
+}
