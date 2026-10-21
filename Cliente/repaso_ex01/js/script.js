@@ -19,7 +19,7 @@ let tercer_color = colores[2];
 console.log(`Primer color: ${primer_color}. Tercer color: ${tercer_color}`);
 
 let usuario = {
-    nick : "CyberCoder",
+    nick: "CyberCoder",
     nivel: 5
 };
 
@@ -68,18 +68,18 @@ let num1 = 1;
 let num2 = 2;
 let operacion = "+";
 
-switch(operacion) {
+switch (operacion) {
     case "+":
-        console.log(num1+num2);
+        console.log(num1 + num2);
         break;
     case "-":
-        console.log(num1-num2);
+        console.log(num1 - num2);
         break;
     case "*":
-        console.log(num1*num2);
+        console.log(num1 * num2);
         break;
     case "/":
-        console.log(num1/num2);
+        console.log(num1 / num2);
         break;
     default:
         console.log("Operador no válido.");
@@ -95,8 +95,8 @@ console.log(estado);
 /* Bloque 3: Bucles y control de flujo */
 
 // Bucle "for" básico y pares.
-for(let i = 1; i <= 20; i++) {
-    if(i % 2 == 0){
+for (let i = 1; i <= 20; i++) {
+    if (i % 2 == 0) {
         console.log(i);
     }
 }
@@ -106,29 +106,29 @@ let intentos = 0;
 
 do {
     intentos++;
-} while(intentos < 3);
+} while (intentos < 3);
 
 console.log(`Intentos: ${intentos}`); // Intentos = 3. Peimero ejecuta, luego comprueba.
 
 // Uso de break y continue
-for(let i = 1; i <= 10; i++){
-    if(i == 4) { continue };
-    if(i == 8) { break };
+for (let i = 1; i <= 10; i++) {
+    if (i == 4) { continue };
+    if (i == 8) { break };
     console.log(i);
 }
 
 /* Bloque 4: Funciones en JavaScript */
 
 // Tipos de funciones (Declarada, Expresada y Flecha)
-function sumarDeclarada(n1,n2) { return(n1 + n2) };
+function sumarDeclarada(n1, n2) { return (n1 + n2) };
 
-let sumarExpresada = function(n1, n2) { return(n1 + n2) };
+let sumarExpresada = function (n1, n2) { return (n1 + n2) };
 
-let sumarFlecha = (n1,n2) => { return(n1 + n2) };
+let sumarFlecha = (n1, n2) => { return (n1 + n2) };
 
-console.log(`Función suma Declarada:\n${sumarDeclarada}\nResultado: ${sumarDeclarada(1,2)}`);
-console.log(`Función suma Expresada:\nContenido: ${sumarExpresada}\nResultado: ${sumarExpresada(1,2)}`);
-console.log(`Función suma Flecha:\nContenido: ${sumarFlecha}\nResultado: ${sumarFlecha(1,2)}`);
+console.log(`Función suma Declarada:\n${sumarDeclarada}\nResultado: ${sumarDeclarada(1, 2)}`);
+console.log(`Función suma Expresada:\nContenido: ${sumarExpresada}\nResultado: ${sumarExpresada(1, 2)}`);
+console.log(`Función suma Flecha:\nContenido: ${sumarFlecha}\nResultado: ${sumarFlecha(1, 2)}`);
 
 // Funciones nativas y de objetos (Math y String)
 function setMayusculas(texto) {
@@ -144,7 +144,7 @@ let numeros = [2, 4, 6, 8, 10];
 console.log(`Números: ${numeros}`);
 
 // - map
-let numeros_cuadrados = numeros.map((n) => n**2);
+let numeros_cuadrados = numeros.map((n) => n ** 2);
 console.log(`Números al cuadrado: ${numeros_cuadrados}`);
 
 // - filter
@@ -152,7 +152,26 @@ let numeros_mayores_cinco = numeros.filter((n) => n > 5);
 console.log(`Números mayores de 5: ${numeros_mayores_cinco}`);
 
 // - reduce
-let numeros_total = numeros.reduce((i, n) => i+n, 0);
+let numeros_total = numeros.reduce((i, n) => i + n, 0);
 console.log(`Suma total: ${numeros_total}`);
 
+// Operaciones con Set (Valores Únicos)
+let lista = ["pera", "manzana", "pera", "kiwi", "manzana", "plátano"];
 
+let lista_limpia = new Set(lista);
+let arr_lista_limpia = [...lista_limpia]; // Pasamos el set a array
+console.log(`Lista sin repetidos: ${arr_lista_limpia}`);
+
+// Gestión de datos con Map
+let stockProductos = new Map();
+
+stockProductos.set("camisetas", 15);
+stockProductos.set("pantalones", 8);
+stockProductos.set("zapatos", 4);
+
+console.log(`Hay zapatos?: ${stockProductos.has("zapatos")}`);
+console.log(`Hay ${stockProductos.get("camisetas")} camisetas`);
+
+for (let [producto, cantidad] of stockProductos) {
+    console.log(`Producto : ${producto}\nCantidad : ${cantidad}`);
+}
