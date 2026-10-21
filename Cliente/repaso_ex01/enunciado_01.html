@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        * {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <title>Enunciado_01</title>
+</head>
+
+<body>
+    <h1>Ejercicios de Práctica de JavaScript</h1>
+    <hr />
+    <h3><strong>Bloque 1: Asignaciones y Operadores Avanzados</strong></h3>
+    <p><em>(Basado en <code>Asignaciones, Operadores, Comentarios y Sentencias.pdf</code>)</em></p>
+    <ol>
+        <li>
+            <p><strong>Operadores de asignación lógica (<code>||=</code> y <code>??=</code>):</strong>
+                Declara una variable <code>configuracion</code> con valor <code>null</code> y otra variable llamada
+                <code>modoOscuro</code> con valor <code>false</code>.</p>
+            <ul>
+                <li>Utiliza el operador de asignación lógica <code>??=</code> para que, si <code>configuracion</code> es
+                    <code>null</code> o <code>undefined</code>, tome por defecto el objeto
+                    <code>{ tema: &quot;claro&quot; }</code>.</li>
+                <li>Utiliza el operador de asignación lógica <code>||=</code> en <code>modoOscuro</code> asignándole
+                    <code>true</code>. Explica mentalmente por qué <code>modoOscuro</code> cambia (o no cambia)
+                    basándote en los conceptos de valores <em>falsy</em> y <em>truthy</em>.</li>
+                <li>Muestra ambos resultados por la consola con <code>console.log</code>.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Desestructuración avanzada de objetos:</strong>
+                Dado el siguiente objeto:</p>
+            <pre><code class="language-javascript">let empleado = { id: 104, datosPersonales: { nombre: &quot;Sofía&quot;, puesto: &quot;Diseñadora&quot; } };
+</code></pre>
+            <p>Utiliza la desestructuración para extraer la propiedad <code>nombre</code> renombrándola como
+                <code>nombreEmpleado</code> y la propiedad <code>puesto</code>. Muestra ambas variables por consola.</p>
+        </li>
+    </ol>
+    <hr />
+    <h3><strong>Bloque 2: Condicionales Múltiples y Operador Ternario</strong></h3>
+    <p><em>(Basado en <code>Condicionales en JavaScript.pdf</code>)</em></p>
+    <ol start="3">
+        <li>
+            <p><strong>Cálculo de tarifa de transporte con condicionales anidados:</strong>
+                Escribe un programa que pida al usuario su edad mediante <code>prompt</code> y la convierta a número con
+                <code>Number()</code>. Utiliza una estructura <code>if...else if...else</code> para determinar el precio
+                de un billete de autobús según las siguientes reglas:</p>
+            <ul>
+                <li>Menores de 6 años: entrada gratuita (<code>0 €</code>).</li>
+                <li>Entre 6 y 17 años (ambos incluidos): tarifa infantil (<code>5 €</code>).</li>
+                <li>Entre 18 y 64 años: tarifa general (<code>10 €</code>).</li>
+                <li>65 años o más: tarifa reducida para mayores (<code>6 €</code>).</li>
+            </ul>
+            <p>Muestra el resultado utilizando <code>alert</code>.</p>
+        </li>
+        <li>
+            <p><strong>Validación rápida con operador ternario:</strong>
+                Crea una variable numérica llamada <code>stock</code>. Utiliza el operador ternario <code>(?:)</code>
+                para asignar a una variable <code>mensaje</code> el valor <code>&quot;Disponible&quot;</code> si el
+                stock es mayor que <code>0</code>, o <code>&quot;Agotado&quot;</code> si es igual o menor a
+                <code>0</code>. Muestra el mensaje resultante en la consola.</p>
+        </li>
+    </ol>
+    <hr />
+    <h3><strong>Bloque 3: Bucles y Control de Flujo</strong></h3>
+    <p><em>(Basado en <code>Bucles en JavaScript.pdf</code>)</em></p>
+    <ol start="5">
+        <li>
+            <p><strong>Recorrido inverso con bucle <code>while</code>:</strong>
+                Utiliza un bucle <code>while</code> para crear una cuenta atrás numérica que empiece en el número
+                <code>15</code> y termine exactamente en el <code>5</code> (ambos incluidos), mostrando cada número por
+                la consola en cada iteración. Asegúrate de actualizar la variable contador correctamente dentro del
+                bucle.</p>
+        </li>
+        <li>
+            <p><strong>Bucle <code>for...in</code> en objetos:</strong>
+                Declara un objeto literal que represente la configuración de una aplicación:</p>
+            <pre><code class="language-javascript">let configApp = { idioma: &quot;es&quot;, modoOscuro: true, version: &quot;2.1&quot; };
+</code></pre>
+            <p>Utiliza un bucle <code>for...in</code> para recorrer sus claves y valores, mostrando en la consola cada
+                clave acompañada de su valor formateado (por ejemplo: <code>idioma: es</code>).</p>
+        </li>
+    </ol>
+    <hr />
+    <h3><strong>Bloque 4: Funciones Avanzadas</strong></h3>
+    <p><em>(Basado en <code>Funciones en JS.pdf</code>)</em></p>
+    <ol start="7">
+        <li>
+            <p><strong>Funciones flecha con un solo parámetro y retorno implícito:</strong>
+                Crea una función flecha llamada <code>calcularCubo</code> que reciba un único número como parámetro,
+                omita los paréntesis del parámetro y devuelva directamente el cubo de ese número (<code>n ** 3</code>)
+                utilizando el retorno implícito (sin usar las llaves <code>{}</code> ni la palabra <code>return</code>).
+                Pruébala pasando el número <code>3</code> y muestra el resultado en la consola.</p>
+        </li>
+        <li>
+            <p><strong>Uso de funciones predefinidas globales y de Math:</strong>
+                Escribe un pequeño programa que reciba una cadena de texto numérica introducida mediante un
+                <code>prompt</code> (por ejemplo, <code>&quot;25.75&quot;</code>). Utiliza la función predefinida
+                <code>parseFloat()</code> para convertirla a número decimal y, a continuación, aplica el método
+                <code>Math.floor()</code> para redondearla siempre hacia abajo. Muestra el resultado final por consola.
+            </p>
+        </li>
+    </ol>
+    <hr />
+    <h3><strong>Bloque 5: Colecciones Avanzadas: Arrays, Set y Map</strong></h3>
+    <p><em>(Basado en <code>Colecciones en Javascript.pdf</code>)</em></p>
+    <ol start="9">
+        <li>
+            <p><strong>Filtrado y transformación combinada en Arrays:</strong>
+                Dado el siguiente array de precios:</p>
+            <pre><code class="language-javascript">let precios = [12, 45, 8, 30, 99, 15];
+</code></pre>
+            <ul>
+                <li>Utiliza el método <code>.filter()</code> para quedarte únicamente con los precios que sean menores o
+                    iguales a <code>30</code>.</li>
+                <li>A continuación, sobre el array filtrado, encadena el método <code>.map()</code> para aplicar un
+                    incremento de <code>10</code> a cada precio.</li>
+                <li>Muestra el array final resultante en la consola.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Operaciones de conjuntos con <code>Set</code> (Diferencia):</strong>
+                Dados dos arrays de identificadores de usuarios conectados en dos salas distintas:</p>
+            <pre><code class="language-javascript">let salaA = [101, 102, 103, 104];
+let salaB = [103, 104, 105];
+</code></pre>
+            <p>Convierte ambos arrays en objetos <code>Set</code> y calcula mediante el operador spread
+                (<code>...</code>) y el método <code>.filter()</code> los usuarios que están exclusivamente en la
+                <code>salaA</code> pero <strong>no</strong> en la <code>salaB</code>. Muestra el array u objeto
+                <code>Set</code> resultante por consola.</p>
+        </li>
+    </ol>
+    <hr />
+    <h3><strong>Bloque 6: Objetos y Programación Orientada a Clases</strong></h3>
+    <p><em>(Basado en <code>Objetos y clases.pdf</code>)</em></p>
+    <ol start="11">
+        <li>
+            <p><strong>Métodos y conversión a JSON:</strong>
+                Crea un objeto literal llamado <code>empleadoEmpresa</code> con las propiedades: <code>nombre</code>
+                (string), <code>departamento</code> (string) y un método llamado <code>detalles()</code> que devuelva
+                una cadena combinando sus propiedades utilizando interpolación con comillas invertidas. Después,
+                convierte todo el objeto en una cadena de texto en formato JSON utilizando <code>JSON.stringify()</code>
+                y muéstrala en la consola.</p>
+        </li>
+        <li>
+            <p><strong>Uso de clases, herencia y <code>super</code>:</strong>
+                Crea una clase base llamada <code>Dispositivo</code> con un constructor que reciba <code>marca</code> y
+                un método <code>encender()</code> que muestre por consola
+                <code>&quot;El dispositivo está encendido&quot;</code>. A continuación, crea una clase hija llamada
+                <code>Smartphone</code> que extienda (<code>extends</code>) de <code>Dispositivo</code>, añada una nueva
+                propiedad llamada <code>sistemaOperativo</code> en su constructor utilizando <code>super()</code>, y
+                añada un método propio llamado <code>llamar()</code>. Instancia un objeto de la clase hija y prueba a
+                ejecutar sus métodos.</p>
+        </li>
+    </ol>
+</body>
+
+</html>
