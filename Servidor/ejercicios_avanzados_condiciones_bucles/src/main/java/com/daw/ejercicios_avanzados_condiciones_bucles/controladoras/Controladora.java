@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Controladora {
 
     @GetMapping("/")
-    public String getMethodName() {
+    public String getInicio() {
         return "inicio";
+    }
+    @GetMapping("/pedidos")
+    public String getPedidos() {
+        return "pedidos";
     }
     
 
