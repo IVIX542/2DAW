@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Controladora {
 
     Pedido pedidos[] = {
-        new Pedido(1, "Cajas de cartón", "pendiente"),
-        new Pedido(2, "Teclados de membrana", "enviado"),
-        new Pedido(3, "Ratones ópticos", "entregado")
+        new Pedido("Cajas de cartón", "pendiente"),
+        new Pedido("Teclados de membrana", "enviado"),
+        new Pedido("Ratones ópticos", "entregado")
     };
     Cliente cliente1 = new Cliente("Iván", "ADMIN", pedidos);
 
     @GetMapping("/")
     public String getInicio(Model modelo) {
         modelo.addAttribute("cliente1", cliente1);
-        
+
         return "inicio";
     }
 
