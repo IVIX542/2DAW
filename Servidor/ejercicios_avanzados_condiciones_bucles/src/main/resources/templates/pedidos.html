@@ -28,7 +28,7 @@
                 <div th:replace="~{fragmentos/fragments :: pedidoPendiente(${pedido})}"></div>
             </div>
             <div th:case="'enviado'">
-                <p th:text="${pedido.nombre}"></p>
+                <div th:replace="~{fragmentos/fragments :: pedidoEnviado(${pedido})}"></div>
             </div>
             <div th:case="'entregado'">
                 <p th:text="${pedido.nombre}"></p>
@@ -36,8 +36,6 @@
         </div>
 
         <h3 th:text="|Pedido ${pedido.id}|"></h3>
-
-        <p th:text="|Estado: ${pedido.estado}|"></p>
 
     </div>
 </body>

@@ -58,6 +58,15 @@
             style="background-color: orange;">
             Nombre del Pedido
         </h3>
+        <p th:text="|Estado: ${pedido.estado}|">Estado</p>
+    </div>
+
+    <div th:fragment="pedidoEnviado(pedido)">
+        <h3 th:text="${pedido.nombre}"
+            style="background-color: lightblue;">
+            Nombre del Pedido
+        </h3>
+        <p th:text="|Estado: ${pedido.estado}|">Estado</p>
     </div>
 </body>
 </html>
