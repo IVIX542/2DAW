@@ -42,17 +42,5 @@ El repositorio está organizado por asignaturas y carpetas de recursos para mant
 
 ---
 
-## 🚀 Puesta en Marcha / Scripts Útiles
-
-Este repositorio incluye un script de automatización (`organizar_2daw.sh`) para mantener la estructura limpia y ordenada de forma rápida.
-
-Para ejecutarlo localmente:
-```bash
-chmod +x organizar_2daw.sh
-./organizar_2daw.sh
-```
-
----
-
 ## 📌 Autor
-* **Alumno de 2DAW** — [Tu Usuario de GitHub]
+* **Alumno de 2DAW** — IVIX542
