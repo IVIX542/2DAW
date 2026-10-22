@@ -13,10 +13,10 @@
     </style>
 </head>
 <body>
-    <header th:insert="~{fragmentos/fragments :: cabecera(${cliente1})}">
+    <div th:replace="~{fragmentos/fragments :: cabecera(${cliente1})}">
         <p>Cabecera</p>
-    </header>
-    
+    </div>
+
     <h1>Pedidos</h1>
 
     <h2 th:text="|Cliente: ${cliente1.nombre}|"></h2>
@@ -25,7 +25,7 @@
 
         <div th:switch="${pedido.estado}">
             <div th:case="'pendiente'">
-                <p th:text="${pedido.nombre}"></p>
+                <div th:replace="~{fragmentos/fragments :: pedidoPendiente(${pedido})}"></div>
             </div>
             <div th:case="'enviado'">
                 <p th:text="${pedido.nombre}"></p>

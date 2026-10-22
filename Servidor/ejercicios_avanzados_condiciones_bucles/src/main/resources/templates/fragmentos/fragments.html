@@ -27,10 +27,10 @@
         <ul th:case="'USER'">
             <p>Usuario</p>
             <li>
-                <a href="#">Inicio</a>
+                <a th:href="@{/}">Inicio</a>
             </li>
             <li>
-                <a href="#">Sobre nosotros</a>
+                <a th:href="@{/pedidos}">Pedidos</a>
             </li>
             <li>
                 <a href="#">Mi perfil</a>
@@ -42,10 +42,10 @@
         <ul th:case="'INVITADO'">
             <p>Invitado</p>
             <li>
-                <a href="#">Inicio</a>
+                <a th:href="@{/}">Inicio</a>
             </li>
             <li>
-                <a href="#">Sobre nosotros</a>
+                <a th:href="@{/pedidos}">Pedidos</a>
             </li>
             <li>
                 <a href="#">Iniciar sesion</a>
@@ -53,6 +53,11 @@
         </ul>
     </div>
 
-    <div th:fr></div>
+    <div th:fragment="pedidoPendiente(pedido)">
+        <h3 th:text="${pedido.nombre}"
+            style="background-color: orange;">
+            Nombre del Pedido
+        </h3>
+    </div>
 </body>
 </html>
