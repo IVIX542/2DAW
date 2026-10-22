@@ -9,8 +9,14 @@ public class Controladora {
 
     Pedido pedidos[] = {
         new Pedido("Cajas de cartón", "pendiente"),
+        new Pedido("Metacrilato", "pendiente"),
+        
         new Pedido("Teclados de membrana", "enviado"),
-        new Pedido("Ratones ópticos", "entregado")
+        new Pedido("Micrófonos", "enviado"),
+
+        new Pedido("Ratones ópticos", "entregado"),
+        new Pedido("Pegatinas", "entregado")
+
     };
     Cliente cliente1 = new Cliente("Iván", "ADMIN", pedidos);
 
