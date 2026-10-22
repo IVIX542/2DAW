@@ -76,5 +76,17 @@
         </h3>
         <p th:text="|Estado: ${pedido.estado}|">Estado</p>
     </div>
+
+    <div th:fragment="pedidoEntregado(pedido)"
+         style="background-color: lightgreen;
+                border: 5px solid black;
+                padding: 1%;
+                margin: 1vh 0;
+                width: fit-content;">
+        <h3 th:text="${pedido.nombre}">
+            Nombre del Pedido
+        </h3>
+        <p th:text="|Estado: ${pedido.estado}|">Estado</p>
+    </div>
 </body>
 </html>

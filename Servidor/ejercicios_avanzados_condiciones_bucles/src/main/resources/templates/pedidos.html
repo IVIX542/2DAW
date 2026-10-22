@@ -30,10 +30,11 @@
         <div th:case="'enviado'"
              th:insert="~{fragmentos/fragments :: pedidoEnviado(${pedido})}">
         </div>
-        <div th:case="'entregado'">
+        <div th:case="'entregado'"
+             th:insert="~{fragmentos/fragments :: pedidoEntregado(${pedido})}">
             <p th:text="${pedido.nombre}"></p>
         </div>
-        
+
 
     </div>
 </body>
