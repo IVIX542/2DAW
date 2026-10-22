@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <style>
+        a {
+            text-decoration: none;
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header th:insert="~{fragmentos/fragments :: cabecera(${cliente1})}">
+        <p>Cabecera</p>
+    </header>
+
+    <h1>Catálogo</h1>
+</body>
+</html>

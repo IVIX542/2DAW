@@ -7,6 +7,8 @@
 
 </head>
 <body>
+
+    <!-- Cabecera -->
     <div th:fragment="cabecera(cliente)"
           th:switch="${cliente.rol}">
 
@@ -53,6 +55,7 @@
         </ul>
     </div>
 
+    <!-- Tipos de pedidos -->
     <div th:fragment="pedidoPendiente(pedido)"
         style="background-color: lightcoral;
                border: 5px solid black;
