@@ -21,21 +21,19 @@
 
     <h2 th:text="|Cliente: ${cliente1.nombre}|"></h2>
 
-    <div th:each="pedido : ${cliente1.pedidos}">
+    <div th:each="pedido : ${cliente1.pedidos}"
+         th:switch="${pedido.estado}">
 
-        <div th:switch="${pedido.estado}">
-            <div th:case="'pendiente'">
-                <div th:replace="~{fragmentos/fragments :: pedidoPendiente(${pedido})}"></div>
-            </div>
-            <div th:case="'enviado'">
-                <div th:replace="~{fragmentos/fragments :: pedidoEnviado(${pedido})}"></div>
-            </div>
-            <div th:case="'entregado'">
-                <p th:text="${pedido.nombre}"></p>
-            </div>
+        <div th:case="'pendiente'"
+             th:insert="~{fragmentos/fragments :: pedidoPendiente(${pedido})}">
         </div>
-
-        <h3 th:text="|Pedido ${pedido.id}|"></h3>
+        <div th:case="'enviado'"
+             th:insert="~{fragmentos/fragments :: pedidoEnviado(${pedido})}">
+        </div>
+        <div th:case="'entregado'">
+            <p th:text="${pedido.nombre}"></p>
+        </div>
+        
 
     </div>
 </body>

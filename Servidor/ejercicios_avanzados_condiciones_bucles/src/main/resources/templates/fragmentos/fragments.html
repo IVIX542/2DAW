@@ -53,17 +53,25 @@
         </ul>
     </div>
 
-    <div th:fragment="pedidoPendiente(pedido)">
-        <h3 th:text="${pedido.nombre}"
-            style="background-color: orange;">
+    <div th:fragment="pedidoPendiente(pedido)"
+        style="background-color: lightcoral;
+               border: 5px solid black;
+               padding: 1%;
+               margin: 1vh 0;
+               width: fit-content;">
+        <h3 th:text="${pedido.nombre}">
             Nombre del Pedido
         </h3>
         <p th:text="|Estado: ${pedido.estado}|">Estado</p>
     </div>
 
-    <div th:fragment="pedidoEnviado(pedido)">
-        <h3 th:text="${pedido.nombre}"
-            style="background-color: lightblue;">
+    <div th:fragment="pedidoEnviado(pedido)"
+         style="background-color: lightblue;
+                border: 5px solid black;
+                padding: 1%;
+                margin: 1vh 0;
+                width: fit-content;">
+        <h3 th:text="${pedido.nombre}">
             Nombre del Pedido
         </h3>
         <p th:text="|Estado: ${pedido.estado}|">Estado</p>
