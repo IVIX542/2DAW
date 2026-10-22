@@ -7,21 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller  
 public class Controladora {
 
+    Pedido pedidos[] = {
+        new Pedido(1, "Cajas de cartón", "pendiente"),
+        new Pedido(2, "Teclados de membrana", "enviado"),
+        new Pedido(3, "Ratones ópticos", "entregado")
+    };
+    Cliente cliente1 = new Cliente("Iván", "ADMIN", pedidos);
+
     @GetMapping("/")
-    public String getInicio() {
+    public String getInicio(Model modelo) {
+        modelo.addAttribute("cliente1", cliente1);
+        
         return "inicio";
     }
 
     @GetMapping("/pedidos")
     public String getPedidos(Model modelo) {
-        Pedido pedidos[] = {
-            new Pedido(1, "pendiente"),
-            new Pedido(2, "enviado"),
-            new Pedido(3, "entregado")
-        };
-
-        Cliente cliente1 = new Cliente("Iván", "ADMIN", pedidos);
-
         modelo.addAttribute("cliente1", cliente1);
 
 

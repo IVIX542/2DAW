@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
+    <style>
+        a {
+            text-decoration: none;
+            padding-left: 1rem;
+        }
+        
+    </style>
 </head>
 <body>
-    <div th:replace="~{fragmentos/fragments :: cabecera(${cliente1})}"></div>
-    <a th:href="@{/}">Inicio</a>
+    <header th:insert="~{fragmentos/fragments :: cabecera(${cliente1})}">
+        <p>Cabecera</p>
+    </header>
+    
     <h1>Pedidos</h1>
 
     <h2 th:text="|Cliente: ${cliente1.nombre}|"></h2>
 
     <div th:each="pedido : ${cliente1.pedidos}">
 
-        <div th:switch="pedido.estado">
-            <div th:case="'pendiente'"></div>
-            <div th:case="'enviado'"></div>
-            <div th:case="'entregado'"></div>
+        <div th:switch="${pedido.estado}">
+            <div th:case="'pendiente'">
+                <p th:text="${pedido.nombre}"></p>
+            </div>
+            <div th:case="'enviado'">
+                <p th:text="${pedido.nombre}"></p>
+            </div>
+            <div th:case="'entregado'">
+                <p th:text="${pedido.nombre}"></p>
+            </div>
         </div>
 
         <h3 th:text="|Pedido ${pedido.id}|"></h3>

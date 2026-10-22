@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fragmentos</title>
+
 </head>
 <body>
-    <head th:fragment="cabecera(cliente)"
+    <div th:fragment="cabecera(cliente)"
           th:switch="${cliente.rol}">
-        <ul th:case="'ADMIN'">
-            <li>
-                <a href="#">Inicio</a>
-            </li>
-            <li>
-                <a href="#">Reportes</a>
-            </li>
-            <li>
-                <a href="#">Gestion usuarios</a>
-            </li>
-            <li>
-                <a href="#">Cerrar sesion</a>
-            </li>
-        </ul>
+
+        <div case="'ADMIN'">
+            <a th:href="@{/}">
+                Inicio
+            </a>
+            <a th:href="@{/pedidos}">
+                Pedidos
+            </a>
+            <a href="#">
+                Consultas
+            </a>
+            <a href="#">
+                Cerrar sesion
+            </a>
+        </div>
         <ul th:case="'USER'">
+            <p>Usuario</p>
             <li>
                 <a href="#">Inicio</a>
             </li>
@@ -37,6 +40,7 @@
             </li>
         </ul>
         <ul th:case="'INVITADO'">
+            <p>Invitado</p>
             <li>
                 <a href="#">Inicio</a>
             </li>
@@ -47,7 +51,7 @@
                 <a href="#">Iniciar sesion</a>
             </li>
         </ul>
-    </head>
+    </div>
 
     <div th:fr></div>
 </body>
