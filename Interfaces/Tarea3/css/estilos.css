@@ -93,14 +93,21 @@ section {
 .cursos {
     box-sizing: border-box;
     background: none;
+    height: 30vh;
 }
 .cursos>.tarjeta {
-    width: 33%;
+    width: 20vw;
+    height: 10vh fit-content;
+    padding: 20px;
+    text-align: center;
     background: var(--fondo-claro);
     border: 1px solid var(--borde);
     border-radius: 10px;
     margin: 2%;
+
+    float:inline-start;
 }
+
 
 /* Recursos Recomendados */
 
