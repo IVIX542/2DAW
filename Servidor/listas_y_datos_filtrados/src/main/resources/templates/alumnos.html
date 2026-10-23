@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Alumnos</title>
+    <style>
+        table {
+            width: fit-content;
+            height: fit-content;
+            margin-bottom: 2rem;
+        }
+        th, td {
+            border: 1px dashed black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .aprobados {
+            background-color: #e2e2e2; /* Fondo gris claro */
+        }
+        .suspensos {
+            background-color: #ffd6d6; /* Fondo rosa claro */
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gestión de Calificaciones de Alumnos</h1>
+
+    <!-- Aprobados -->
+    <h2>Alumnos Aprobados (Media >= 5)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Curso</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Nota media</th>
+                <th>Asignaturas y notas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="alumno : ${alumnos}" th:if="${alumno.media >= 5}" class="aprobados">
+                <td th:text="${alumno.curso}">Curso</td>
+                <td th:text="${alumno.nombre}">Nombre</td>
+                <td th:text="${alumno.apellidos}">Apellidos</td>
+                <td th:text="${#numbers.formatDecimal(alumno.media, 1, 2)}">0.0</td>
+                <td>
+                    <ul>
+                        <li th:each="entry : ${alumno.notas}">
+                            <span th:text="${entry.key}">Asignatura</span>: <span th:text="${entry.value}">0.0</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Suspensos -->
+    <h2>Alumnos Suspensos (Media < 5)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Curso</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Nota media</th>
+                <th>Asignaturas y notas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="alumno : ${alumnos}" th:if="${alumno.media < 5}" class="suspensos">
+                <td th:text="${alumno.curso}">Curso</td>
+                <td th:text="${alumno.nombre}">Nombre</td>
+                <td th:text="${alumno.apellidos}">Apellidos</td>
+                <td th:text="${#numbers.formatDecimal(alumno.media, 1, 2)}">0.0</td>
+                <td>
+                    <ul>
+                        <li th:each="entry : ${alumno.notas}">
+                            <span th:text="${entry.key}">Asignatura</span>: <span th:text="${entry.value}">0.0</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
