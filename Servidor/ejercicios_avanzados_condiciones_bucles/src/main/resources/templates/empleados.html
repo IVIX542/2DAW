@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Empleados</title>
+    <style>
+        .par { background-color: #f2f2f2; }
+        .impar { background-color: #ffffff; }
+        .negrita { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Tabla de Empleados</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Número</th>
+                <th>Nombre</th>
+                <th>Departamento</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Requisito 1: th:each con variable de estado -->
+            <!-- Requisito 2: th:classappend para filas pares/impares -->
+            <tr th:each="e, estado : ${empleados}" 
+                th:classappend="${estado.even} ? 'par' : 'impar'">
+                
+                <td th:text="${e.numero}">1</td>
+                <td>
+                    <!-- Requisito 3: Icono para el primer empleado -->
+                    <span th:if="${estado.first}">⭐</span>
+                    <span th:text="${e.nombre}">Nombre</span>
+                </td>
+                
+                <!-- Requisito 4: th:classappend para aplicar negrita si el departamento es "Dirección" -->
+                <td th:text="${e.departamento}" 
+                    th:classappend="${e.departamento == 'Dirección'} ? 'negrita' : ''">Departamento</td>
+                
+                <td th:text="${e.salario}">0.0</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

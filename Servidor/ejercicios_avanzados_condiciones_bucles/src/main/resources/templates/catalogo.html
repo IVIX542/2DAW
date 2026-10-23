@@ -11,11 +11,24 @@
         }
     </style>
 </head>
-<body>
+<body th:with="mostrar = ${filtro}, pedidos = ${cliente1.pedidos}">
     <header th:insert="~{fragmentos/fragments :: cabecera(${cliente1})}">
         <p>Cabecera</p>
     </header>
 
     <h1>Catálogo</h1>
+
+    <ul th:each="pedido : ${pedidos}">
+        <li th:if="(${mostrar} == 'oferta' and ${pedido.precioUnitario} < 10.0) or 
+                   (${mostrar} == 'caro' and ${pedido.precioUnitario} > 1000.0) or 
+                   (${mostrar} == 'todos')">
+            <span th:text="${pedido.nombre}">Nombre Producto</span>
+            <span th:text="${pedido.precioUnitario} + ' €'">Precio Producto</span>
+
+        </li>
+    </ul>
+
+    <p th:if="${#lists.isEmpty(pedidos)}">No hay productos disponibles.</p>
+    
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Usuario</title>
+</head>
+<body>
+    <h1>Panel Resumen</h1>
+
+    <!-- Sección Perfil del usuario -->
+    <th:block th:if="${mostrarPerfil}">
+        <div>
+            <h2>Perfil del usuario</h2>
+            <p>Contenido de la sección de perfil.</p>
+        </div>
+    </th:block>
+
+    <!-- Sección Historial de pedidos -->
+    <th:block th:if="${mostrarPedidos}">
+        <div>
+            <h2>Historial de pedidos</h2>
+            <p>Contenido de la sección de pedidos.</p>
+        </div>
+    </th:block>
+
+    <!-- Sección Mensajes -->
+    <th:block th:if="${mostrarMensajes}">
+        <div>
+            <h2>Mensajes</h2>
+            <p>Contenido de la sección de mensajes.</p>
+        </div>
+    </th:block>
+
+    <!-- Mensaje por defecto si ninguna sección está activa -->
+    <th:block th:if="${(mostrarPerfil == null or !mostrarPerfil) and (mostrarPedidos == null or !mostrarPedidos) and (mostrarMensajes == null or !mostrarMensajes)}">
+        <p>Sin contenido disponible.</p>
+    </th:block>
+</body>
+</html>
