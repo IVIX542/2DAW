@@ -17,12 +17,16 @@
 :root {
     --azul-principal: blue;
     --azul-oscuro: darkblue;
-    --violeta: blueviolet;
+    --azul-claro: lightblue;
     --cian: #00adad;
+
+    --violeta: blueviolet;
 
     --fondo-claro: rgba(217, 236, 242, 0.494);
     --borde: rgba(128, 128, 128, 0.5);
     --color-texto: black;
+
+    --acento-nivel: lightgrey;
 }
 
 /* 3. ESTILOS GENERALES */
@@ -89,7 +93,6 @@ section {
 }
 
 /* Cursos Disponibles */
-
 .cursos {
     box-sizing: border-box;
     background: none;
@@ -97,10 +100,12 @@ section {
 }
 .cursos>.tarjeta {
     width: 20vw;
-    height: 10vh fit-content;
+    height: 20vh ;
+
     padding: 20px;
-    text-align: center;
+
     background: var(--fondo-claro);
+
     border: 1px solid var(--borde);
     border-radius: 10px;
     margin: 2%;
@@ -108,9 +113,33 @@ section {
     float:inline-start;
 }
 
+.cursos>.destacada {
+    border: 1px solid var(--cian);
+}
+
+/* Etiqueta de nivel */
+
+.tarjeta .nivel {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 15px;
+
+    background-color: var(--acento-nivel);
+    color: black;
+    line-height: 1rem;
+}
+.tarjeta[data-nivel="avanzado"] .nivel {
+    background-color: var(--violeta);
+    color: white;
+    line-height: 1rem;
+}
+
+
 
 /* Recursos Recomendados */
-
 .recursos>ul {
     padding-left: 5%;
 }
