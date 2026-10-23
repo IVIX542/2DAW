@@ -9,51 +9,28 @@
 <body>
 
     <!-- Cabecera -->
-    <div th:fragment="cabecera(cliente)"
-          th:switch="${cliente.rol}">
-
-        <div case="'ADMIN'">
-            <a th:href="@{/}">
-                Inicio
-            </a>
-            <a th:href="@{/pedidos}">
-                Pedidos
-            </a>
-            <a href="#">
-                Consultas
-            </a>
-            <a href="#">
-                Cerrar sesion
-            </a>
-        </div>
-        <ul th:case="'USER'">
-            <p>Usuario</p>
-            <li>
-                <a th:href="@{/}">Inicio</a>
-            </li>
-            <li>
-                <a th:href="@{/pedidos}">Pedidos</a>
-            </li>
-            <li>
-                <a href="#">Mi perfil</a>
-            </li>
-            <li>
-                <a href="#">Cerrar sesion</a>
-            </li>
-        </ul>
-        <ul th:case="'INVITADO'">
-            <p>Invitado</p>
-            <li>
-                <a th:href="@{/}">Inicio</a>
-            </li>
-            <li>
-                <a th:href="@{/pedidos}">Pedidos</a>
-            </li>
-            <li>
-                <a href="#">Iniciar sesion</a>
-            </li>
-        </ul>
-    </div>
+    <header th:fragment="cabecera(cliente)">
+        <nav>
+            <div th:switch="${cliente.rol}">
+                <!-- Opciones para ADMIN -->
+                <ul th:case="'ADMIN'">
+                    <li><a href="/admin/gestion">Gestión</a></li>
+                </ul>
+                <!-- Opciones para USER -->
+                <ul th:case="'USER'">
+                    <li><a href="/user/perfil">Perfil</a></li>
+                </ul>
+                <!-- Opciones para INVITADO -->
+                <ul th:case="'INVITADO'">
+                    <li><a href="/login">Iniciar sesión</a></li>
+                </ul>
+                <!-- Opción por defecto -->
+                <ul th:case="*">
+                    <li><a href="/">Inicio</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <!-- Tipos de pedidos -->
     <div th:fragment="pedidoPendiente(pedido)"
