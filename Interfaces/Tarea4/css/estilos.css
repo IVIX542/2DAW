@@ -6,7 +6,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    
+    font-family: system-ui, sans-serif;
 }
 
 /* VARIABLES */
@@ -14,6 +14,7 @@
 :root {
     --color-borde: gray;
     --color-principal: darkblue;
+    --azul-claro-transparente: rgba(173, 216, 230, 0.5);
 }
 
 /* BASE Y UNIDADES */
@@ -43,6 +44,7 @@ header>nav>a {
 }
 
 /* MODELO DE CAJAS */
+/* Hero */
 .hero {
     overflow: hidden;
     border-bottom: 1px solid var(--color-borde);
@@ -69,11 +71,30 @@ header>nav>a {
 
 }
 
-
 .hero>img {
     float: right;
     height: 500px;
 }
+
+/* Medidas */
+.medidas {
+    height: 20vh;
+    margin: 20px 50px;
+}
+
+.medidas>.caja-adaptable {
+    background-color: var(--azul-claro-transparente);
+
+    border: 2px solid var(--color-principal);
+    border-radius: 10px;
+
+    max-width: 50vw;
+
+    padding: 20px;
+
+    margin-top: 20px;
+}
+
 
 /* DISPLAY */
 
