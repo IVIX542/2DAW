@@ -43,6 +43,37 @@ header>nav>a {
 }
 
 /* MODELO DE CAJAS */
+.hero {
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-borde);
+    margin: 0 50px;
+}
+
+.hero>div {
+    float: left;    
+    height: 50vh;
+    width: 55%;
+    padding: 10% 0;
+}
+.hero>div>small {
+    color: var(--color-principal);
+    font-size: large;
+    line-height: 2rem;
+
+}
+.hero>div>h1 {
+    font-size: medium;    line-height: 1rem;
+}
+.hero>div>p {
+    line-height: 3rem;
+
+}
+
+
+.hero>img {
+    float: right;
+    height: 500px;
+}
 
 /* DISPLAY */
 
