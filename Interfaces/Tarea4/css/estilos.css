@@ -15,6 +15,7 @@
     --color-borde: gray;
     --color-principal: darkblue;
     --azul-claro-transparente: rgba(173, 216, 230, 0.5);
+    --morado: rgb(158, 84, 228);
 }
 
 /* BASE Y UNIDADES */
@@ -95,6 +96,37 @@ header>nav>a {
     margin-top: 20px;
 }
 
+/* Catalogo */
+.catalogo {
+    margin: 20px 50px;
+}
+.catalogo>h2 {
+    margin-bottom: 20px;
+}
+.catalogo>article {
+    width: 26%;
+    height: 200px;
+
+    margin-right: 3%;
+    padding: 20px 30px;
+
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+
+    display: inline-block;
+}
+.catalogo>article>span {
+    background-color: var(--morado);
+    color: white;
+
+    padding: 1px 5px;
+    line-height: 40px;
+
+    border-radius: 5px;
+}
+.catalogo>article>h3 {
+    line-height: 40px;
+}
 
 /* DISPLAY */
 
