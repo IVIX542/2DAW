@@ -16,6 +16,8 @@
     --color-principal: darkblue;
     --azul-claro-transparente: rgba(173, 216, 230, 0.5);
     --morado: rgb(158, 84, 228);
+    --fondo-gris: rgba(128, 128, 128, 0.2);
+    --azul-oscuro: rgb(0, 0, 66);
 }
 
 /* BASE Y UNIDADES */
@@ -53,7 +55,7 @@ header>nav>a {
 }
 
 .hero>div {
-    float: left;    
+    float: left;
     height: 50vh;
     width: 55%;
     padding: 10% 0;
@@ -126,6 +128,28 @@ header>nav>a {
 }
 .catalogo>article>h3 {
     line-height: 40px;
+}
+
+/* Overflow demo */
+.overflow-demo {
+    margin: 20px 50px;
+
+    padding: 20px ;
+
+    background-color: var(--azul-claro-transparente);
+
+    border-radius: 10px;
+}
+.overflow-demo>pre {
+    width: 100%;
+    height: 155px;
+
+    background-color: var(--azul-oscuro);
+    color: white;
+
+    border-radius: 20px;
+
+    overflow-x: auto;
 }
 
 /* DISPLAY */
