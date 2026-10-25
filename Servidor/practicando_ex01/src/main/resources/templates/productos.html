@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Productos</title>
 </head>
 <body>
-    
+
+    <div th:switch="${usuario.rol}">
+        <h3 th:case="'ADMIN'">Admin</h3>
+        <h3 th:case="'MODERADOR'">Moderador</h3>
+        <h3 th:case="*">Otro</h3>
+    </div>
+
+    <table>
+        <thead>
+            <!-- 
+                NOTE: faltaba el th con # para la fila de números
+            -->
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </thead>
+
+        <tbody>
+            <!-- 
+                NOTE: Faltaba estado para verificar el número de fila y ver si era par.
+                ${estado.even} indica si la posición de estado es par o impar.
+            -->
+            <tr th:each="producto, estado : ${productos}"
+                  th:classappend="${estado.even} ? 'fila-par' : '' "> 
+
+                <td th:text="${estado.count}">Número fila</td>
+                <td th:text="${producto.nombre}">Nombre del producto</td>
+                <td th:text="${producto.precio}">Precio del producto</td>
+                <td th:text="${ producto.stock == 0? 'Sin stock' : 'Disponible' }">Stock del producto</td>
+
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
