@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones con Thymeleaf</title>
+</head>
+<body>
+    <div>
+        <p th:text="${#strings.toUpperCase(cadena)}"></p>
+
+        <!-- formatDecimal(numero, cantidad de números a la izquierda de la coma, cantidad de números a la derecha de la coma) -->
+        <p th:text="${#numbers.formatDecimal(precio, 1, 2)}"></p>
+
+        <!-- Se usa .format(fecha, formato) -->
+        <p th:text="${#temporals.format(fechaActual, 'dd/MM/yyyy')}"></p>
+    </div>
+</body>
+</html>
