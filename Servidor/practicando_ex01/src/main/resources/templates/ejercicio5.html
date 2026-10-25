@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables Locales y Bloques Invisibles</title>
+</head>
+<body>
+
+    <th:block th:if="${mostrarPanel}">
+        <h2>Panel</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae deleniti quasi minus inventore ipsa reiciendis! Eos autem, impedit dolor excepturi accusamus porro, debitis vel, nemo quibusdam obcaecati quo neque sed!</p>
+        <a href="#">Enlace</a>
+    </th:block>
+
+    <div>
+        <!-- th:with para crear una variable local en la etiqueta declarada -->
+        <p th:with="importe_total=(${precioUnitario} * ${cantidad})">
+            <span th:text="${importe_total}"></span>
+        </p>
+    </div>
+</body>
+</html>
