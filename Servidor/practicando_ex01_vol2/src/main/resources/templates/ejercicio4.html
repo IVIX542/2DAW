@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque 4</title>
+</head>
+<body>
+    <h1>Utilitarios de Cadenas y Colecciones</h1>
+
+    <p th:text="${#strings.length(descripcion)}">Longitud de descripción</p>
+    <p th:if="${#lists.isEmpty(alumnos)}">No hay alumnos matriculados</p>
+    <p th:text="${#lists.size(alumnos)}">Cantidad total de elementos en la lista alumnos</p>
+</body>
+</html>
