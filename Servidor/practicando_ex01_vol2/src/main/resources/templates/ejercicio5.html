@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque 5</title>
+</head>
+<body>
+    <h1>Combinación de variables locales y bloques</h1>
+
+    <table>
+        <thead>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Nota</th>
+        </thead>
+
+        <tbody>
+            <th:block th:each="alumno, cont : ${alumnos}">
+                <tr th:with="aprobado=${alumno.nota>=5}">
+                    <td th:text="${cont.count}">Número del alumno en la fila</td>
+                    <td th:text="${alumno.nombre}">Nombre del alumno</td>
+                    <td th:text="${aprobado? 'Aprobado' : 'Suspenso'}">Alumno aprobado?</td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+</body>
+</html>
