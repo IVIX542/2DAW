@@ -25,6 +25,7 @@ tareas_lista.remove("llamar al cliente X")
 print(f"Tarea completada: {tareas_lista.pop(0)}")
 
 print("\n----------------Ejercicio2.c----------------\n")
+
 # Buscamos el índice de la tarea y lo guardamos en una variable
 indice_tarea = tareas_lista.index("terminar el informe mensual")
 
@@ -37,4 +38,23 @@ tareas_lista.insert(indice_tarea, "terminar y enviar el informe mensual")
 # Imprimimos la lista para ver los cambios
 print(tareas_lista)
 
+print("\n----------------Ejercicio2.d----------------\n")
 
+# Comprobamos si "revisar el correo" sigue en la lista
+correo_en_lista = tareas_lista.count("revisar el correo")
+
+# Imprimimos el resultado de la condición. En caso de que sea mayor a 0: "True". En caso
+# contrario, "False".
+print(correo_en_lista > 0)
+
+# Si "responder a los correos de soporte" está en la lista, mostramos su posición.
+tarea = "responder a los correos de soporte"
+
+responder_correos = tareas_lista.count(tarea)>0
+
+if responder_correos :
+    print(f"Índice de la tarea: {tareas_lista.index(tarea)}")
+
+# Si no, evita el error comprobando su existencia antes
+else :
+    print(f"La tarea '{tarea}' no existe")
