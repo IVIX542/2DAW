@@ -58,3 +58,29 @@ if responder_correos :
 # Si no, evita el error comprobando su existencia antes
 else :
     print(f"La tarea '{tarea}' no existe")
+
+print("\n-----------------Ejercicio3-----------------\n")
+print("\n----------------Ejercicio3.a----------------\n")
+
+# Creamos una segunda lista "tareas_tarde"
+tareas_tarde = ["planificar tareas de mañana", "hacer copia de seguridad "]
+
+# Añadimos todos los elementos de "tareas_tarde" a la lista principal de tareas
+tareas_lista.extend(tareas_tarde)
+
+# Mostramos "tareas_lista"
+print(tareas_lista)
+
+print("\n----------------Ejercicio3.b----------------\n")
+
+# Ordenamos la lista de tareas principal
+tareas_lista.sort()
+
+# Imprimimos el contenido para ver el resultado
+print(f"Lista ordenada:\n{tareas_lista}")
+
+# Invertimos el orden de la lista
+tareas_lista.reverse()
+
+# Imprimimos el contenido de la lista al revés
+print(f"\nLista invertida:\n{tareas_lista}")
