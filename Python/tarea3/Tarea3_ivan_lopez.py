@@ -22,3 +22,19 @@ print(tareas_lista)
 print("\n----------------Ejercicio2.b----------------\n")
 
 tareas_lista.remove("llamar al cliente X")
+print(f"Tarea completada: {tareas_lista.pop(0)}")
+
+print("\n----------------Ejercicio2.c----------------\n")
+# Buscamos el índice de la tarea y lo guardamos en una variable
+indice_tarea = tareas_lista.index("terminar el informe mensual")
+
+# Eliminamos el elemento en ese índice
+del tareas_lista[indice_tarea]
+
+# Añadimos un nuevo elemento en el índice indicado
+tareas_lista.insert(indice_tarea, "terminar y enviar el informe mensual")
+
+# Imprimimos la lista para ver los cambios
+print(tareas_lista)
+
+
