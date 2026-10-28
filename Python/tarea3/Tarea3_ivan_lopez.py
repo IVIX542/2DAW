@@ -84,3 +84,16 @@ tareas_lista.reverse()
 
 # Imprimimos el contenido de la lista al revés
 print(f"\nLista invertida:\n{tareas_lista}")
+
+print("\n-----------------Ejercicio4-----------------\n")
+print("\n----------------Ejercicio4.a----------------\n")
+
+# Creamos la variable "titulo"
+titulo = "--- Resumen de Tareas Pendientes ---\n"
+
+print("\n--------------Ejercicio4.b y 4c-------------\n")
+
+# Convertimos la lista final en una sola cadena de texto, de modo que cada tarea aparezca
+# en una nueva línea. Para ello, utilizo un bucle for
+for tarea in tareas_lista:
+    print(f"- {tarea.capitalize()}")
