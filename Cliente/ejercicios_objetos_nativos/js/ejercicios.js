@@ -51,5 +51,30 @@ function ejercicioMath() {
     // Calculamos el área de un círculo de radio 5 usando Math.PI
     let area_circulo = Math.PI * (5**2);
     document.body.innerHTML += "<p> Área decírculo con radio 5: " + area_circulo + "</p>";
+    
+}
+
+/* Ejercicio 4 */
+function ejercicioDate() {
+    
+    // Creamos un objeto con la fecha actual con new Date()
+    let fecha = new Date();
+    document.body.innerHTML += "<p>Fecha sin formato: " + fecha + "</p>";
+    
+    // Le damos formato "dd/MM/yyyy"
+    let fecha_formateada = fecha.getDate() + "/" + fecha.getMonth() + "/" + fecha.getFullYear();
+    document.body.innerHTML += "<p>Fecha con formato: " + fecha_formateada + "</p>";
+    
+    // Averiguamos qué día de la semana cayó el 1 de enero del año 2000
+    let fecha2 = new Date(2000, 0, 1); // año : 2000 - mes : enero - día : 1
+
+    // Nos devuelve el día de la semana(0:domingo, 1:lunes, 2:martes, 3:miércoles, 4:jueves, 5:viernes, 6:sábado)
+    let dia_semana = fecha2.getDay();
+
+    // Array con los días de la semana formato yanqui
+    const dias_semana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
+    // Imprimimos el día correspondiente al índice de la variable "dia_semana"
+    document.body.innerHTML += "<p>Día de la semana del 1 de enero del año 2000: " + dias_semana[dia_semana] + "</p>";
 
 }
