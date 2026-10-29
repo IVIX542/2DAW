@@ -120,5 +120,16 @@ function mostrarTamaño() {
     document.body.innerHTML += `<p>Alto de la ventana: ${alto}px</p>`;
     document.body.innerHTML += `<p>Ancho de la ventana: ${ancho}px</p>`;
     
+
+}
+
+/* Ejercicio 4 */
+function mostrarURL() {
+
+    // Definimos una variable con la URL completa
+    let url = location.href;
     
+    // Imprimimos un parrafo con la url
+    document.body.innerHTML += `URL: ${url}`;
+
 }
