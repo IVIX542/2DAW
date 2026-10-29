@@ -39,6 +39,17 @@ function ejercicioNumber() {
 
 /* Ejercicio 3 */
 function ejercicioMath() {
+
+    // Generamos número aleatorio entre 1 y 10
     let numeroRandom = Math.floor((Math.random() * 10)+1);
     document.body.innerHTML += "<p> Número random: " + numeroRandom + "</p>";
+    
+    // Calculamos la raíz cuadrada de 81 (Math.sqrt(81))
+    let r_cuadrada = Math.sqrt(81);
+    document.body.innerHTML += "<p> Raíz cuadrada de 81: " + r_cuadrada + "</p>";
+    
+    // Calculamos el área de un círculo de radio 5 usando Math.PI
+    let area_circulo = Math.PI * (5**2);
+    document.body.innerHTML += "<p> Área decírculo con radio 5: " + area_circulo + "</p>";
+
 }
