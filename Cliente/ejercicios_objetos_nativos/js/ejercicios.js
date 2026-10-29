@@ -36,3 +36,9 @@ function ejercicioNumber() {
     let numeroHEX = Number(255).toString(16);
     document.body.innerHTML += "<p> Número 255 en HEX: " + numeroHEX + "</p>";
 }
+
+/* Ejercicio 3 */
+function ejercicioMath() {
+    let numeroRandom = Math.floor((Math.random() * 10)+1);
+    document.body.innerHTML += "<p> Número random: " + numeroRandom + "</p>";
+}
