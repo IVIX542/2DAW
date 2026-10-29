@@ -98,13 +98,27 @@ function cambiarColor() {
     
     // Creamos el array con los colores
     let colores = ["red", "green", "blue", "lightblue", "yellow", "SlateBlue", "Tomato", "Violet", "Gray"];
-
+    
     // Número aleatorio de 0 a la longitud del array
     let indice = Math.floor(Math.random() * colores.length);
-
+    
     // Imprimimos por consola el color, para ver cuál se elige
     console.log(colores[indice]);
     
     // Cambiamos el color de fondo al color en la posición indicada por el índice
     document.body.style.backgroundColor = colores[indice];
+}
+
+/* Ejercicio 3 */
+function mostrarTamaño() {
+    
+    // Definimos las variables ancho y alto
+    let ancho = window.innerWidth;
+    let alto = window.innerHeight;
+    
+    // Mostramos un párrafo con el alto y el ancho de la ventana
+    document.body.innerHTML += `<p>Alto de la ventana: ${alto}px</p>`;
+    document.body.innerHTML += `<p>Ancho de la ventana: ${ancho}px</p>`;
+    
+    
 }
