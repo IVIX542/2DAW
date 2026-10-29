@@ -92,3 +92,19 @@ function mostrarNombre() {
     // Imprimimos un saludo personalizado en un h1
     document.body.innerHTML += `<h1>Hola, ${nombre}</h1>`;
 }
+
+/* Ejercicio 2 */
+function cambiarColor() {
+    
+    // Creamos el array con los colores
+    let colores = ["red", "green", "blue", "lightblue", "yellow", "SlateBlue", "Tomato", "Violet", "Gray"];
+
+    // Número aleatorio de 0 a la longitud del array
+    let indice = Math.floor(Math.random() * colores.length);
+
+    // Imprimimos por consola el color, para ver cuál se elige
+    console.log(colores[indice]);
+    
+    // Cambiamos el color de fondo al color en la posición indicada por el índice
+    document.body.style.backgroundColor = colores[indice];
+}
