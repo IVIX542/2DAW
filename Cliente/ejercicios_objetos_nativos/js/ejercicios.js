@@ -147,3 +147,9 @@ function comprobarConexion() {
     document.body.innerHTML += texto;
 
 }
+
+/* Ejercicio 6 */
+function volverAtras() {
+    // Llamamos a history.back() para retroceder en el historial una vez
+    history.back();
+}
