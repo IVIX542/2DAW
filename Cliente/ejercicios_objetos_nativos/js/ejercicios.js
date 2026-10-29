@@ -1,6 +1,8 @@
 /* Bloque 1 */
 /* Ejercicio 1 */
 function ejercicioString() {
+    
+    
     let frase = prompt("Escribe una frase");
     document.body.innerHTML += "<p>Frase: " + frase + "</p>";
     document.body.innerHTML += "<p>La frase tiene " + frase.length + " caracteres.</p>";
@@ -10,16 +12,16 @@ function ejercicioString() {
     let salida = "<ul>";
     
     for(palabra of lista_palabras) {
-        salida += "<li> " + palabra + "</li>";
-        
+        salida += "<li>" + palabra + "</li>";
     }
+    
     salida += "</ul>";
     document.body.innerHTML += salida;
 }
 
 /* Ejercicio 2 */
 function ejercicioNumber() {
-
+    
     // Cadena
     let cadena = "123.456";
     document.body.innerHTML += "<p> Cadena original: " + cadena + "</p>";
@@ -39,7 +41,7 @@ function ejercicioNumber() {
 
 /* Ejercicio 3 */
 function ejercicioMath() {
-
+    
     // Generamos número aleatorio entre 1 y 10
     let numeroRandom = Math.floor((Math.random() * 10)+1);
     document.body.innerHTML += "<p> Número random: " + numeroRandom + "</p>";
@@ -67,14 +69,26 @@ function ejercicioDate() {
     
     // Averiguamos qué día de la semana cayó el 1 de enero del año 2000
     let fecha2 = new Date(2000, 0, 1); // año : 2000 - mes : enero - día : 1
-
+    
     // Nos devuelve el día de la semana(0:domingo, 1:lunes, 2:martes, 3:miércoles, 4:jueves, 5:viernes, 6:sábado)
     let dia_semana = fecha2.getDay();
-
+    
     // Array con los días de la semana formato yanqui
     const dias_semana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-
+    
     // Imprimimos el día correspondiente al índice de la variable "dia_semana"
     document.body.innerHTML += "<p>Día de la semana del 1 de enero del año 2000: " + dias_semana[dia_semana] + "</p>";
+    
+}
 
+/* Bloque 2 */
+/* Ejercicio 1 */
+
+function mostrarNombre() {
+    
+    // Pedimos el nombre por un prompt
+    let nombre = prompt("Escribe tu nombre");
+    
+    // Imprimimos un saludo personalizado en un h1
+    document.body.innerHTML += `<h1>Hola, ${nombre}</h1>`;
 }
