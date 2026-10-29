@@ -133,3 +133,17 @@ function mostrarURL() {
     document.body.innerHTML += `URL: ${url}`;
 
 }
+
+/* Ejercicio 5 */
+function comprobarConexion() {
+
+    // Definimos una variable que guarde el estado de conexión
+    let conexion = navigator.onLine;
+    
+    // Condicional - en caso de "True": "Estado: Online" - en caso "False": "Estado: Offline"
+    let texto = conexion? "Estado: Online" : "Estado: Offline";
+
+    // Mostramos el resultado en el body
+    document.body.innerHTML += texto;
+
+}
