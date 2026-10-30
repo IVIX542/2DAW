@@ -8,13 +8,21 @@ import ButtonComponent from './components/ButtonComponent'
 
 function App() {
 
-  // Declaramos variable myPlaceHolder
+  // Variables
   let myPlaceHolder = "Escribe aquí";
+  
+  const links = {
+    home : "Home",
+    blog : "Blog",
+    news : "News",
+    contact : "Contact Us"
+  }
 
-  // Variable number reactiva
+  // Variables reactivas
   const [number, setNumber] = useState(0);
 
   const [greetings, setGreetings] = useState("Bienvenidos a mi web");
+
 
   // Variable myValue reactiva
   const [myValue, setMyValue] = useState("Hola");
@@ -37,7 +45,7 @@ function App() {
 
   return (
     <>
-      <HeaderComponent greetings={greetings}></HeaderComponent>
+      <HeaderComponent greetings={greetings} links={links}></HeaderComponent>
 
       <main className='main-content'>
         <h2 onClick={sayHello}>Hola a todos!</h2>

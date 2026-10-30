@@ -1,7 +1,7 @@
 import "./HeaderComponent.css";
 
 function HeaderComponent(props) {
-    const {greetings} = props;
+    const {greetings, links} = props;
 
     return (
         <header className="header">
@@ -9,16 +9,16 @@ function HeaderComponent(props) {
             <nav>
                 <ul className="header-list">
                     <li>
-                        <a className="link" href="#">Home</a>
+                        <a className="link" href="#">{links.home}</a>
                     </li>
                     <li>
-                        <a className="link" href="#">Blog</a>
+                        <a className="link" href="#">{links.blog}</a>
                     </li>
                     <li>
-                        <a className="link" href="#">News</a>
+                        <a className="link" href="#">{links.news}</a>
                     </li>
                     <li>
-                        <a className="link" href="#">Contact Us</a>
+                        <a className="link" href="#">{links.contact}</a>
                     </li>
                 </ul>
             </nav>
