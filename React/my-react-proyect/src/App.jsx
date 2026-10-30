@@ -8,8 +8,14 @@ import ButtonComponent from './components/ButtonComponent'
 
 function App() {
 
+  // Función que imprime por consola "Hello!"
   const sayHello = () => {
     console.log("Hello!");
+  }
+
+  // Evento que captura el cambio a la hora de escribir en el input:text
+  const handleChange = (e) => {
+    console.log(e.target.value);
   }
 
   return (
@@ -18,6 +24,10 @@ function App() {
 
       <main className='main-content'>
         <h2 onClick={sayHello}>Hola a todos!</h2>
+        <input type="text" onChange={handleChange} />
+
+        <br />
+        <br />
         <ButtonComponent></ButtonComponent>
       </main>
     </>
