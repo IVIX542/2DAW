@@ -7,7 +7,7 @@ import React from 'react'
 
 function ButtonComponent() {
   return (
-    <div>ButtonComponent</div>
+    <button>Soy un botón</button>
   )
 }
 
