@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Mi blog</title>
+</head>
+<body>
+    <div th:replace="~{fragmentos/cabecera :: barra_nav}"></div>
+    <div class="row text-center mt-5">
+        <h1 class="display-6">Lista de articulos</h1>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Detalle</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="articulo :${listaArticulos}">
+                        <td th:text="${articulo.titulo}"></td>
+                        <td th:text="${articulo.autor}"></td>
+                        <td th:text="${articulo.id}"></td>
+                        <td ><a th:href="@{/articulos/{id}(id=${articulo.id})}" class="btn btn-secondary">Detalle</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div th:replace="~{fragmentos/cabecera :: pie_pagina}"></div>
+</body>
+</html>
