@@ -14,6 +14,8 @@ function App() {
   // Variable number reactiva
   const [number, setNumber] = useState(0);
 
+  const [greetings, setGreetings] = useState("Bienvenidos a mi web");
+
   // Variable myValue reactiva
   const [myValue, setMyValue] = useState("Hola");
 
@@ -35,7 +37,7 @@ function App() {
 
   return (
     <>
-      <HeaderComponent></HeaderComponent>
+      <HeaderComponent greetings={greetings}></HeaderComponent>
 
       <main className='main-content'>
         <h2 onClick={sayHello}>Hola a todos!</h2>
@@ -46,6 +48,7 @@ function App() {
 
         <br />
         <br />
+
         <ButtonComponent></ButtonComponent>
       </main>
     </>
