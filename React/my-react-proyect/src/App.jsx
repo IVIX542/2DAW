@@ -8,6 +8,21 @@ import ButtonComponent from './components/ButtonComponent'
 
 function App() {
 
+  // Declaramos variable myPlaceHolder
+  let myPlaceHolder = "Escribe aquí";
+
+  // Variable number reactiva
+  const [number, setNumber] = useState(0);
+
+  // Variable myValue reactiva
+  const [myValue, setMyValue] = useState("Hola");
+
+  // Función para modificar number
+  const addOne = () => {
+    setNumber(number + 1);
+    console.log(number);
+  }
+
   // Función que imprime por consola "Hello!"
   const sayHello = () => {
     console.log("Hello!");
@@ -24,7 +39,10 @@ function App() {
 
       <main className='main-content'>
         <h2 onClick={sayHello}>Hola a todos!</h2>
-        <input type="text" onChange={handleChange} />
+        
+        <h2 onClick={addOne}>Number: {number}</h2>
+        
+        <input value={myValue} placeholder={myPlaceHolder} type="text" onChange={handleChange} />
 
         <br />
         <br />
