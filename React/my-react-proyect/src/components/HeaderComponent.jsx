@@ -21,3 +21,5 @@ function HeaderComponent() {
         </header>
     )
 }
+
+export default HeaderComponent;
