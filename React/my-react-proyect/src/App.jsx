@@ -7,16 +7,21 @@ import HeaderComponent from './components/HeaderComponent'
 import ButtonComponent from './components/ButtonComponent'
 
 function App() {
+
+  const sayHello = () => {
+    console.log("Hello!");
+  }
+
   return (
     <>
       <HeaderComponent></HeaderComponent>
-      <main className='main-content'>
-        <h2>Hola a todos!</h2>
-        <ButtonComponent></ButtonComponent>
 
+      <main className='main-content'>
+        <h2 onClick={sayHello}>Hola a todos!</h2>
+        <ButtonComponent></ButtonComponent>
       </main>
     </>
-  )
+  );
 }
 
 export default App
