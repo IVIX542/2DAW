@@ -42,26 +42,7 @@ function App() {
       <HeaderComponent greetings={greetings} links={links}></HeaderComponent>
 
       <main className='main-content'>
-
-        {/** 
-         * Renderización condicional de elementos 
-         * En caso de que la primera condición sea truthy, muestra el bloque. En caso
-         *  contrario, no lo muestra
-         * */}
-        {user.username && <h2>Hola {user.username}</h2>}
-
-        <LoginComponent handleLogin={login}></LoginComponent>
-
-        {/* Renderización condicional con && lógico */}
-        {condition && <h2>La condicion se cumple</h2>}
-        {!condition && <h2>La condicion no se cumple</h2>}
-
-        {/* Renderización condicional con operador ternario */}
-        { condition? (
-          <h2>La condicion se cumple</h2>
-        ) : (
-          <h2>La condicion no se cumple</h2>
-        )}
+        <h2>Hola a todos!</h2>
       </main>
     </>
   );
