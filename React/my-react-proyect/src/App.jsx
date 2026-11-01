@@ -17,11 +17,13 @@ function App() {
 
   // Variables  
   const links = {
-    home : "Home",
-    blog : "Blog",
-    news : "News",
-    contact : "Contact Us"
+    home: "Home",
+    blog: "Blog",
+    news: "News",
+    contact: "Contact Us"
   }
+
+  const condition = true;
 
   // Variables reactivas
   const [greetings, setGreetings] = useState("Bienvenidos a mi web");
@@ -46,10 +48,20 @@ function App() {
          * En caso de que la primera condición sea truthy, muestra el bloque. En caso
          *  contrario, no lo muestra
          * */}
-        {user.username && <h2>Hola {user.username}</h2> }
-        
+        {user.username && <h2>Hola {user.username}</h2>}
+
         <LoginComponent handleLogin={login}></LoginComponent>
 
+        {/* Renderización condicional con && lógico */}
+        {condition && <h2>La condicion se cumple</h2>}
+        {!condition && <h2>La condicion no se cumple</h2>}
+
+        {/* Renderización condicional con operador ternario */}
+        { condition? (
+          <h2>La condicion se cumple</h2>
+        ) : (
+          <h2>La condicion no se cumple</h2>
+        )}
       </main>
     </>
   );
