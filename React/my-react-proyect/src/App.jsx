@@ -13,6 +13,7 @@ import HeaderComponent from './components/HeaderComponent'
 import ButtonComponent from './components/ButtonComponent'
 import LoginComponent from './components/LoginComponent'
 import MovieList from './components/MovieList'
+import AnimalList from './components/AnimalList'
 
 function App() {
 
@@ -44,7 +45,9 @@ function App() {
 
       <main className='main-content'>
         <h2>Hola a todos!</h2>
+        
         <MovieList></MovieList>
+        <AnimalList></AnimalList>
       </main>
     </>
   );
