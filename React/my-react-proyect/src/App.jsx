@@ -40,7 +40,13 @@ function App() {
       <HeaderComponent greetings={greetings} links={links}></HeaderComponent>
 
       <main className='main-content'>
-        <h2>Hola {user.username}</h2>
+
+        {/** 
+         * Renderización condicional de elementos 
+         * En caso de que la primera condición sea truthy, muestra el bloque. En caso
+         *  contrario, no lo muestra
+         * */}
+        {user.username && <h2>Hola {user.username}</h2> }
         
         <LoginComponent handleLogin={login}></LoginComponent>
 
