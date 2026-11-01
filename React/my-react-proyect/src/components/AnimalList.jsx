@@ -20,7 +20,7 @@ function AnimalList() {
     const HTMLAnimals = animals.map((animal) => {
         return (
         <li key={animal.id}>
-            {animal.name}
+            <h3>{animal.name}</h3>
         </li>
     )
     })

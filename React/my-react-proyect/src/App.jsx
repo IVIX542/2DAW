@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 /* Assets */
 import heroImg from './assets/hero.png'
@@ -16,6 +16,10 @@ import MovieList from './components/MovieList'
 import AnimalList from './components/AnimalList'
 
 function App() {
+
+  useEffect( () => {
+    console.log("Ejecución cada vez que se renderiza el componente raíz");
+  })
 
   // Variables  
   const links = {
@@ -45,9 +49,8 @@ function App() {
 
       <main className='main-content'>
         <h2>Hola a todos!</h2>
-        
-        <MovieList></MovieList>
-        <AnimalList></AnimalList>
+
+        <LoginComponent handleLogin={login}></LoginComponent>
       </main>
     </>
   );
