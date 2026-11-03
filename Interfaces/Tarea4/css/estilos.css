@@ -67,7 +67,8 @@ header>nav>a {
 
 }
 .hero>div>h1 {
-    font-size: medium;    line-height: 1rem;
+    font-size: medium;
+    line-height: 1rem;
 }
 .hero>div>p {
     line-height: 3rem;

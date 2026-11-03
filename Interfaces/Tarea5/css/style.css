@@ -1,0 +1,62 @@
+/* Variables */
+:root {
+    --color-principal: blue;
+}
+
+/* Formato global */
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    font-family: system-ui, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: var(--color-principal);
+
+    color: white;
+
+    margin: 5vh 10vw;
+
+    border-radius: 20px;
+
+    height: 200px;
+}
+
+header>img {
+    background-color: aqua;
+
+    padding: 5px;
+    margin: 40px;
+
+    float: left;
+
+    border-radius: 10px;
+
+    height: 75px;
+}
+header>h2 {
+    font-weight: bold;
+    font-size:xx-large;
+
+    padding-top: 30px;
+
+}
+header>p {
+    padding-top: 10px;
+    color: whitesmoke;
+}
+
+header>.etiquetas {
+    margin-top: 10px;
+}
+
+header>.etiquetas>.etiqueta {
+    display: inline-block;
+    margin-right: 20px;
+
+    font-weight: bold;
+}
