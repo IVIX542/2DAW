@@ -3,7 +3,6 @@ package com.daw.blogv2.modelos;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  * Interfaz de repositorio para la entidad Articulo.
@@ -16,7 +15,6 @@ import org.springframework.stereotype.Repository;
  * - save(obj) -> inserta o actualiza un artículo
  * - deleteById(id) -> elimina un artículo
  */
-@Repository
 public interface ArticuloRepository extends JpaRepository<Articulo, Long> {
     // ============================
     // Consultas personalizadas
