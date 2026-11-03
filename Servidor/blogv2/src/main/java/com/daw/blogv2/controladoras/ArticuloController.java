@@ -22,8 +22,10 @@ import com.daw.blogv2.servicios.ArticuloService;
 @RequestMapping("/articulos")
 public class ArticuloController {
 
+    // Inyección automática del servicio (SpringBoot lo hestiona)
     private final ArticuloService articuloService;
 
+    // Constructor para la inyección de dependencias
     public ArticuloController(ArticuloService articuloService) {
         this.articuloService = articuloService;
     }
