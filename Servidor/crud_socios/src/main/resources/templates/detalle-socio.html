@@ -26,8 +26,11 @@
                 </div>
                 <div class="card-body">
                     <p th:text="|Fecha de alta: ${#temporals.format(socio.fechaAlta, 'dd/MMMM/yyyy') }|">Fecha de alta del socio</p>
+
                     <p th:text="|Teléfono: ${socio.telefono}|">Telefono del socio</p>
+
                     <p th:text="|Email: ${socio.email}|">Email del socio</p>
+
                     <p th:text="|Cuota: ${socio.cuotaPagada? 'Pagada' : 'Pendiente de pago'}|">Cuota pagada del socio</p>
                     
                 </div>
@@ -35,7 +38,19 @@
                     <p th:text="|DNI: ${socio.dni}|">DNI del socio</p>
                 </div>
             </div>
+            <div class="row mt-3">
+                <div class="col-4 text-center">
+                    <a th:href="@{/socios}" class="btn btn-secondary">Volver</a>
+                </div>
+                <div class="col-4 text-center">
+                    <a th:href="@{/socios/editar/{id}(id=${socio.id})}" class="btn btn-secondary">Modificar</a>
+                </div>
+                <div class="col-4 text-center">
+                    <a th:href="@{/socios/eliminar/{id}(id=${socio.id})}" class="btn btn-secondary">Eliminar</a>
+                </div>
+            </div>
         </div>
+        <div class="col-3"></div>
     </div>
 
     <div th:replace="~{fragments/fragmentos :: pie_pagina}"></div>
