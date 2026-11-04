@@ -41,16 +41,20 @@ public class SocioController {
 
     @GetMapping("/nuevo")
     public String getNuevoSocio() {
-        return "inicio";
+        return "form-socios";
     }
+    
+    @GetMapping("/editar/{id}")
+    public String getEditarSocio(@PathVariable Long id, Model modelo) {
+        Optional<Socio> socio = socioService.buscarPorId(id);
 
+        modelo.addAttribute("socio", socio.get());
+
+        return "form-socios";
+    }
+    
     @GetMapping("/guardar")
     public String getGuardarSocio() {
-        return "inicio";
-    }
-
-    @GetMapping("/editar/{id}")
-    public String getEditarSocio() {
         return "inicio";
     }
 

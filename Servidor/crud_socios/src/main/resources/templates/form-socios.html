@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Formulario Socios</title>
+</head>
+<body>
+    <div th:replace="~{fragments/fragmentos :: barra_nav}"></div>
+
+    <div class="row text-center mt-5">
+        <h1 class="display-6">Registrar socio</h1>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-3"></div>
+
+        <div class="col-6">
+            <form th:action="@{/socios/guardar}" th:object="${socio}" method="post">
+
+                <!-- Atributo oculto con el id, en caso de crear un socio, no tiene -->
+                <input type="hidden" th:field="*{id}"/>
+
+                <!-- Nombre -->
+                <div class="mt-2">
+                    <label for="nombre" class="form-label">Nombre: </label>
+                    <input type="text" name="nombre" id="nombre" th:field="*{nombre}" class="form-control" required maxlength="100">
+                </div>
+
+                <!-- Apellidos -->
+                <div class="mt-2">
+                    <label for="apellidos" class="form-label">Apellidos: </label>
+                    <input type="text" name="apellidos" id="apellidos" th:field="*{apellidos}" class="form-control" required maxlength="100">
+                </div>
+
+                <!-- DNI -->
+                <div class="mt-2">
+                    <label for="dni" class="form-label">DNI: </label>
+                    <input type="text" name="dni" id="dni" th:field="*{dni}" class="form-control" required maxlength="10">
+                </div>
+
+                <!-- Teléfono -->
+                <div class="mt-2">
+                    <label for="telefono" class="form-label">Teléfono: </label>
+                    <input type="text" name="telefono" id="telefono" th:field="*{telefono}" class="form-control" required maxlength="15">
+                </div>
+
+                <!-- e-mail -->
+                <div class="mt-2">
+                    <label for="email" class="form-label">e-mail: </label>
+                    <input type="text" name="email" id="email" th:field="*{email}" class="form-control" required maxlength="100">
+                </div>
+
+                <!-- Fecha de Alta -->
+                <div class="mt-2">
+                    <label for="fechaAlta" class="form-label">Fecha de Alta: </label>
+                    <!-- CONSEGUIDO: muestra la fecha establecida en la BD gracias a hacer referencia al atributo dentro del objeto socio, y luego dándole formato -->
+                    <input type="date" name="fechaAlta" id="fechaAlta" th:value="${#temporals.format(socio.fechaAlta, 'yyyy-MM-dd')}" class="form-control" required maxlength="100">
+                </div>
+
+                <!-- Cuota Pagada -->
+                <div class="mt-2">
+                    <label for="cuotaPagada" class="form-label">Cuota Pagada: </label>
+                    
+                    <input type="checkbox" name="cuotaPagada" id="cuotaPagada" th:field="*{cuotaPagada}">
+                </div>
+
+                <div class="d-flex justify-content-between mt-3">
+                    <a th:href="@{/socios}" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/fragmentos :: pie_pagina}"></div>
+</body>
+</html>
