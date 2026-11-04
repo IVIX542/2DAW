@@ -21,28 +21,19 @@
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>DNI</th>
-                        <th>Teléfono</th>
-                        <th>e-mail</th>
                         <th>Cuota Pagada</th>
                         <th>Fecha de Alta</th>
-                        <th>Acciones</th>
+                        <th>Detalle</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="socio :${listaSocios}">
-                        <td th:text="${socio.nombre}">Nombre</td>
-                            <td th:text="${socio.apellidos}">Apellidos</td>
-                            <td th:text="${socio.dni}">DNI</td>
-                            <td th:text="${socio.telefono}">Teléfono</td>
-                            <td th:text="${socio.email}">Email</td>
-                            <td th:text="${socio.cuotaPagada ? 'Sí' : 'No'}">Cuota</td>
-                            <td th:text="${socio.fechaAlta}">Fecha Alta</td>
-                            <td>
-                                <a th:href="@{/socios/editar/{id}(id=${socio.id})}" class="btn btn-warning btn-sm">Editar</a>
-                                <a th:href="@{/socios/eliminar/{id}(id=${socio.id})}" class="btn btn-danger btn-sm">Eliminar</a>
-                            </td>
+                        <td th:text="${socio.nombre} + ' ' + ${socio.apellidos} ">Nombre</td>
+                        <td th:text="${socio.cuotaPagada ? 'Sí' : 'No'}">Cuota</td>
+                        <td th:text="${socio.fechaAlta}">Fecha Alta</td>
+                        <td>
+                            <a th:href="@{/socios/{id}(id=${socio.id})}" class="btn btn-secondary">Detalle</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

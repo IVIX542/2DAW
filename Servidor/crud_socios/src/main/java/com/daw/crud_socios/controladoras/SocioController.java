@@ -1,10 +1,14 @@
 package com.daw.crud_socios.controladoras;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.daw.crud_socios.modelos.Socio;
 import com.daw.crud_socios.servicios.SocioService;
 
 @Controller 
@@ -24,6 +28,15 @@ public class SocioController {
         modelo.addAttribute("listaSocios", socioService.listarSocios());
 
         return "lista-socios";
+    }
+
+    @GetMapping("/{id}")
+    public String getSocioPorId(@PathVariable Long id, Model modelo) {
+        Optional<Socio> socio = socioService.buscarPorId(id);
+
+        modelo.addAttribute("socio", socio.get());
+
+        return "detalle-socio";
     }
 
     @GetMapping("/nuevo")
