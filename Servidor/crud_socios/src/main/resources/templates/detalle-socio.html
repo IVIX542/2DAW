@@ -25,8 +25,10 @@
                     <p class="display-6 text-center" th:text="|${socio.nombre} ${socio.apellidos}|">Nombre y apellidos del socio</p>
                 </div>
                 <div class="card-body">
+                    <p th:text="|Fecha de alta: ${#temporals.format(socio.fechaAlta, 'dd/MMMM/yyyy') }|">Fecha de alta del socio</p>
                     <p th:text="|Teléfono: ${socio.telefono}|">Telefono del socio</p>
-                    <p th:text="|Teléfono: ${socio.telefono}|">Telefono del socio</p>
+                    <p th:text="|Email: ${socio.email}|">Email del socio</p>
+                    <p th:text="|Cuota: ${socio.cuotaPagada? 'Pagada' : 'Pendiente de pago'}|">Cuota pagada del socio</p>
                     
                 </div>
                 <div class="card-footer">
