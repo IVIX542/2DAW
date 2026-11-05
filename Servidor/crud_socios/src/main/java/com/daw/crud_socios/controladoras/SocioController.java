@@ -71,8 +71,12 @@ public class SocioController {
     }
 
     @GetMapping("/eliminar/{id}")
-    public String getEliminarSocio() {
-        return "inicio";
+    public String getEliminarSocio(@PathVariable Long id) {
+        // Llamamos al método "eliminar()" del servicio
+        socioService.eliminar(id);
+
+        // Redireccionamos a la lista de socios principal
+        return "redirect:/socios";
     }
 
 }
