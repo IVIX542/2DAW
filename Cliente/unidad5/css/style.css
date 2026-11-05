@@ -1,0 +1,15 @@
+.destacado {
+    background-color: #fef3c7;
+    padding: 0.5rem;
+}
+
+.rojo {
+    color: red;
+    padding: 0.5rem;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+    padding: 0.5rem;
+}
