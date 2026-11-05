@@ -42,6 +42,7 @@ public class SocioService {
         socioRepository.deleteById(id);
     }
 
+    
     /* MÉTODOS PERSONALIZADOS */
     
     /* Socios con nombre especificado */
