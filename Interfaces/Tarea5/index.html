@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Información del curso</title>
 </head>
@@ -12,15 +12,66 @@
         <h2>Diseño Web con CSS</h2>
         <p>Curso online · Próxima edición</p>
         <div class="etiquetas">
-            <p id="e_horas" class="etiqueta">30 horas</p>
-            <p id="e_plazas" class="etiqueta">25 plazas</p>
-            <p id="e_nivel" class="etiqueta">Nivel intermedio</p>
+            <p class="e_horas etiqueta">30 horas</p>
+            <p class="e_plazas etiqueta">25 plazas</p>
+            <p class="e_nivel etiqueta">Nivel intermedio</p>
         </div>
     </header>
 
-    <section id="info_curso" class="seccion">
-        <img src="img/documento.svg" alt="img_documento">
+    <section class="info-curso seccion" >
+        <div class="imagen">
+            <img src="img/documento.svg" alt="img_documento">
+        </div>
         <h3>Información del Curso</h3>
+
+        <details class="desplegable req-previos">
+            <summary>Requisitos previos</summary>
+            <p>
+                Es recomendable conocer la estructura básica de un documento HTML y tener
+                conocimientos fundamentales de CSS.
+            </p>
+        </details>
+
+        <details class="desplegable cont-curso">
+            <summary>Contenclasso del curso</summary>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus totam magnam cumque et labore aliquam dolorum at pariatur tenetur.
+            </p>
+        </details>
+
+        <details class="desplegable modalidad">
+            <summary>Modalclassad</summary>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus totam magnam cumque et labore aliquam dolorum at pariatur tenetur.
+            </p>
+        </details>
+
+    </section>
+
+    <section class="tec-nivel seccion">
+        <div class="imagen">
+            <img src="img/buscar.svg" alt="img_buscar">
+        </div>
+        <h3>Tecnología y Nivel</h3>
+
+        <label for="tec-principal" class="lab tec-principal">Tecnología Principal</label>
+        <input type="text" placeholder="Ej: CSS" name="tec-principal" list="tecnologias" class="in-text">
+        <datalist id="tecnologias">
+            <option value="HTML">
+            <option value="CSS">
+            <option value="JavaScript">
+            <option value="PHP">
+        </datalist>
+
+        <label for="nivel-curso" class="lab">Nivel del curso</label>
+        <select name="nivel-curso" class="id-curso">
+            <option value="principiante">Principiante</option>
+            <option value="facil">Fácil</option>
+            <option value="intermedio">Intermedio</option>
+            <option value="dificil">Difícil</option>
+        </select>
     </section>
 </body>
 </html>

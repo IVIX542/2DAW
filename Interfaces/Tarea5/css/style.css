@@ -1,6 +1,14 @@
 /* Variables */
 :root {
     --color-principal: blue;
+    --fondo-principal: whitesmoke;
+    
+    --fondo-secciones: white;
+
+    --plegado:whitesmoke;
+
+
+    --desplegado:rgba(173, 216, 230, 0.2);
 }
 
 /* Formato global */
@@ -11,6 +19,11 @@
     box-sizing: border-box;
 
     font-family: system-ui, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: var(--fondo-principal);
 }
 
 /* Header */
@@ -27,7 +40,9 @@ header {
 }
 
 header>img {
-    background-color: aqua;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    color: white;
 
     padding: 5px;
     margin: 40px;
@@ -60,3 +75,109 @@ header>.etiquetas>.etiqueta {
 
     font-weight: bold;
 }
+
+/* Secciones */
+.seccion {
+    background-color:var(--fondo-secciones) ;
+
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+
+    width: 39%;
+    height: fit-content;
+    padding: 20px;
+}
+
+.seccion>.imagen>img  {
+    background-color: rgba(0, 0, 255, 0.1);
+
+    padding: 5px;
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+}
+
+.seccion>.imagen {
+    display: inline-block;
+}
+
+.seccion>h3 {
+    display: inline-block;
+
+    margin-left: 5px;
+
+    height: 35px;
+    vertical-align: top;
+
+    margin-top: 7px;
+}
+
+/* Seccion - Información del Curso */
+.info-curso {
+    float: left;
+    margin-left: 10vw;
+}
+
+/* Desplegables */
+.desplegable {
+
+    margin: 10px 0;
+    padding: 5px;
+
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 5px;
+
+    background-color: var(--plegado);
+}
+.desplegable>summary {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.desplegable:open {
+    background-color: var(--desplegado);
+}
+
+/* Tecnología y nivel */
+.tec-nivel>.lab {
+    font-size: small;
+    font-weight: bold;
+
+    line-height: 30px;
+}
+
+/* Tecnología */
+.tec-nivel {
+    float: right;
+    
+    margin-right: 10vw;
+}
+.tec-nivel>.tec-principal {
+    
+    display: block;
+}
+.tec-nivel>.in-text {
+    width: 100%;
+    height: 30px;
+
+    padding: 10px;
+    
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 5px;
+}
+
+/* Nivel */
+
+.tec-nivel>.id-curso {
+    height: 40px;
+    width: 100%;
+    
+    padding: 10px;
+
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 5px;
+}
+.tec-nivel>.id-curso:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
