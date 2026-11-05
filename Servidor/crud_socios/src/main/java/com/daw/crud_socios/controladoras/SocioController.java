@@ -1,11 +1,14 @@
 package com.daw.crud_socios.controladoras;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.daw.crud_socios.modelos.Socio;
@@ -53,9 +56,18 @@ public class SocioController {
         return "form-socios";
     }
     
-    @GetMapping("/guardar")
-    public String getGuardarSocio() {
-        return "inicio";
+    @PostMapping ("/guardar")
+    public String getGuardarSocio(@ModelAttribute("socio") Socio socio) {
+        // En caso de no especificar fecha, ponemos la actual
+        if(socio.getFechaAlta() == null){
+            socio.setFechaAlta(LocalDate.now());
+        }
+
+        // Guardamos (nuevo o modificado) el socio en la BD
+        socioService.guardar(socio);
+
+        // Redireccionamos a la lista de socios principal
+        return "redirect:/socios";
     }
 
     @GetMapping("/eliminar/{id}")
