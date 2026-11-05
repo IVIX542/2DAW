@@ -21,18 +21,20 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Cuota Pagada</th>
-                        <th>Fecha de Alta</th>
-                        <th>Detalle</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Cuota Pagada</th>
+                        <th class="text-center">Fecha de Alta</th>
+                        <th class="text-center">Detalle</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="socio :${listaSocios}">
-                        <td th:text="${socio.nombre} + ' ' + ${socio.apellidos} ">Nombre</td>
-                        <td th:text="${socio.cuotaPagada ? 'Sí' : 'No'}">Cuota</td>
-                        <td th:text="${socio.fechaAlta}">Fecha Alta</td>
-                        <td>
+                        <td th:text="${socio.nombre} + ' ' + ${socio.apellidos} " class="text-center">Nombre</td>
+                        <td th:text="${socio.cuotaPagada ? 'Sí' : 'No'}" class="text-center">Cuota</td>
+
+                        <!-- Añadido formato a la fecha -->
+                        <td th:text="${#temporals.format(socio.fechaAlta, 'dd/MMMM/yyyy')}" class="text-center">Fecha Alta</td>
+                        <td class="text-center">
                             <a th:href="@{/socios/{id}(id=${socio.id})}" class="btn btn-secondary">Detalle</a>
                         </td>
                     </tr>

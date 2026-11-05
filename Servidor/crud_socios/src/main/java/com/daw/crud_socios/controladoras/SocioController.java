@@ -43,7 +43,11 @@ public class SocioController {
     }
 
     @GetMapping("/nuevo")
-    public String getNuevoSocio() {
+    public String getNuevoSocio(Model modelo) {
+        // Enviamos un socio vacío al modelo
+        modelo.addAttribute("socio", new Socio());
+
+        // Devolvemos el formulario para rellenar los campos
         return "form-socios";
     }
     
