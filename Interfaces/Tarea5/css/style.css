@@ -6,9 +6,12 @@
     --fondo-secciones: white;
 
     --plegado:whitesmoke;
+    --color-borde-plegado:rgb(144, 144, 144);
 
+    --desplegado:rgba(173, 216, 230, 0.5);
+    --color-borde-desplegado: darkblue;
 
-    --desplegado:rgba(173, 216, 230, 0.2);
+    --color-borde: rgba(128, 128, 128, 0.2);
 }
 
 /* Formato global */
@@ -124,17 +127,20 @@ header>.etiquetas>.etiqueta {
     margin: 10px 0;
     padding: 5px;
 
-    border: 1px solid rgba(128, 128, 128, 0.2);
+    border: 1px solid var(--color-borde-plegado);
     border-radius: 5px;
 
     background-color: var(--plegado);
 }
 .desplegable>summary {
     margin-bottom: 10px;
+
     font-weight: bold;
 }
 .desplegable:open {
     background-color: var(--desplegado);
+
+    border: 1px solid var(--color-borde-desplegado);
 }
 
 /* Tecnología y nivel */
@@ -161,23 +167,27 @@ header>.etiquetas>.etiqueta {
 
     padding: 10px;
     
-    border: 1px solid rgba(128, 128, 128, 0.2);
+    border: 1px solid var(--color-borde-plegado);
     border-radius: 5px;
 }
 
 /* Nivel */
-
 .tec-nivel>.id-curso {
     height: 40px;
     width: 100%;
     
     padding: 10px;
 
-    border: 1px solid rgba(128, 128, 128, 0.2);
+    border: 1px solid var(--color-borde-plegado);
     border-radius: 5px;
 }
 .tec-nivel>.id-curso:focus-visible {
-    outline: 3px solid #f59e0b;
+    outline: 3px solid var(--color-borde-desplegado);
     outline-offset: 3px;
 }
 
+/* Resumen */
+.resumen {
+    float: left;
+    margin-top: 100px;
+}

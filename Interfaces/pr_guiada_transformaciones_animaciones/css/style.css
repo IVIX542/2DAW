@@ -1,0 +1,196 @@
+div {
+    width: 200px;
+    height: 200px;
+
+    margin: 50px;
+
+    display: inline-block;
+}
+
+#trasladar {
+    background: orange;
+}
+
+#trasladar:hover {
+    transform: translateX(200px);
+    transform: translateY(200px);
+    transform: translate(200px, 300px);
+}
+
+#escalar {
+    background: violet;
+
+}
+
+#escalar:hover {
+    transform: scale(1.5);
+}
+
+#rotar {
+    background: lawngreen;
+}
+
+#rotar:hover {
+    transform: rotate(45deg);
+}
+
+#deformar {
+    background: lightgreen;
+}
+#deformar:hover {
+    transform: skew(45deg);
+}
+
+#combinar {
+    background: lightskyblue;
+}
+#combinar:hover {
+    transform: translateX(5rem) rotate(30deg);
+    /* transform: rotate(30deg) translateX(5rem); */
+}
+
+.formas {
+    border: 1px solid black;
+    
+    width: fit-content;
+    height: fit-content;
+}
+
+.forma {
+    background: lime;
+
+    transition: all 2s;
+
+    width: 150px;
+    height: 150px;
+
+    margin: 100px auto;
+}
+
+.forma:hover {
+    transform: rotate(360deg);
+}
+
+.f2 {
+    transform-origin: left;
+}
+
+.caja {
+    width: 100px;
+    height: 100px;
+
+    margin: 20px;
+
+    transition: all 2s;
+
+    transform: translateX(500px);
+
+    background: lightcoral;
+}
+
+.caja:hover {
+    transform: translateX(500px);
+    transition: all 2s;
+}
+
+.f1 {
+    transition-timing-function: linear;
+}
+
+.f2 {
+    transition-timing-function: ease;
+}
+
+.f3 {
+    transition-timing-function: ease-in;
+}
+
+.f4 {
+    transition-timing-function: ease-out;
+}
+
+.f5 {
+    transition-timing-function: ease-in-out;
+}
+
+
+.ele {
+    width: 200px;
+    height: 200px;
+
+    margin: 70px;
+
+    display: inline-block;
+}
+.ele1 {
+    background-color: lightsalmon;
+}
+.ele1:hover {
+    
+    background-color: orange;
+}
+.ele2 {
+    background-color: lightblue;
+    transition: background ease 2s;
+}
+.ele2:hover {
+    background-color: blue;
+}
+
+.boton {
+    width: 50px;
+    height: 50px;
+
+    position: fixed;
+
+    right: 100px;
+    bottom: 100px;
+
+    opacity: 0.5;
+
+    transition: all 1s;
+
+    background-color: darkred;
+
+    color: white;
+}
+
+.boton:hover {
+    opacity: 1;
+}
+
+.animaciones {
+    width: 200px;
+    height: 200px;
+
+    background-color: gray;
+
+    margin: 50px 0;
+
+    transition: background ease 2s;
+
+    animation-name: cambioColor;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.animaciones:hover {
+    background-color: black;
+    animation-play-state: running;
+
+}
+
+@keyframes cambioColor {
+    0% {
+        transform: translateX(0);
+        background-color: blue;
+    }
+
+    100% {
+        transform: translateX(1000px);
+        background-color: black;
+    }
+}
