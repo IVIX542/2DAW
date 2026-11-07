@@ -5,6 +5,7 @@
     --color-principal: #2d65e2;
 
     --fondo-principal: rgba(128, 128, 128, 0.1);
+    --sombra-principal:rgba(128, 128, 128, 0.1);
 
     --fondo-main: white;
 
@@ -38,7 +39,9 @@ main {
 
     height: fit-content;
 
-    border-radius: 0 0 20px 20px;
+    border-radius: 20px;
+
+    box-shadow: 0 15px 15px 15px var(--sombra-principal);
 }
 
 /* Cabecera */
@@ -82,6 +85,35 @@ main {
     border-bottom: 1px solid var(--borde-gris);
 }
 
+.seccion .titulo {
+    height: fit-content;
+
+    margin-bottom: 20px;
+}
+
+.seccion .titulo img{
+    display: inline-block;
+
+    margin-right: 10px;
+
+    background: var(--fondo-principal);
+
+    padding: 5px;
+    height: 20px;
+
+    border-radius: 5px;
+}
+
+.seccion .titulo h3 {
+    display: inline-block;
+
+    font-size: medium;
+
+    line-height: 30px;
+
+    vertical-align: top;
+}
+
 /* Datos Básicos */
 .datos-basicos {
     height: fit-content;
@@ -119,36 +151,6 @@ main {
 
 .datos-basicos .campo input[type=text]::placeholder {
     font-style: italic;
-}
-
-/* Datos básicos - título */
-.datos-basicos .titulo {
-    height: fit-content;
-
-    margin-bottom: 20px;
-}
-
-.datos-basicos .titulo img{
-    display: inline-block;
-
-    margin-right: 10px;
-
-    background: var(--fondo-principal);
-
-    padding: 5px;
-    height: 20px;
-
-    border-radius: 5px;
-}
-
-.datos-basicos .titulo h3 {
-    display: inline-block;
-
-    font-size: medium;
-
-    line-height: 30px;
-
-    vertical-align: top;
 }
 
 /* Datos básicos - correo - titulo */
