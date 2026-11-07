@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Información del curso</title>
 </head>
@@ -12,73 +12,117 @@
         <h2>Diseño Web con CSS</h2>
         <p>Curso online · Próxima edición</p>
         <div class="etiquetas">
-            <p class="e_horas etiqueta">30 horas</p>
-            <p class="e_plazas etiqueta">25 plazas</p>
-            <p class="e_nivel etiqueta">Nivel intermedio</p>
+            <span class="e_horas etiqueta">30 horas</span>
+            <span class="e_plazas etiqueta">25 plazas</span>
+            <span class="e_nivel etiqueta">Nivel Intermedio</span>
         </div>
     </header>
 
-    <section class="info-curso seccion" >
-        <div class="imagen">
-            <img src="img/documento.svg" alt="img_documento">
+    <!-- Cuadro de diálogo flotante -->
+    <dialog open class="dialogo-curso">
+        <div class="dialogo-header">
+            <span class="dialogo-icono">ⓘ</span>
+            <h3>Información importante</h3>
+            <button type="button" class="dialogo-cerrar">✕</button>
         </div>
-        <h3>Información del Curso</h3>
-
-        <details class="desplegable req-previos">
-            <summary>Requisitos previos</summary>
-            <p>
-                Es recomendable conocer la estructura básica de un documento HTML y tener
-                conocimientos fundamentales de CSS.
-            </p>
-        </details>
-
-        <details class="desplegable cont-curso">
-            <summary>Contenclasso del curso</summary>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus totam magnam cumque et labore aliquam dolorum at pariatur tenetur.
-            </p>
-        </details>
-
-        <details class="desplegable modalidad">
-            <summary>Modalclassad</summary>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus totam magnam cumque et labore aliquam dolorum at pariatur tenetur.
-            </p>
-        </details>
-
-    </section>
-
-    <section class="seccion tec-nivel">
-        <div class="imagen">
-            <img src="img/buscar.svg" alt="img_buscar">
+        <p>La inscripción en este curso no garantiza la reserva de plaza hasta que se complete el proceso de matrícula.</p>
+        <p class="dialogo-subtexto">Recibirás un correo de confirmación con todos los detalles y el acceso al campus virtual.</p>
+        <div class="dialogo-footer">
+            <button type="button" class="btn-entendido">Entendido</button>
         </div>
-        <h3>Tecnología y Nivel</h3>
+    </dialog>
 
-        <label for="tec-principal" class="lab tec-principal">Tecnología Principal</label>
-        <input type="text" placeholder="Ej: CSS" name="tec-principal" list="tecnologias" class="in-text">
-        <datalist id="tecnologias">
-            <option value="HTML">
-            <option value="CSS">
-            <option value="JavaScript">
-            <option value="PHP">
-        </datalist>
+    <main class="contenedor-principal">
+        <section class="seccion info-curso">
+            <div class="imagen">
+                <img src="img/documento.svg" alt="img_documento">
+            </div>
+            <h3>Información del curso</h3>
 
-        <label for="nivel-curso" class="lab">Nivel del curso</label>
-        <select name="nivel-curso" class="id-curso">
-            <option value="principiante">Principiante</option>
-            <option value="facil">Fácil</option>
-            <option value="intermedio">Intermedio</option>
-            <option value="dificil">Difícil</option>
-        </select>
-    </section>
+            <details class="desplegable" name="curso-grupo" open>
+                <summary>Requisitos previos</summary>
+                <p>Es recomendable conocer la estructura básica de un documento HTML y tener conocimientos fundamentales de CSS.</p>
+            </details>
 
-    <section class="seccion resumen">
-        <div class="imagen">
-            <img src="img/buscar.svg" alt="img_buscar">
-        </div>
-        <h3>Tecnología y Nivel</h3>
-    </section>
+            <details class="desplegable" name="curso-grupo">
+                <summary>Contenido del curso</summary>
+                <p>El curso abarca selectores avanzados, diseño visual, maquetación y adaptación a diferentes dispositivos.</p>
+            </details>
+
+            <details class="desplegable" name="curso-grupo">
+                <summary>Modalidad</summary>
+                <p>Formación completamente online con contenidos accesibles las 24 horas y tutorías personalizadas.</p>
+            </details>
+        </section>
+
+        <section class="seccion tec-nivel">
+            <div class="imagen">
+                <img src="img/buscar.svg" alt="img_buscar">
+            </div>
+            <h3>Tecnología y nivel</h3>
+
+            <label for="tec-principal" class="lab">Tecnología principal</label>
+            <input type="text" id="tec-principal" name="tec-principal" placeholder="Ej.: CSS" list="tecnologias" class="in-text">
+            <datalist id="tecnologias">
+                <option value="HTML">
+                <option value="CSS">
+                <option value="JavaScript">
+                <option value="PHP">
+            </datalist>
+
+            <label for="nivel-curso" class="lab">Nivel del curso</label>
+            <select id="nivel-curso" name="nivel-curso" class="id-curso">
+                <option value="principiante">Principiante</option>
+                <option value="facil">Fácil</option>
+                <option value="intermedio" selected>Intermedio</option>
+                <option value="dificil">Difícil</option>
+            </select>
+        </section>
+
+        <section class="seccion resumen">
+            <div class="imagen">
+                <img src="img/documento.svg" alt="img_resumen">
+            </div>
+            <h3>Resumen</h3>
+
+            <div class="resumen-grid">
+                <div class="item-resumen">
+                    <span class="icono-resumen">⏱</span>
+                    <span class="etiqueta-resumen">Duración</span>
+                    <output class="valor-resumen">30 horas</output>
+                </div>
+                <div class="item-resumen">
+                    <span class="icono-resumen">👥</span>
+                    <span class="etiqueta-resumen">Plazas</span>
+                    <output class="valor-resumen">25</output>
+                </div>
+                <div class="item-resumen">
+                    <span class="icono-resumen">🎓</span>
+                    <span class="etiqueta-resumen">Modalidad</span>
+                    <output class="valor-resumen">Online</output>
+                </div>
+                <div class="item-resumen">
+                    <span class="icono-resumen">💶</span>
+                    <span class="etiqueta-resumen">Precio</span>
+                    <output class="valor-resumen">120 €</output>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion estado-matricula">
+            <div class="imagen">
+                <img src="img/documento.svg" alt="img_matricula">
+            </div>
+            <h3>Estado de la matrícula</h3>
+
+            <label for="barra-progreso" class="lab-progreso">Plazas reservadas</label>
+            <progress id="barra-progreso" value="12" max="20" class="progreso-matricula">12 de 20 plazas</progress>
+            <p class="texto-auxiliar">12 de 20 plazas</p>
+
+            <label for="medicion-ocupacion" class="lab-progreso">Nivel de ocupación del curso</label>
+            <meter id="medicion-ocupacion" min="0" max="100" low="40" high="80" optimum="20" value="75" class="medidor-ocupacion">75 %</meter>
+            <p class="texto-auxiliar">Ocupación actual: 75 %</p>
+        </section>
+    </main>
 </body>
 </html>

@@ -1,193 +1,341 @@
-/* Variables */
+/* Variables CSS */
 :root {
-    --color-principal: blue;
-    --fondo-principal: whitesmoke;
-    
-    --fondo-secciones: white;
-
-    --plegado:whitesmoke;
-    --color-borde-plegado:rgb(144, 144, 144);
-
-    --desplegado:rgba(173, 216, 230, 0.5);
-    --color-borde-desplegado: darkblue;
-
-    --color-borde: rgba(128, 128, 128, 0.2);
+    --color-principal: #2563eb;
+    --color-oscuro: #172554;
+    --color-acento: #7c3aed;
+    --fondo-principal: #f8fafc;
+    --fondo-secciones: #ffffff;
+    --fondo-componentes: #f8fafc;
+    --fondo-abierto: #eff6ff;
+    --color-borde: #cbd5e1;
+    --color-borde-activo: #2563eb;
 }
 
-/* Formato global */
+/* Reset global */
 * {
     padding: 0;
     margin: 0;
-
     box-sizing: border-box;
-
     font-family: system-ui, sans-serif;
 }
 
-/* Body */
 body {
     background-color: var(--fondo-principal);
+    color: var(--color-oscuro);
+    padding-bottom: 4rem;
 }
 
 /* Header */
 header {
-    background-color: var(--color-principal);
-
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
     color: white;
-
-    margin: 5vh 10vw;
-
-    border-radius: 20px;
-
-    height: 200px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgb(37 99 235 / 0.2);
 }
 
-header>img {
-    background-color: rgba(255, 255, 255, 0.5);
-
-    color: white;
-
-    padding: 5px;
-    margin: 40px;
-
+header > img {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.75rem;
     float: left;
-
-    border-radius: 10px;
-
-    height: 75px;
-}
-header>h2 {
-    font-weight: bold;
-    font-size:xx-large;
-
-    padding-top: 30px;
-
-}
-header>p {
-    padding-top: 15px;
-    color: whitesmoke;
+    border-radius: 0.75rem;
+    height: 4rem;
+    margin-right: 1.5rem;
 }
 
-header>.etiquetas {
-    margin-top: 30px;
+header > h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
 }
 
-header>.etiquetas>.etiqueta {
+header > p {
+    color: #e0e7ff;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+header > .etiquetas {
+    clear: both;
+    padding-top: 1rem;
+}
+
+header > .etiquetas > .etiqueta {
     display: inline-block;
-    margin-right: 20px;
-
-    font-weight: bold;
+    margin-right: 1.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
-/* Secciones */
+/* Contenedor principal */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.contenedor-principal::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Secciones distribuidas en dos columnas mediante floats */
 .seccion {
-    background-color:var(--fondo-secciones) ;
-
-    border: 1px solid gainsboro;
-    border-radius: 10px;
-
-    width: 39%;
-    height: fit-content;
-    padding: 20px;
+    background-color: var(--fondo-secciones);
+    border: 1px solid var(--color-borde);
+    border-radius: 1rem;
+    width: 48%;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
 }
 
-.seccion>.imagen>img  {
-    background-color: rgba(0, 0, 255, 0.1);
-
-    padding: 5px;
-    margin-bottom: 10px;
-
-    border-radius: 10px;
-}
-
-.seccion>.imagen {
-    display: inline-block;
-}
-
-.seccion>h3 {
-    display: inline-block;
-
-    margin-left: 5px;
-
-    height: 35px;
-    vertical-align: top;
-
-    margin-top: 7px;
-}
-
-/* Seccion - Información del Curso */
 .info-curso {
     float: left;
-    margin-left: 10vw;
 }
 
-/* Desplegables */
-.desplegable {
-
-    margin: 10px 0;
-    padding: 5px;
-
-    border: 1px solid var(--color-borde-plegado);
-    border-radius: 5px;
-
-    background-color: var(--plegado);
-}
-.desplegable>summary {
-    margin-bottom: 10px;
-
-    font-weight: bold;
-}
-.desplegable:open {
-    background-color: var(--desplegado);
-
-    border: 1px solid var(--color-borde-desplegado);
-}
-
-/* Tecnología y nivel */
-.tec-nivel>.lab {
-    font-size: small;
-    font-weight: bold;
-
-    line-height: 30px;
-}
-
-/* Tecnología */
 .tec-nivel {
     float: right;
-    
-    margin-right: 10vw;
-}
-.tec-nivel>.tec-principal {
-    
-    display: block;
-}
-.tec-nivel>.in-text {
-    width: 100%;
-    height: 30px;
-
-    padding: 10px;
-    
-    border: 1px solid var(--color-borde-plegado);
-    border-radius: 5px;
 }
 
-/* Nivel */
-.tec-nivel>.id-curso {
-    height: 40px;
-    width: 100%;
-    
-    padding: 10px;
-
-    border: 1px solid var(--color-borde-plegado);
-    border-radius: 5px;
-}
-.tec-nivel>.id-curso:focus-visible {
-    outline: 3px solid var(--color-borde-desplegado);
-    outline-offset: 3px;
-}
-
-/* Resumen */
 .resumen {
     float: left;
-    margin-top: 100px;
+    clear: left;
+}
+
+.estado-matricula {
+    float: right;
+    clear: right;
+}
+
+.seccion > .imagen {
+    display: inline-block;
+}
+
+.seccion > .imagen > img {
+    background-color: var(--fondo-abierto);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+}
+
+.seccion > h3 {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 1.15rem;
+    vertical-align: middle;
+    color: var(--color-oscuro);
+}
+
+/* Desplegables (<details>) */
+.desplegable {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 0.75rem;
+    background-color: var(--fondo-componentes);
+    transition: background-color 0.2s ease;
+}
+
+.desplegable > summary {
+    font-weight: 700;
+    color: var(--color-oscuro);
+    cursor: pointer;
+}
+
+.desplegable > summary::marker {
+    color: var(--color-acento);
+}
+
+.desplegable > p {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.desplegable[open] {
+    background-color: var(--fondo-abierto);
+    border-color: var(--color-borde-activo);
+}
+
+/* Tecnología y Nivel */
+.tec-nivel > .lab {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 1.25rem;
+    margin-bottom: 0.35rem;
+    color: var(--color-oscuro);
+}
+
+.tec-nivel > .in-text,
+.tec-nivel > .id-curso {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 0.5rem;
+    font: inherit;
+    color: var(--color-oscuro);
+    background-color: white;
+}
+
+.tec-nivel > .in-text:focus-visible,
+.tec-nivel > .id-curso:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 2px;
+    border-color: transparent;
+}
+
+/* Estado de la matrícula (Progress y Meter) */
+.lab-progreso {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 1.25rem;
+    margin-bottom: 0.35rem;
+    color: var(--color-oscuro);
+}
+
+progress.progreso-matricula,
+meter.medidor-ocupacion {
+    width: 100%;
+    height: 1.25rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: none;
+    background-color: #e2e8f0;
+    accent-color: var(--color-principal);
+}
+
+.texto-auxiliar {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+/* Bloque de Resumen y Output */
+.resumen-grid {
+    margin-top: 1.25rem;
+}
+
+.item-resumen {
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--fondo-componentes);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.75rem;
+    vertical-align: top;
+}
+
+.item-resumen:nth-child(odd) {
+    margin-right: 2%;
+}
+
+.icono-resumen {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.etiqueta-resumen {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.valor-resumen {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    color: var(--color-principal);
+    background-color: var(--fondo-abierto);
+    border: 1px solid #bfdbfe;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Cuadro de diálogo flotante (<dialog>) */
+.dialogo-curso {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    left: auto;
+    margin: 0;
+    width: 26rem;
+    max-width: 90vw;
+    padding: 1.25rem 1.5rem;
+    color: var(--color-oscuro);
+    background-color: white;
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2.5rem rgb(15 23 42 / 0.18);
+    z-index: 1;
+}
+
+.dialogo-curso::backdrop {
+    background-color: rgb(15 23 42 / 0.4);
+}
+
+.dialogo-header {
+    margin-bottom: 0.75rem;
+}
+
+.dialogo-icono {
+    color: var(--color-principal);
+    font-weight: bold;
+    margin-right: 0.4rem;
+}
+
+.dialogo-header > h3 {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.dialogo-cerrar {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.dialogo-curso > p {
+    font-size: 0.85rem;
+    color: #334155;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.dialogo-subtexto {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.dialogo-footer {
+    text-align: right;
+    margin-top: 1.05rem;
+}
+
+.btn-entendido {
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
