@@ -7,6 +7,68 @@
     <title>Inscripción Aula Abierta</title>
 </head>
 <body>
-    
+    <main>
+
+        <div class="cabecera">
+
+            <img src="img/documento.svg" alt="imagen documento">
+
+            <h1>Configura tu Inscripción</h1>
+            <p>Completa tus preferencias para el curso</p>
+
+        </div>
+
+        <form class="formulario">
+
+            <div class="datos-basicos seccion">
+                <div class="titulo">
+                    <img src="img/usuarios.svg" alt="imagen usuarios">
+                    <h3>Datos Básicos</h3>
+                </div>
+
+                <div class="nombre campo">
+                    <label for="txt-nombre">Nombre</label>
+                    <input type="text" placeholder="Ej.: Ana García" name="nombre" id="txt-nombre">
+                </div>
+
+                <div class="correo campo">
+
+                    <div class="titulo">
+                        <img src="img/correo.svg" alt="imagen correo">
+                        <h3>Correo Electrónico</h3>
+                    </div>
+
+                    <input type="email" placeholder="ana@aula.es" id="in-correo">
+
+                </div>
+
+                <div class="curso campo">
+
+                    <label for="txt-curso">Curso que buscas</label>
+                    <input type="text" name="curso" list="lista-cursos" placeholder="Ej.: CSS" id="txt-curso">
+
+                    <datalist id="lista-cursos">
+                        <option value="HTML">
+                        <option value="CSS">
+                        <option value="JavaScript">
+                        <option value="PHP">
+                    </datalist>
+
+                </div>
+
+                <div class="sesiones campo">
+                    
+                    <label for="num-sesiones">Sesiones Semanales</label>
+                    <input type="number" name="sesiones-semanales" max="5" id="num-sesiones">
+
+                </div>
+
+            </div>
+
+
+
+        </form>
+
+    </main>
 </body>
 </html>

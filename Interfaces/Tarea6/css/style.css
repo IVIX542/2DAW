@@ -1,0 +1,196 @@
+/* Variables */
+:root {
+    --negro: black;
+
+    --color-principal: #2d65e2;
+
+    --fondo-principal: rgba(128, 128, 128, 0.1);
+
+    --fondo-main: white;
+
+    --fondo-cabecera: linear-gradient(45deg, #2d65e2, #7339e8);
+    --fondo-imagen-cabecera: #3b79ea;
+
+    --borde-gris: rgba(128, 128, 128, 0.15);
+    --borde-verde-oscuro: darkgreen;
+}
+
+/* Reset Global */
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: system-ui, sans-serif;
+}
+
+/* Body */
+body {
+    background: var(--fondo-principal);
+}
+
+/* Main */
+main {
+    margin: 2% 20%;
+    
+    padding-bottom: 10px;
+
+    background: var(--fondo-main);
+
+    height: fit-content;
+
+    border-radius: 0 0 20px 20px;
+}
+
+/* Cabecera */
+.cabecera {
+    background: var(--fondo-cabecera);
+    color: white;
+
+    border-radius: 20px 20px 0 0;
+
+    padding: 40px;
+}
+
+.cabecera img {
+    background-color: var(--fondo-imagen-cabecera);
+
+    display: block;
+
+    float: left;
+
+    margin-right: 10px;
+    
+    padding: 10px;
+
+    border-radius: 5px;
+
+    width: 40px;
+}
+
+.cabecera h1 {
+    display: block;
+}
+.cabecera p {
+    display: block;
+
+}
+
+/* Secciones */
+.seccion {
+    margin: 20px;
+
+    border-bottom: 1px solid var(--borde-gris);
+}
+
+/* Datos Básicos */
+.datos-basicos {
+    height: fit-content;
+}
+
+/* Datos básicos - campos */
+.datos-basicos .campo {
+    margin-bottom: 20px;
+}
+
+/* Datos básicos - campos - label */
+.datos-basicos .campo label {
+    font-weight: bold;
+
+    margin-bottom: 7px;
+
+    display: block;
+}
+
+/* Datos básicos - campos - input:text */
+.datos-basicos .campo input[type=text] {
+    display: block;
+
+    width: 95%;
+    height: 40px;
+
+    padding-left: 10px;
+
+    border-radius: 10px;
+
+    border: 1px solid  var(--borde-gris);
+    border-left: 5px solid var(--color-principal);
+
+}
+
+.datos-basicos .campo input[type=text]::placeholder {
+    font-style: italic;
+}
+
+/* Datos básicos - título */
+.datos-basicos .titulo {
+    height: fit-content;
+
+    margin-bottom: 20px;
+}
+
+.datos-basicos .titulo img{
+    display: inline-block;
+
+    margin-right: 10px;
+
+    background: var(--fondo-principal);
+
+    padding: 5px;
+    height: 20px;
+
+    border-radius: 5px;
+}
+
+.datos-basicos .titulo h3 {
+    display: inline-block;
+
+    font-size: medium;
+
+    line-height: 30px;
+
+    vertical-align: top;
+}
+
+/* Datos básicos - correo - titulo */
+.datos-basicos .correo .titulo{
+    margin-bottom: 7px;
+}
+
+.datos-basicos .correo .titulo img {
+    padding: 2px;
+
+}
+
+/* Datos básicos - correo - in-correo */
+.datos-basicos .correo #in-correo {
+    display: block;
+
+    width: 95%;
+    height: 40px;
+
+    padding-left: 10px;
+
+    border-radius: 10px;
+
+    border: 1px solid  var(--borde-verde-oscuro);
+    border-left: 5px solid var(--borde-verde-oscuro);
+}
+
+/* Datos básicos - curso - input */
+.datos-basicos .curso #txt-curso {
+    border: 1px solid var(--borde-gris);
+}
+
+/* Datos básicos - sesiones - num-sesiones */
+.datos-basicos .sesiones #num-sesiones {
+    display: block;
+
+    width: 95%;
+    height: 40px;
+
+    padding-left: 10px;
+
+    border-radius: 10px;
+
+    border: 1px solid  var(--negro);
+}
