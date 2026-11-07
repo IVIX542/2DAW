@@ -59,18 +59,45 @@
                 <div class="sesiones campo">
                     
                     <label for="num-sesiones">Sesiones Semanales</label>
-                    <input type="number" name="sesiones-semanales" max="5" id="num-sesiones">
+                    <input type="number" name="sesiones-semanales" min="1" max="5" value="1" id="num-sesiones">
 
                 </div>
 
             </div>
 
             <div class="preferencias seccion">
+
                 <div class="titulo">
-                    <img src="img/usuarios.svg" alt="imagen usuarios">
-                    <h3>Datos Básicos</h3>
+                    <img src="img/sol.svg" alt="imagen usuarios">
+                    <h3>Preferencias</h3>
                 </div>
+
+                <div class="fecha-inicio campo">
+                    <div class="titulo">
+                        <img src="img/calendario.svg" alt="imagen correo">
+                        <h3>Fecha de inicio preferida</h3>
+                    </div>
+
+                    <input type="date" id="in-correo">
+                </div>
+
+                <div class="color-preferido campo">
+                    <div class="titulo">
+                        <img src="img/paleta.svg" alt="imagen usuarios">
+                        <h3>Color Preferido</h3>
+                    </div>
+
+                    <input type="color" value="#7339e8" id="color-elegido">
+                </div>
+
+                <div class="nivel-intensidad campo">
+                    <label for="slide-intensidad">Nivel de intensidad</label>
+                    <input type="range" id="slide-intensidad" min="0" max="100" step="1" value="50">
+                </div>
+
             </div>
+
+            <div class="opciones seccion"></div>
 
         </form>
 

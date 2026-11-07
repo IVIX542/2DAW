@@ -4,6 +4,8 @@
 
     --color-principal: #2d65e2;
 
+    --color-preferido: #7339e8;
+
     --fondo-principal: rgba(128, 128, 128, 0.1);
     --sombra-principal:rgba(128, 128, 128, 0.1);
 
@@ -14,6 +16,11 @@
 
     --borde-gris: rgba(128, 128, 128, 0.15);
     --borde-verde-oscuro: darkgreen;
+
+    --ancho-input: 95%;
+    --alto-input: 40px;
+
+    --radio-borde-input: 10px;
 }
 
 /* Reset Global */
@@ -114,18 +121,13 @@ main {
     vertical-align: top;
 }
 
-/* Datos Básicos */
-.datos-basicos {
-    height: fit-content;
-}
-
-/* Datos básicos - campos */
-.datos-basicos .campo {
+/* Campos */
+.campo {
     margin-bottom: 20px;
 }
 
-/* Datos básicos - campos - label */
-.datos-basicos .campo label {
+/* Campos - label */
+.campo label {
     font-weight: bold;
 
     margin-bottom: 7px;
@@ -133,12 +135,12 @@ main {
     display: block;
 }
 
-/* Datos básicos - campos - input:text */
-.datos-basicos .campo input[type=text] {
+/* Campos - input:text */
+.campo input[type=text] {
     display: block;
 
-    width: 95%;
-    height: 40px;
+    width: var(--ancho-input);
+    height: var(--alto-input);
 
     padding-left: 10px;
 
@@ -149,8 +151,13 @@ main {
 
 }
 
-.datos-basicos .campo input[type=text]::placeholder {
+.campo input[type=text]::placeholder {
     font-style: italic;
+}
+
+/* Datos Básicos */
+.datos-basicos {
+    height: fit-content;
 }
 
 /* Datos básicos - correo - titulo */
@@ -167,7 +174,7 @@ main {
 .datos-basicos .correo #in-correo {
     display: block;
 
-    width: 95%;
+    width: var(--ancho-input);
     height: 40px;
 
     padding-left: 10px;
@@ -187,12 +194,48 @@ main {
 .datos-basicos .sesiones #num-sesiones {
     display: block;
 
-    width: 95%;
-    height: 40px;
+    width: var(--ancho-input);
+    height: var(--alto-input);
 
     padding-left: 10px;
 
     border-radius: 10px;
 
     border: 1px solid  var(--negro);
+}
+
+/* Preferencias - fecha inicio - titulo */
+.preferencias .fecha-inicio .titulo {
+    margin-bottom: 7px;
+}
+
+/* Preferencias - fecha inicio - in-correo */
+.preferencias .fecha-inicio #in-correo {
+    width: var(--ancho-input);
+    height: var(--alto-input);
+
+    padding-left: 10px;
+
+    border-radius: var(--radio-borde-input);
+
+    border: 1px solid var(--negro);
+}
+
+/* Preferencias - color preferido - color-elegido */
+.preferencias .color-preferido #color-elegido {
+    width: 60px;
+    height: 40px;
+
+    padding: 2px;
+
+    border-radius: var(--radio-borde-input);
+}
+
+/* Preferencias - nivel-intensidad - slide intensidad */
+.preferencias .nivel-intensidad #slide-intensidad {
+    accent-color: var(--color-preferido);
+
+    width: var(--ancho-input);
+
+    cursor:grab; /* Obtenido probando */
 }
