@@ -39,6 +39,8 @@ body {
 /* Main */
 main {
     margin: 2% 20%;
+
+    margin-bottom: 25vh;
     
     padding-bottom: 10px;
 
@@ -239,3 +241,72 @@ main {
 
     cursor:grab; /* Obtenido probando */
 }
+
+.opciones {
+    padding-bottom: 20px;
+}
+
+/* Opciones - casillas */
+.opciones .casilla {
+    display: inline-block;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+}
+
+/* Opciones - casilla - input:checkbox */
+.opciones .casilla input[type=checkbox] {
+    accent-color: var(--color-preferido);
+}
+
+/* Modalidad - opciones-modalidad - opcion */
+.modalidad .opciones-modalidad .opcion {
+    margin-bottom: 10px;
+}
+.modalidad .opciones-modalidad .opcion input[type="radio"] {
+    accent-color: var(--color-preferido);
+}
+
+/* Estado inscripcion - codigo-promocional - input:text */
+
+.estado-inscripcion .codigo-promocional input[type="text"] {
+    border: 1px solid var(--borde-gris);
+
+    background-color: var(--fondo-principal);
+
+    margin-bottom: 7px;
+}
+
+.estado-inscripcion .codigo-promocional input[type="text"]::placeholder {
+    font-style:normal;
+}
+
+/* Estado inscripcion - codigo-promocional - p */
+.estado-inscripcion .codigo-promocional p {
+    font-size: small;
+}
+
+.guardar-inscripcion {
+    border: none;
+}
+
+/* guardar-inscripcion - input:button */
+.guardar-inscripcion input[type="button"] {
+    width: var(--ancho-input);
+    height: var(--alto-input);
+
+
+    background-color: var(--color-principal);
+    color: white;
+
+    font-size: large;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: 5px;
+
+}
+

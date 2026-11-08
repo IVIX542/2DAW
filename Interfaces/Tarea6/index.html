@@ -78,7 +78,7 @@
                         <h3>Fecha de inicio preferida</h3>
                     </div>
 
-                    <input type="date" id="in-correo">
+                    <input type="date" id="in-fecha">
                 </div>
 
                 <div class="color-preferido campo">
@@ -97,7 +97,67 @@
 
             </div>
 
-            <div class="opciones seccion"></div>
+            <div class="opciones seccion">
+                <div class="titulo">
+                    <h3>Opciones</h3>
+                </div>
+
+                <div class="casilla">
+                    <input type="checkbox" name="nuevas-ediciones" checked="true" id="cb-nuevas-ediciones">
+                    <label for="cb-nuevas-ediciones">Recibir avisos de nuevas ediciones</label>
+                </div>
+                
+                <div class="casilla">
+                    <input type="checkbox" name="material-complementario" id="cb-material-complementario">
+                    <label for="cb-material-complementario">Recibir material complementario</label>
+                </div>
+            </div>
+
+            <div class="modalidad seccion">
+
+                <div class="titulo">
+                    <img src="img/gafas.svg" alt="imagen usuarios">
+                    <h3>Modalidad</h3>
+                </div>
+
+                <div class="opciones-modalidad">
+
+                    <div class="opcion">
+                        <input type="radio" name="opcion" value="presencial" id="op-presencial">
+                        <label for="op-presencial">Presencial</label>
+                    </div>
+
+                    <div class="opcion">
+                        <input type="radio" name="opcion" checked="true" value="online" id="op-online">
+                        <label for="op-online">Online</label>
+                    </div>
+
+                    <div class="opcion">
+                        <input type="radio" name="opcion" value="hibrida" id="op-hibrida">
+                        <label for="op-hibrida">Híbrida</label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="estado-inscripcion seccion">
+                <div class="titulo">
+                    <h3>Estado de la inscripción</h3>
+                </div>
+
+                <div class="codigo-promocional campo">
+
+                    <label for="in-codigo-promocional">Código Promocional</label>
+                    <input type="text" disabled placeholder="NO DISPONIBLE" name="codigo-promocional" id="in-codigo-promocional">
+                    <p class="nota-input">El código promocional no está disponible para esta edición</p>
+                    
+                </div>
+            </div>
+
+            <div class="guardar-inscripcion seccion">
+                <input type="button" value="Guardar Inscripción">
+            </div>
 
         </form>
 
