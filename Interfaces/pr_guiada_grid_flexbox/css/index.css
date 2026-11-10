@@ -1,0 +1,47 @@
+/* General */
+.flex-container {
+    background: lightgray;
+    padding: 20px;
+    border:2px solid black;
+    height: 500px;
+}
+
+.item {
+    background: lightblue;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    border: 2px solid #FFF;
+}
+
+/* Flex */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+
+    /* Eje Principal */
+    /* justify-content: flex-start; */
+    /* justify-content: flex-end; */
+    /* justify-content: space-around; */
+    justify-content: space-between;
+    /* justify-content: center; */
+    
+    /* Eje Secundario */
+    /* align-items: stretch; */
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    /* align-items: center; */
+
+    /* Uno o varios ejes principales */
+    flex-wrap: wrap;
+
+    /* Dirección y wrap juntos */
+    flex-flow: row wrap;
+
+    /* Bloque  */
+    align-content: space-between;
+    align-content: center;
+}
