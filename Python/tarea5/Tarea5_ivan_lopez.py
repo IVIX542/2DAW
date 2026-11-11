@@ -123,3 +123,77 @@ coordenadas_repetidas = (madrid*3)
 print("\n--------------------Ejercicio 4.8--------------------")
 print(f"número de ubicaciones almacenadas: {len(ubicaciones)}")
 
+print("\n---------------------Ejercicio 5---------------------")
+productos = (
+    (101, "Teclado", 25.90, 15),
+    (102, "Ratón", 12.50, 30),
+    (103, "Monitor", 159.99, 8),
+    (104, "Auriculares", 35.00, 20),
+    (105, "Webcam", 45.50, 12)
+)
+
+print("--------------------Ejercicio 5.1--------------------")
+print(f"Productos:\n{productos}")
+
+print("\n--------------------Ejercicio 5.2--------------------")
+print(f"Número de productos: {len(productos)}")
+
+print("\n--------------------Ejercicio 5.3--------------------")
+print(f"Información del tercer producto:\n{productos[2]}")
+
+print("\n--------------------Ejercicio 5.4--------------------")
+print(f"Nombre del tercer producto: {productos[2][1]}")
+
+print("\n--------------------Ejercicio 5.5--------------------")
+print(f"Precio del cuarto producto: {productos[3][2]}€")
+
+print("\n--------------------Ejercicio 5.6--------------------")
+id_prod_1 = productos[0][0]
+nombre_prod_1 = productos[0][1]
+precio_prod_1 = productos[0][2]
+stock_prod_1 = productos[0][3]
+
+print(f"Producto 1:\n{id_prod_1} - {nombre_prod_1} - {precio_prod_1} - {stock_prod_1}")
+
+print("\n--------------------Ejercicio 5.7--------------------")
+valor_total_prod_1 = productos[0][2] * productos[0][3]
+valor_total_prod_2 = productos[1][2] * productos[1][3]
+valor_total_prod_3 = productos[2][2] * productos[2][3]
+valor_total_prod_4 = productos[3][2] * productos[3][3]
+valor_total_prod_5 = productos[4][2] * productos[4][3]
+
+print(f"Valor total del producto 1: {valor_total_prod_1}€")
+print(f"Valor total del producto 2: {valor_total_prod_2}€")
+print(f"Valor total del producto 3: {valor_total_prod_3}€")
+print(f"Valor total del producto 4: {valor_total_prod_4}€")
+print(f"Valor total del producto 5: {valor_total_prod_5}€")
+
+print("\n--------------------Ejercicio 5.8--------------------")
+valor_total_inventario = valor_total_prod_1 + valor_total_prod_2 + valor_total_prod_3 + valor_total_prod_4 + valor_total_prod_5
+
+print(f"Valor total del inventario: {valor_total_inventario}€")
+
+print("\n--------------------Ejercicio 5.9--------------------")
+precios_unitarios = (productos[0][2], productos[1][2], productos[2][2], productos[3][2], productos[4][2])
+precio_mas_alto = max(precios_unitarios)
+
+print(f"Precios unitarios:\n{precios_unitarios}")
+print(f"Precio más alto: {precio_mas_alto}€")
+
+print("\n-------------------Ejercicio 5.10--------------------")
+lista_productos = list(productos)
+
+print(f"Lista de productos:\n{lista_productos}")
+
+print("\n-------------------Ejercicio 5.11--------------------")
+lista_productos.append(
+    (106, "Micrófono", 50.0, 100)
+)
+
+print(f"Lista con un producto más:\n{lista_productos}")
+
+print("\n-------------------Ejercicio 5.12--------------------")
+tupla_productos = tuple(lista_productos)
+
+print("\n-------------------Ejercicio 5.13--------------------")
+print(f"Tupla productos:\n {tupla_productos}")
