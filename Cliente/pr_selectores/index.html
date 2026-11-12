@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca del aula</title>
+    <script src="js/practica.js" defer></script>
+</head>
+<body>
+    <header id="cabecera">
+        <h1 id="titulo-principal">Biblioteca del aula</h1>
+        <p id="lema" class="texto secundario">Aprender, practicar y compartir.</p>
+        <nav id="menu-principal" aria-label="Menú principal">
+            <ul id="lista-menu">
+                <li><a id="enlace-inicio" class="enlace-menu activo" href="#presentacion">Inicio</a></li>
+                <li><a class="enlace-menu" href="#catalogo">Catálogo</a></li>
+                <li><a class="enlace-menu" href="#prestamos">Préstamos</a></li>
+                <li><a class="enlace-menu" href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <section id="presentacion" class="seccion">
+            <h2>Bienvenida</h2>
+            <p id="saludo" class="texto">Bienvenidos a la biblioteca del aula.</p>
+            <p class="texto destacado">Cada semana encontrarás nuevos recursos.</p>
+            <div id="aviso" class="caja">
+                <p class="texto aviso">Recuerda devolver los libros a tiempo.</p>
+            </div>
+        </section>
+
+        <section id="catalogo" class="seccion">
+            <h2>Catálogo de libros</h2>
+            <p class="texto">Consulta los títulos disponibles.</p>
+            <div id="lista-libros" class="rejilla">
+                <article id="libro-html" class="tarjeta disponible" data-categoria="web" data-nivel="inicial">
+                    <h3>HTML desde cero</h3>
+                    <p class="autor">Ana López</p>
+                    <p class="descripcion">Estructura tus primeras páginas.</p>
+                    <span class="etiqueta">Web</span>
+                    <a class="detalle" href="libros/html.html">Ver HTML</a>
+                    <button type="button" class="boton reservar" data-libro="html">Reservar HTML</button>
+                </article>
+                <article id="libro-css" class="tarjeta prestado" data-categoria="web" data-nivel="inicial">
+                    <h3>CSS paso a paso</h3>
+                    <p class="autor">Luis Martín</p>
+                    <p class="descripcion">Da estilo a tus páginas.</p>
+                    <span class="etiqueta">Web</span>
+                    <a class="detalle" href="libros/css.html">Ver CSS</a>
+                    <button type="button" class="boton reservar" data-libro="css" disabled>Reservar CSS</button>
+                </article>
+                <article id="libro-js" class="tarjeta disponible destacado" data-categoria="web" data-nivel="medio">
+                    <h3>JavaScript y el DOM</h3>
+                    <p class="autor">Marta Ruiz</p>
+                    <p class="descripcion">Añade interacción a tus páginas.</p>
+                    <span class="etiqueta">Web</span>
+                    <a class="detalle" href="libros/javascript.html">Ver JavaScript</a>
+                    <button type="button" class="boton reservar" data-libro="js">Reservar JavaScript</button>
+                </article>
+                <article id="libro-python" class="tarjeta disponible" data-categoria="sistemas" data-nivel="inicial">
+                    <h3>Python para sistemas</h3>
+                    <p class="autor">Diego Pérez</p>
+                    <p class="descripcion">Automatiza tareas habituales.</p>
+                    <span class="etiqueta">Sistemas</span>
+                    <a class="detalle" href="libros/python.html">Ver Python</a>
+                    <button type="button" class="boton reservar" data-libro="python">Reservar Python</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="recursos" class="seccion">
+            <h2>Recursos de consulta</h2>
+            <ul id="lista-recursos">
+                <li class="recurso"><a href="https://developer.mozilla.org/es/" target="_blank" rel="noopener">MDN</a></li>
+                <li class="recurso"><a href="https://www.w3.org/" target="_blank" rel="noopener">W3C</a></li>
+                <li class="recurso"><a href="documentos/guia-html.pdf" download>Guía HTML</a></li>
+                <li class="recurso"><a href="documentos/guia-css.pdf" download>Guía CSS</a></li>
+            </ul>
+            <ol id="pasos-reserva">
+                <li>Busca un libro.</li>
+                <li>Comprueba su disponibilidad.</li>
+                <li>Solicita la reserva.</li>
+            </ol>
+        </section>
+
+        <section id="prestamos" class="seccion">
+            <h2>Préstamos actuales</h2>
+            <table id="tabla-prestamos">
+                <thead>
+                    <tr><th>Persona</th><th>Libro</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    <tr data-estado="pendiente"><td>Lucía</td><td>CSS paso a paso</td><td>Pendiente</td></tr>
+                    <tr data-estado="devuelto"><td>Pedro</td><td>HTML desde cero</td><td>Devuelto</td></tr>
+                    <tr data-estado="pendiente"><td>Sara</td><td>JavaScript y el DOM</td><td>Pendiente</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="galeria" class="seccion">
+            <h2>Espacios de la biblioteca</h2>
+            <figure>
+                <img id="foto-sala" class="foto" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100'%3E%3Crect width='200' height='100' fill='lightblue'/%3E%3C/svg%3E" alt="Ilustración de la sala de lectura" width="200" height="100">
+                <figcaption>Sala de lectura</figcaption>
+            </figure>
+            <figure>
+                <img id="foto-estanteria" class="foto" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100'%3E%3Crect width='200' height='100' fill='wheat'/%3E%3C/svg%3E" alt="Ilustración de la estantería" width="200" height="100">
+                <figcaption>Estantería principal</figcaption>
+            </figure>
+        </section>
+
+        <section id="contacto" class="seccion">
+            <h2>Solicita información</h2>
+            <form id="form-contacto">
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" class="entrada" type="text" name="nombre" placeholder="Tu nombre" required>
+                </div>
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input id="correo" class="entrada" type="email" name="correo" placeholder="Tu correo" required>
+                </div>
+                <div class="campo">
+                    <label for="grupo">Grupo</label>
+                    <select id="grupo" class="entrada" name="grupo">
+                        <option value="daw1">DAW1</option>
+                        <option value="daw2">DAW2</option>
+                        <option value="asir1">ASIR1</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" class="entrada" name="mensaje" rows="4"></textarea>
+                </div>
+                <div class="campo">
+                    <input id="novedades" type="checkbox" name="novedades" checked>
+                    <label for="novedades">Recibir novedades</label>
+                </div>
+                <button id="enviar" class="boton" type="submit">Enviar consulta</button>
+                <button id="limpiar" class="boton secundario" type="reset">Limpiar formulario</button>
+            </form>
+        </section>
+    </main>
+
+    <aside id="panel-avisos" class="caja">
+        <h2>Avisos</h2>
+        <p class="texto aviso">Horario: de 9:00 a 14:00.</p>
+        <p class="texto">Consulta las novedades cada lunes.</p>
+    </aside>
+
+    <footer id="pie">
+        <p id="creditos" class="texto secundario">Biblioteca del aula · Curso 2026-2027</p>
+        <a id="volver-arriba" href="#cabecera">Volver arriba</a>
+    </footer>
+</body>
