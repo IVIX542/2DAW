@@ -11,3 +11,10 @@ const r7 = document.getElementsByClassName("destacado");
 const r8 = document.getElementsByClassName("tarjeta" && "disponible");
 const r9 = document.getElementsByClassName("enlace-menu")[1];
 const r10 = document.getElementById("presentacion").getElementsByClassName("texto");
+
+/* C. getElementsByTagName() */
+const r11 = document.getElementsByTagName("h2");
+const r12 = document.getElementsByTagName("img");
+const r13 = document.getElementsByTagName("button");
+const r14 = document.getElementById("pasos-reserva").getElementsByTagName("li")[2];
+const r15 = document.getElementById("tabla-prestamos").getElementsByTagName("td");
