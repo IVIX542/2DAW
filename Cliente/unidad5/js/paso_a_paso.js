@@ -59,6 +59,34 @@ function creaSiguiente() {
             numElemento++;
             cargarTailwind();
             creaPaso("Se ha cargado TailWind.");
+            break;
+        case 10:
+            numElemento++;
+            recolocar();
+            creaPaso("Tabla y lista recolocadas.");
+            // break;
+        case 11:
+            numElemento++;
+            estilizarPagina();
+            creaPaso("Aplicar estilos a la página y al botón.");
+            break;
+        case 12:
+            numElemento++;
+            estilizarTabla();
+            creaPaso("Aplicar estilos a la tabla.");
+            // break;
+        case 13:
+            numElemento++;
+            estilizarLista();
+            creaPaso("Aplicar estilos a la lista.");
+            break;
+        case 14:
+            numElemento++;
+            creaPaso("Elemento uno lista.");
+            // break;
+        case 15:
+            numElemento++;
+            creaPaso("Elemento dos lista.");
             // break;
         // Añade aquí los casos siguientes.
     }
@@ -66,18 +94,84 @@ function creaSiguiente() {
     console.log(`Paso ${numElemento}`);
 }
 
+function estilizarLista() {
+    document.querySelector("#divMensajes h2").classList.add(
+        "mb-2", "text-xl", "font-semibold"
+    );
+
+    mensajes.classList.add(
+        "space-y-1", 
+        "[&>li:last-child]:font-semibold",
+        "[&>li:last-child]:text-indigo-700"
+    );
+}
+
+function estilizarTabla() {
+    contenedor.classList.add("oferflow-x-auto");
+    tabla.classList.add("w-full", "border-collapse", "text-sm");
+    tabla.querySelector("thead").classList.add("bg-indigo-100");
+
+    tabla.querySelectorAll("th, td").forEach(celda => {
+
+        celda.classList.add("border", "border-slate-300", "p-2", "text-left");
+    });
+
+    tabla.querySelectorAll("tbody tr").forEach(fila => {
+        fila.classList.add("even:bg-stale-50"); // even
+    })
+}
+
+function estilizarPagina() {
+    // añadir estilos al body
+    document.body.classList.add("mx-auto", "max-w-5xl", "p-6");
+
+    // añadir estilos al primer h1
+    document.querySelector("h1").classList.add("mb-4", "text-3xl", "font-bold");
+
+    // añadir estilos al botón
+    botonCrear.classList.add("mb-6", "rounded-lg", "bg-indigo-700", "px-4", "py-2","font-semibold", "text-white", "hover:bg-indigo-800","disabled:opacity-50");
+
+}
+
+function recolocar() {
+    // crear el nuevo div, para contener la tabla y la lista
+    const zona = document.createElement("div");
+
+    // recuperar la lista
+    const zonaLista = document.getElementById("divMensajes");
+
+    // añadimos zona delante de "divMensajes", variable zona
+    zonaLista.before(zona);
+
+    // añadimos como hijo la lista
+    zona.appendChild(zonaLista);
+    // añadimos como hijo el contenedor de la tabla
+    zona.appendChild(contenedor);
+
+    // modificamos el aspecto para colocar la lista al lado de la tabla
+    zona.classList.add("grid", "grid-cols-1", "md:grid-cols-2", "gap-6");
+
+
+}
+
 function cargarTailwind() {
+    // Creamos un elemento script
     const script = document.createElement("script");
 
+    // Añadimos ese contenido al src del script
     script.src = "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4";
+
+    // Deshabilitamos el botón
     botonCrear.disabled = true;
 
+    // Carga correcta
     script.addEventListener("load", () => {
         mensajes.classList.add("list-[upper-roman]", "list-inside");
         creaPaso("Se ha cargado TailWind CSS.");
         botonCrear.disabled = false;
     });
-
+    
+    // Carga dio error
     script.addEventListener("error", () => {
         script.remove();
         numElemento--;
@@ -85,21 +179,31 @@ function cargarTailwind() {
         alert("No se pudo cargar TailWind. Vuelve a pulsar el botón Crear.");
     });
 
+    // Añadimos el script al DOM en el head
     document.head.appendChild(script);
 }
 
 function borrarBorde() {
-    tabla.classList.remove("table_borde");
+    // tabla.classList.remove("table_borde");
+
+    tabla.classList.toggle("table_borde")
 }
 
 function ponerBorde() {
+    crearNodoEstiloTabla();
+
+    tabla.classList.toggle("table_borde");
+}
+
+function crearNodoEstiloTabla() {
     const estiloBorde = document.createElement("style");
 
-    estiloBorde.textContent = ".table_borde {border: 2px solid black; border-radius: 5px;}"
+    // estiloBorde.textContent = ".table_borde {border: 2px solid black; border-radius: 5px;}"
+    
+    const claseTexto = document.createTextNode(".table_borde {border: 2px solid black; border-radius: 5px;}");
+    estiloBorde.appendChild(claseTexto);
 
     document.head.appendChild(estiloBorde);
-
-    tabla.classList.add("table_borde");
 }
 
 function crearCeldasDatos() {

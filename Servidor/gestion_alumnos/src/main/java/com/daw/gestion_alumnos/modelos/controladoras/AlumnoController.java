@@ -50,7 +50,9 @@ public class AlumnoController {
         return "detalle_alumno";
     }
 
+    
 
+    /* Pruebas */
     // De prueba
     @GetMapping("/crea_alumno")
     public String prueba() {
