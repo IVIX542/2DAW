@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.daw.gestion_alumnos.modelos.Alumno;
 import com.daw.gestion_alumnos.modelos.Nota;
+import com.daw.gestion_alumnos.modelos.Perfil;
 import com.daw.gestion_alumnos.servicios.AlumnoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,6 +51,20 @@ public class AlumnoController {
         return "detalle_alumno";
     }
 
+    @GetMapping("/perfil/{id}")
+    public String verPerfil(@PathVariable Long id, Model modelo) {
+        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
+
+        // Si no hay un alumno con ese id
+        if (alumno.isEmpty()) {
+            return "redurect:/alumno";
+        }
+
+        // el alumno con ese id existe, lo añadimos al modelo
+        modelo.addAttribute("alumno", alumno.get());
+
+        return "perfil_alumno";
+    }
     
 
     /* Pruebas */
@@ -76,6 +91,20 @@ public class AlumnoController {
         this.alumnoService.guardar(alumno2);
 
         return "alumno_con_notas";
+    }
+
+    @GetMapping("/crea_alumno_con_perfil")
+    public String pruebaPerfil() {
+
+        Alumno alumno1 = new Alumno("Pepe Bueno", "Perez Perez");
+
+        Perfil pl1 = new Perfil("Calle Principal", "666 666 666", "mifoto.jpg");
+
+        alumno1.setPerfil(pl1);
+
+        this.alumnoService.guardar(alumno1);
+
+        return "probando";
     }
     
 

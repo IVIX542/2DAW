@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -26,7 +27,11 @@ public class Alumno {
        mappedBy hace referencia al atributo de la clase relacionada */
     @OneToMany(mappedBy = "alumno", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Nota> notas;
-
+    
+    // Relación uno a uno: un alumno tiene un perfil
+    @OneToOne(mappedBy = "alumno", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Perfil perfil;
+    
     /* Constructor vacío */
     public Alumno() {}
 
@@ -68,6 +73,15 @@ public class Alumno {
     public void setNotas(List<Nota> notas) {
         this.notas = notas;
     }
+
+    public Perfil getPerfil() { return perfil; }
+
+    public void setPerfil(Perfil perfil) {
+        this.perfil = perfil;
+        perfil.setAlumno(this); // mantenemos sincronía
+    }
+
+
 
     @Override
     public String toString() {
