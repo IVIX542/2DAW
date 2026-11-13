@@ -28,3 +28,12 @@ const r20 = document.querySelector("a[href^='https://']"); // utilizamos "^" par
 const r21 = document.querySelector("#presentacion p:nth-of-type(2)");
 const r22 = document.querySelector("#lista-recursos li:first-child");
 const r23 = document.querySelector("#tabla-prestamos tbody tr:nth-of-type(2) td:first-child");
+
+/* E. querySelectorAll() */
+const r24 = document.querySelectorAll("#menu-principal a");
+const r25 = document.querySelectorAll("#presentacion>p");
+const r26 = document.querySelectorAll(".tarjeta[data-categoria = 'web']");
+const r27 = document.querySelectorAll("a[href$='.pdf']"); // utilizamos "$" para indicar que acaba por x
+const r28 = document.querySelectorAll("input[required]");
+const r29 = document.querySelectorAll("#tabla-prestamos tbody tr[data-estado = 'pendiente']");
+const r30 = document.querySelectorAll("button:not([disabled])");
