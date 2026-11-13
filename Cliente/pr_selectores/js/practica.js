@@ -18,3 +18,13 @@ const r12 = document.getElementsByTagName("img");
 const r13 = document.getElementsByTagName("button");
 const r14 = document.getElementById("pasos-reserva").getElementsByTagName("li")[2];
 const r15 = document.getElementById("tabla-prestamos").getElementsByTagName("td");
+
+/* D.  querySelector() */
+const r16 = document.querySelector("#lema");
+const r17 = document.querySelector(".disponible");
+const r18 = document.querySelector("#libro-js h3");
+const r19 = document.querySelector("input[name='correo']");
+const r20 = document.querySelector("a[href^='https://']"); // utilizamos "^" para indicar que empieza por x
+const r21 = document.querySelector("#presentacion p:nth-of-type(2)");
+const r22 = document.querySelector("#lista-recursos li:first-child");
+const r23 = document.querySelector("#tabla-prestamos tbody tr:nth-of-type(2) td:first-child");
