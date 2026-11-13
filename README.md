@@ -92,4 +92,4 @@ git log --oneline --grep="(gestion_alumnos)"
 ```
 
 ## 📌 Autor
-* **Alumno de 2DAW** — IVIX542
+* **Alumno de 2DAW** — Iván López Benítez
