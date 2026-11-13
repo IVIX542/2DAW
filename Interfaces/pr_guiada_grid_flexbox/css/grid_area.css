@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    background: #e9ecf4;
+    font-family: sans-serif;
+}
+
+.grid {
+    width: 70%;
+    border: 5px solid #222;
+    margin: 50px auto;
+    font-size: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+
+    /* Plantilla de áreas del grid */
+    grid-template-areas: "header    header    header"
+                         "contenido contenido aside "
+                         "contenido contenido aside "
+                         "widget1   widget2   aside "
+                         "footer    footer    footer";
+}
+
+.grid div {
+    padding: 20px;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.grid .header {
+    background: gray;
+
+    /*
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-column: 1/-1;
+    */
+
+    grid-area: header;
+}
+
+.grid .aside {
+    background: orange;
+
+    grid-area: aside;
+}
+
+.grid .contenido {
+    background: white;
+    color: black;
+
+    grid-area: contenido;
+}
+
+.grid .widget1 {
+    background: greenyellow;
+
+    grid-area: widget1;
+}
+
+.grid .widget2 {
+    background: yellow;
+    
+    grid-area: widget2;
+}
+
+.grid .footer {
+    background: #3a3a3a;
+
+    grid-area: footer;
+}
