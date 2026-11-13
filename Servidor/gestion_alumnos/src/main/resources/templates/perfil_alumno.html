@@ -36,13 +36,10 @@
                 </div>
 
                 <div class="col-3 text-center">
-                    <a th:href="@{/alumno/editar/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Modificar</a>
+                    <a th:href="@{/alumno/perfil/editar/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Modificar</a>
                 </div>
                 <div class="col-3 text-center">
-                    <a th:href="@{/alumno/eliminar/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Eliminar</a>
-                </div>
-                <div class="col-3 text-center">
-                    <a th:href="@{/nota/nueva/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Nueva nota</a>
+                    <a th:href="@{/alumno/perfil/eliminar/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Eliminar</a>
                 </div>
             </div>
         </div>
