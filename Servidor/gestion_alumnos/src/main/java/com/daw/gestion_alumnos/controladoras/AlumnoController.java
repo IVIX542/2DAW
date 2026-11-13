@@ -1,4 +1,4 @@
-package com.daw.gestion_alumnos.modelos.controladoras;
+package com.daw.gestion_alumnos.controladoras;
 
 import java.util.List;
 import java.util.Optional;
