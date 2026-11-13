@@ -56,8 +56,8 @@ public class AlumnoController {
         Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
 
         // Si no hay un alumno con ese id
-        if (alumno.isEmpty()) {
-            return "redurect:/alumno";
+        if (alumno.isEmpty() || alumno.get().getPerfil() == null) {
+            return "redirect:/alumno";
         }
 
         // el alumno con ese id existe, lo añadimos al modelo

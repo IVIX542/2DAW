@@ -30,7 +30,21 @@
                         <td th:text="${alumno.nombre}"></td>
                         <td th:text="${alumno.apellidos}"></td>
                         <td><a th:href="@{/alumno/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Detalle</a></td>
-                        <td><a th:href="@{/alumno/perfil/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Perfil</a></td>
+                        <td>
+                            <a th:if="${alumno.perfil != null}" 
+                               th:href="@{/alumno/perfil/{id}(id=${alumno.id_alumno})}" 
+                               class="btn btn-secondary">
+
+                                Perfil
+                            </a>
+                            <button th:unless="${alumno.perfil != null}"
+                                    th:href="@{/alumno/perfil/{id}(id=${alumno.id_alumno})}"
+                                    class="btn btn-secondary"
+                                    disabled="true">
+
+                                Perfil
+                            </button>
+                        </td>
                         <td><a th:href="@{/alumno/matriculas/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Matriculas</a></td>
                     </tr>
                 </tbody>
