@@ -20,7 +20,7 @@
 
                     <!-- Cuerpo del formulario -->
                     <div class="card-body">
-                        <form th:action="@{/guardar}" th:object="${alumno}" method="post">
+                        <form th:action="@{/alumno/guardar}" th:object="${alumno}" method="post">
 
                             <!-- Campo ID oculto para editar -->
                             <input type="hidden" th:field="*{id_alumno}">
