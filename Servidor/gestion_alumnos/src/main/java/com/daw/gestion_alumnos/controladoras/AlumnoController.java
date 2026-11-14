@@ -53,6 +53,12 @@ public class AlumnoController {
         return "detalle_alumno";
     }
 
+    // Crear alumno
+    @GetMapping ("/nuevo") 
+    public String nuevoAlumno(Model modelo) {
+        return "form_alumno";
+    }
+
     // Eliminar alumno mediante su id
     @GetMapping ("/eliminar/{id}")
     public String eliminarAlumno(@PathVariable Long id, Model modelo) {
