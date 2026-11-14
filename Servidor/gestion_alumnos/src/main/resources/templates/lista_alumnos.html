@@ -38,13 +38,15 @@
                                 Perfil
                             </a>
                             <a th:unless="${alumno.perfil != null}"
-                                th:href="@{/alumno/perfil/nuevo}"
+                                th:href="@{/alumno/perfil/nuevo(id_alumno=${alumno.id_alumno})}"
                                 class="btn btn-secondary">
 
                                 Crear Perfil
                             </a>
                         </td>
-                        <td><a th:href="@{/alumno/matriculas/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Matriculas</a></td>
+                        <td>
+                            <a th:href="@{/alumno/matriculas/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Matriculas</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

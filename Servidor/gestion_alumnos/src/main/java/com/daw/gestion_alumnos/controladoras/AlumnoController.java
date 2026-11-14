@@ -1,5 +1,6 @@
 package com.daw.gestion_alumnos.controladoras;
 
+import com.daw.gestion_alumnos.servicios.PerfilService;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,9 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-
-
 
 @Controller 
 @RequestMapping ("/alumno")
@@ -56,7 +54,7 @@ public class AlumnoController {
         return "detalle_alumno";
     }
 
-    // Crear alumno
+    // Nuevo alumno
     @GetMapping ("/nuevo") 
     public String nuevoAlumno(Model modelo) {
         // Creamos un alumno vacío
@@ -105,28 +103,6 @@ public class AlumnoController {
 
         return "redirect:/alumno";
     }
-
-
-    /* PERFIL */
-
-    // Obtener perfil de un alumno mediante su id
-    @GetMapping("/perfil/{id}")
-    public String verPerfil(@PathVariable Long id, Model modelo) {
-        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
-
-        // Si no hay un alumno con ese id
-        if (alumno.isEmpty() || alumno.get().getPerfil() == null) {
-            return "redirect:/alumno";
-        }
-
-        // el alumno con ese id existe, lo añadimos al modelo
-        modelo.addAttribute("alumno", alumno.get());
-
-        return "perfil_alumno";
-    }
-    
-    // Eliminar perfil de un alumno mediante su id
-    
 
     /* Pruebas */
     // De prueba
