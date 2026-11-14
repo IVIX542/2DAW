@@ -56,6 +56,13 @@ public class AlumnoController {
     // Crear alumno
     @GetMapping ("/nuevo") 
     public String nuevoAlumno(Model modelo) {
+        // Creamos un alumno vacío
+        Alumno alumno = new Alumno();
+
+        // Lo añadimos al modelo
+        modelo.addAttribute(alumno);
+
+        // Devolvemos el formulario
         return "form_alumno";
     }
 
