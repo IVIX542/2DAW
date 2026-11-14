@@ -43,7 +43,7 @@ public class AlumnoController {
         Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
 
         if (alumno.isEmpty()) {
-            return "redurect:/alumno";
+            return "redirect:/alumno";
         }
 
         modelo.addAttribute("alumno", alumno.get());
@@ -66,6 +66,14 @@ public class AlumnoController {
         return "perfil_alumno";
     }
     
+    @GetMapping ("/perfil/eliminar/{id}")
+    public String eliminarPerfil(@PathVariable Long id, Model modelo) {
+        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
+
+        alumnoService.eliminar(alumno.get().getId_alumno());
+
+        return "redirect:/alumno";
+    }
 
     /* Pruebas */
     // De prueba
