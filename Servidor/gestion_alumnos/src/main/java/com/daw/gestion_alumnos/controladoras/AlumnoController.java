@@ -63,7 +63,7 @@ public class AlumnoController {
         Alumno alumno = new Alumno();
 
         // Lo añadimos al modelo
-        modelo.addAttribute(alumno);
+        modelo.addAttribute("alumno", alumno);
 
         // Devolvemos el formulario
         return "form_alumno";
@@ -77,9 +77,23 @@ public class AlumnoController {
         return "redirect:/alumno";
     }
     
+    // Editar alumno
+    @GetMapping ("/editar/{id}")
+    public String editarAlumno(@PathVariable Long id, Model modelo) {
+        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
+
+        if(alumno.isEmpty()) {
+            return "redirect:/alumno";
+        }
+
+        modelo.addAttribute("alumno", alumno.get());
+
+        return "form_alumno";
+    }
 
     // Eliminar alumno mediante su id
     @GetMapping ("/eliminar/{id}")
+    // NOTE: usar @PathVariable, ya que es obligatoria
     public String eliminarAlumno(@PathVariable Long id, Model modelo) {
         Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
 
