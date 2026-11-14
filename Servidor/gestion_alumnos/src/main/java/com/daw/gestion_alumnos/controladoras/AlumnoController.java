@@ -12,7 +12,10 @@ import com.daw.gestion_alumnos.modelos.Nota;
 import com.daw.gestion_alumnos.modelos.Perfil;
 import com.daw.gestion_alumnos.servicios.AlumnoService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 
 
@@ -65,6 +68,15 @@ public class AlumnoController {
         // Devolvemos el formulario
         return "form_alumno";
     }
+
+    // Guardar alumno
+    @PostMapping("/guardar")
+    public String guardarAlumno(@ModelAttribute Alumno alumno) {
+        this.alumnoService.guardar(alumno);
+        
+        return "redirect:/alumno";
+    }
+    
 
     // Eliminar alumno mediante su id
     @GetMapping ("/eliminar/{id}")
