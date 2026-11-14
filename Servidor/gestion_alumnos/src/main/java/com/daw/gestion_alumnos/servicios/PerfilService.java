@@ -30,8 +30,8 @@ public class PerfilService {
         return this.perfilRepository.findById(id);
     }
 
-    public Perfil guardar(Perfil alumno){
-        return this.perfilRepository.save(alumno);
+    public Perfil guardar(Perfil perfil){
+        return this.perfilRepository.save(perfil);
     }
 
     public void eliminar(Long id){
