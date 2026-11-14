@@ -106,6 +106,25 @@ public class AlumnoController {
 
         return "probando";
     }
+
+    @GetMapping("/crea_alumno_con_perfil_y_notas")
+    public String pruebaPerfilyNotas() {
+
+        Alumno alumno1 = new Alumno("Ivan", "Lopez Benitez");
+
+        Nota nota1 = new Nota("Servidor", 0, alumno1);
+        Nota nota2 = new Nota("Cliente", 1, alumno1);
+
+        alumno1.setNotas(List.of(nota1, nota2));
+
+        Perfil pl1 = new Perfil("Calle Estrecha", "666 536 072", "foto-perfil.jpg");
+
+        alumno1.setPerfil(pl1);
+
+        this.alumnoService.guardar(alumno1);
+
+        return "probando";
+    }
     
 
 }
