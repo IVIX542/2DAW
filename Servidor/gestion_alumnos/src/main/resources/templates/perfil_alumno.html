@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <p>[[${alumno.perfil.direccion}]]</p>
                     <p>[[${alumno.perfil.telefono}]]</p>
-                    <img th:src="@{alumno.perfil.foto_url}" alt="imagen alumno"></img>
+                    <img th:src="@{/{foto}(foto = ${alumno.perfil.foto_url})}" alt="imagen alumno" width="50%"></img>
                 </div>
                 <div class="card-footer">
                

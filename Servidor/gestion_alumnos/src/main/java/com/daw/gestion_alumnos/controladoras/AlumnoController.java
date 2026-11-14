@@ -98,7 +98,7 @@ public class AlumnoController {
 
         Alumno alumno1 = new Alumno("Pepe Bueno", "Perez Perez");
 
-        Perfil pl1 = new Perfil("Calle Principal", "666 666 666", "mifoto.jpg");
+        Perfil pl1 = new Perfil("Calle Principal", "666 666 666", "foto-perfil.jpg");
 
         alumno1.setPerfil(pl1);
 
