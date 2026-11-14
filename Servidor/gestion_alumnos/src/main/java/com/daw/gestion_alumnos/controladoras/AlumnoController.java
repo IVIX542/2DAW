@@ -28,6 +28,8 @@ public class AlumnoController {
 
     /* EndPoints */
 
+    /* ALUMNO */
+
     // Listar todos los alumnos
     @GetMapping
     public String listarAlumnos(Model modelo) {
@@ -51,6 +53,24 @@ public class AlumnoController {
         return "detalle_alumno";
     }
 
+    // Eliminar alumno mediante su id
+    @GetMapping ("/eliminar/{id}")
+    public String eliminarAlumno(@PathVariable Long id, Model modelo) {
+        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
+
+        if (alumno.isEmpty()) {
+            return "redirect:/alumno";
+        }
+
+        alumnoService.eliminar(alumno.get().getId_alumno());
+
+        return "redirect:/alumno";
+    }
+
+
+    /* PERFIL */
+
+    // Obtener perfil de un alumno mediante su id
     @GetMapping("/perfil/{id}")
     public String verPerfil(@PathVariable Long id, Model modelo) {
         Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
@@ -66,14 +86,8 @@ public class AlumnoController {
         return "perfil_alumno";
     }
     
-    @GetMapping ("/perfil/eliminar/{id}")
-    public String eliminarPerfil(@PathVariable Long id, Model modelo) {
-        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
-
-        alumnoService.eliminar(alumno.get().getId_alumno());
-
-        return "redirect:/alumno";
-    }
+    // Eliminar perfil de un alumno mediante su id
+    
 
     /* Pruebas */
     // De prueba
