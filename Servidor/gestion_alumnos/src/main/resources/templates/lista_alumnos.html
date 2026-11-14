@@ -37,13 +37,12 @@
 
                                 Perfil
                             </a>
-                            <button th:unless="${alumno.perfil != null}"
-                                    th:href="@{/alumno/perfil/{id}(id=${alumno.id_alumno})}"
-                                    class="btn btn-secondary"
-                                    disabled="true">
+                            <a th:unless="${alumno.perfil != null}"
+                                th:href="@{/alumno/perfil/nuevo}"
+                                class="btn btn-secondary">
 
-                                Perfil
-                            </button>
+                                Crear Perfil
+                            </a>
                         </td>
                         <td><a th:href="@{/alumno/matriculas/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Matriculas</a></td>
                     </tr>
