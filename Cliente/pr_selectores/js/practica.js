@@ -1,7 +1,7 @@
 /* A. getElementById() */
 const r1 = document.getElementById("titulo-principal");
-const r2 = document.getElementById("contenido");
-const r3 = document.getElementById("catalogo");
+const r2 = document.getElementById("catalogo");
+const r3 = document.getElementById("tabla-prestamos");
 const r4 = document.getElementById("correo");
 const r5 = document.getElementById("limpiar");
 
