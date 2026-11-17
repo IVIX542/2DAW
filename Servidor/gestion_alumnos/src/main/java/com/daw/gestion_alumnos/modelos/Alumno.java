@@ -56,6 +56,18 @@ public class Alumno {
         this.apellidos = apellidos; 
     }
 
+    /* MÉTODOS */
+    // Métodos para añadir o eliminar asignaturas
+    public void matricularEn(Asignatura asignatura) {
+        asignaturas.add(asignatura);
+        asignatura.getAlumnos().add(this);
+    }
+
+    public void desmatricularDe(Asignatura asignatura) {
+        asignaturas.remove(asignatura);
+        asignatura.getAlumnos().remove(this);
+    }
+
     /* GETTERS Y SETTERS */
     public Long getId_alumno() {
         return id_alumno;
