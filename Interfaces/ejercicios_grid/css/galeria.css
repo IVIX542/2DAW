@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+
+    height: 100vh;
+
+    background: black;
+}
+
+.grid-container {
+    width: 100%;
+
+    padding: 5px;
+
+    display: grid;
+    gap: 5px;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.item {
+    transition: all .3s;
+}
+
+.grid-container:hover .item {
+    opacity: 0.2;
+}
+
+.item:hover {
+    /* !important para que lo pueda hacer estando dentro del contenedor */
+    opacity: 1 !important;
+}
+
+.r-span2 {
+    grid-row: span 2;
+}
+.c-span2 {
+    grid-column: span 2;
+}
