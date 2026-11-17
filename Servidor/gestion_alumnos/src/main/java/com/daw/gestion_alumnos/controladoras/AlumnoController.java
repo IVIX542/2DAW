@@ -119,7 +119,9 @@ public class AlumnoController {
             return "redirect:/alumno";
         }
 
-        alumnoService.eliminar(alumno.get().getId_alumno());
+        alumnoService.buscarPorId(id);
+
+        modelo.addAttribute("alumno", alumno.get());
 
         return "matriculas_alumnos";
     }
