@@ -59,13 +59,13 @@ public class Alumno {
     /* MÉTODOS */
     // Métodos para añadir o eliminar asignaturas
     public void matricularEn(Asignatura asignatura) {
-        asignaturas.add(asignatura);
-        asignatura.getAlumnos().add(this);
+        asignaturas.add(asignatura); // añado la asignatura al conjunto de asignaturas del alumno
+        asignatura.getAlumnos().add(this); // añado el alumno al conjunto de alumnos de la asignatura
     }
 
     public void desmatricularDe(Asignatura asignatura) {
-        asignaturas.remove(asignatura);
-        asignatura.getAlumnos().remove(this);
+        asignaturas.remove(asignatura); // borro la asignatura del conjunto de asignaturas del alumno
+        asignatura.getAlumnos().remove(this); // borro el alumno del conjunto de alumnos de la asignatura
     }
 
     /* GETTERS Y SETTERS */
@@ -107,6 +107,8 @@ public class Alumno {
         this.perfil = perfil;
         perfil.setAlumno(this); // mantenemos sincronía
     }
+
+    public Set<Asignatura> getAsignaturas() { return asignaturas; }
 
 
 
