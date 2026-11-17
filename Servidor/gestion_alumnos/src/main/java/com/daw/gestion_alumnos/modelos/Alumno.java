@@ -1,6 +1,8 @@
 package com.daw.gestion_alumnos.modelos;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -31,6 +33,10 @@ public class Alumno {
     // Relación uno a uno: un alumno tiene un perfil
     @OneToOne(mappedBy = "alumno", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Perfil perfil;
+
+    // Relación N a N: un alumno está matriculado en varias asignaturas
+    //                 una asignatura tiene matriculados varios alumnos
+    private Set<Asignatura> asignaturas = new HashSet<>();
     
     /* Constructor vacío */
     public Alumno() {}
