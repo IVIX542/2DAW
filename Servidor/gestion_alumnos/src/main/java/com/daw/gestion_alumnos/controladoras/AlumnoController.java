@@ -190,7 +190,7 @@ public class AlumnoController {
         this.alumnoService.guardar(juan);
         this.alumnoService.guardar(ana);
 
-        return "probado";
+        return "probando";
     }
 
 }
