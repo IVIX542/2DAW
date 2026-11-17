@@ -1,3 +1,6 @@
+let contador = 0;
+
 function saludar() {
-	console.log("evento click");
+    contador++;
+	console.log("evento click " + contador);
 }

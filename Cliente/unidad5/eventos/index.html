@@ -7,6 +7,19 @@
 	<script src="js/eventos.js"></script>
 </head>
 <body>
+    <!-- asocio al elemento una función js con un atributo on<nombre-evento> -->
 	<button onclick="saludar()">Haz clic</button>
+
+	<button ondblclick="saludar()">Haz doble clic</button>
+
+	<button onmouseenter="saludar()">Entra</button>
+
+    <div onclick="saludar()">
+        <hr>
+        <h1 ondblclick="saludar()">Esto es un h1</h1>
+        <hr>
+        <p onmouseenter="saludar()">Esto es un parrafo</p>
+        <hr>
+    </div>
 </body>
 </html>
