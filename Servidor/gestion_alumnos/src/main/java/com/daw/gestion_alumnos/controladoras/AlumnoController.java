@@ -8,9 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.daw.gestion_alumnos.modelos.Alumno;
+import com.daw.gestion_alumnos.modelos.Asignatura;
 import com.daw.gestion_alumnos.modelos.Nota;
 import com.daw.gestion_alumnos.modelos.Perfil;
 import com.daw.gestion_alumnos.servicios.AlumnoService;
+import com.daw.gestion_alumnos.servicios.AsignaturaService;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,9 +24,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AlumnoController {
 
     private final AlumnoService alumnoService;
+    private final AsignaturaService asignaturaService;
 
-    public AlumnoController(AlumnoService alumnoService) {
+    public AlumnoController(AlumnoService alumnoService,
+        AsignaturaService asignaturaService) {
         this.alumnoService = alumnoService;
+        this.asignaturaService = asignaturaService;
     }
 
     /* EndPoints */
@@ -162,5 +168,29 @@ public class AlumnoController {
         return "probando";
     }
     
+    @GetMapping("/matricula_alumnos")
+    public String matriculaAlumnos() {
+
+        // crear dos alumnos
+        Alumno ana = new Alumno("Ana", "García López");
+        Alumno juan = new Alumno("Juan", "Martín Ruiz");
+
+        // crear dos asignaturas
+        Asignatura mat = new Asignatura("Matemáticas", "1º ESO");
+        Asignatura len = new Asignatura("Lengua", "1º ESO");
+
+        // matriculas alumnos en asignaturas
+        ana.matricularEn(mat);
+        juan.matricularEn(mat);
+        ana.matricularEn(len);
+
+        this.asignaturaService.guardar(mat);
+        this.asignaturaService.guardar(len);
+
+        this.alumnoService.guardar(juan);
+        this.alumnoService.guardar(ana);
+
+        return "probado";
+    }
 
 }
