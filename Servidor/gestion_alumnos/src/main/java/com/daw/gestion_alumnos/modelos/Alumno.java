@@ -39,7 +39,7 @@ public class Alumno {
 
     // Relación N a N: un alumno está matriculado en varias asignaturas
     //                 una asignatura tiene matriculados varios alumnos
-    @ManyToMany
+    @ManyToMany // por defecto son FetchType.LAZY, no se suele indicar CascadeType.REMOVE
     @JoinTable(
         name = "alumno_asignatura", // tabla intermedia
         joinColumns = @JoinColumn(name = "id_alumno"), // FK a esta entidad
