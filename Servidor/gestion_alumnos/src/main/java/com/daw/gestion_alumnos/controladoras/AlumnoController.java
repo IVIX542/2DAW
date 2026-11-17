@@ -109,6 +109,21 @@ public class AlumnoController {
         return "redirect:/alumno";
     }
 
+    // Listado de matrivulas de un alumno
+    @GetMapping ("/matriculas/{id}") 
+    public String verMatriculas(@PathVariable Long id, Model modelo) {
+
+        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
+        
+        if (alumno.isEmpty()) {
+            return "redirect:/alumno";
+        }
+
+        alumnoService.eliminar(alumno.get().getId_alumno());
+
+        return "matriculas_alumnos";
+    }
+
     /* Pruebas */
     // De prueba
     @GetMapping("/crea_alumno")
