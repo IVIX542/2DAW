@@ -10,6 +10,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -36,7 +39,13 @@ public class Alumno {
 
     // Relación N a N: un alumno está matriculado en varias asignaturas
     //                 una asignatura tiene matriculados varios alumnos
-    private Set<Asignatura> asignaturas = new HashSet<>();
+    @ManyToMany
+    @JoinTable(
+        name = "alumno_asignatura", // tabla intermedia
+        joinColumns = @JoinColumn(name = "id_alumno"), // FK a esta entidad
+        inverseJoinColumns = @JoinColumn(name = "id_asignatura") // FK a la otra entidad
+    )
+    private Set<Asignatura> asignaturas = new HashSet<>(); // conjunto de asignaturas en la que está matriculado el alumno
     
     /* Constructor vacío */
     public Alumno() {}
