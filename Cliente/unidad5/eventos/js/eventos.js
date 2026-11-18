@@ -45,4 +45,4 @@ bnEnviar.addEventListener("click", (evento) => {
         console.log("Enviar los datos");
         formulario.requestSubmit();
     }
-})
+});
