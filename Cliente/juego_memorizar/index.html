@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego Memo</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="js/efecto_vuelta.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body class="bg-white min-h-screen p-4">
+
+  <div class="grid grid-cols-1 md:grid-cols-[160px_1fr_160px] gap-4 items-start max-w-6xl mx-auto">
+
+    <!-- Izquierda: Contadores -->
+    <div class="text-sm text-neutral-800 space-y-3 pt-1">
+      <p>Fallos: <span id="fallos">0</span></p>
+      <p>Victorias: <span id="victorias">0</span></p>
+    </div>
+
+    <!-- Centro: Título y tablero -->
+    <div class="w-full max-w-3xl mx-auto">
+      <header class="bg-neutral-900 py-2 px-4 mb-1">
+        <h1 class="text-amber-400 text-4xl sm:text-5xl font-light text-center">
+          Juego Memo
+        </h1>
+      </header>
+
+      <main id="tablero" class="grid grid-cols-3 gap-1">
+
+        <!-- Carta 1 -->
+        <button id="carta1"
+                type="button"
+                aria-label="Girar carta"
+                aria-pressed="false"
+                class="carta block w-full aspect-[3/4] perspective-[1000px] cursor-pointer">
+          <div id="interior1"
+               class="interior relative w-full h-full transform-3d transition-transform duration-700 ease-in-out">
+            <img src="img/detras.png"
+                 alt="Reverso de la carta"
+                 class="absolute inset-0 w-full h-full object-cover rounded backface-hidden">
+            <img src="img/carta1.png"
+                 alt="Parte delantera de la carta"
+                 class="delante absolute inset-0 w-full h-full object-cover rounded backface-hidden rotate-y-180">
+          </div>
+        </button>
+
+        <!-- Carta 2 -->
+        <button id="carta2"
+                type="button"
+                aria-label="Girar carta"
+                aria-pressed="false"
+                class="carta block w-full aspect-[3/4] perspective-[1000px] cursor-pointer">
+          <div id="interior2"
+               class="interior relative w-full h-full transform-3d transition-transform duration-700 ease-in-out">
+            <img src="img/detras.png"
+                 alt="Reverso de la carta"
+                 class="absolute inset-0 w-full h-full object-cover rounded backface-hidden">
+            <img src="img/carta1.png"
+                 alt="Parte delantera de la carta"
+                 class="delante absolute inset-0 w-full h-full object-cover rounded backface-hidden rotate-y-180">
+          </div>
+        </button>
+
+        <!-- Carta 3 -->
+        <button id="carta3"
+                type="button"
+                aria-label="Girar carta"
+                aria-pressed="false"
+                class="carta block w-full aspect-[3/4] perspective-[1000px] cursor-pointer">
+          <div id="interior3"
+               class="interior relative w-full h-full transform-3d transition-transform duration-700 ease-in-out">
+            <img src="img/detras.png"
+                 alt="Reverso de la carta"
+                 class="absolute inset-0 w-full h-full object-cover rounded backface-hidden">
+            <img src="img/carta2.png"
+                 alt="Parte delantera de la carta"
+                 class="delante absolute inset-0 w-full h-full object-cover rounded backface-hidden rotate-y-180">
+          </div>
+        </button>
+
+        <!-- Carta 4 -->
+        <button id="carta4"
+                type="button"
+                aria-label="Girar carta"
+                aria-pressed="false"
+                class="carta block w-full aspect-[3/4] perspective-[1000px] cursor-pointer">
+          <div id="interior4"
+               class="interior relative w-full h-full transform-3d transition-transform duration-700 ease-in-out">
+            <img src="img/detras.png"
+                 alt="Reverso de la carta"
+                 class="absolute inset-0 w-full h-full object-cover rounded backface-hidden">
+            <img src="img/carta2.png"
+                 alt="Parte delantera de la carta"
+                 class="delante absolute inset-0 w-full h-full object-cover rounded backface-hidden rotate-y-180">
+          </div>
+        </button>
+
+        <!-- Carta 5 -->
+        <button id="carta5"
+                type="button"
+                aria-label="Girar carta"
+                aria-pressed="false"
+                class="carta block w-full aspect-[3/4] perspective-[1000px] cursor-pointer">
+          <div id="interior5"
+               class="interior relative w-full h-full transform-3d transition-transform duration-700 ease-in-out">
+            <img src="img/detras.png"
+                 alt="Reverso de la carta"
+                 class="absolute inset-0 w-full h-full object-cover rounded backface-hidden">
+            <img src="img/carta3.png"
+                 alt="Parte delantera de la carta"
+                 class="delante absolute inset-0 w-full h-full object-cover rounded backface-hidden rotate-y-180">
+          </div>
+        </button>
+
+        <!-- Carta 6 -->
+        <button id="carta6"
+                type="button"
+                aria-label="Girar carta"
+                aria-pressed="false"
+                class="carta block w-full aspect-[3/4] perspective-[1000px] cursor-pointer">
+          <div id="interior6"
+               class="interior relative w-full h-full transform-3d transition-transform duration-700 ease-in-out">
+            <img src="img/detras.png"
+                 alt="Reverso de la carta"
+                 class="absolute inset-0 w-full h-full object-cover rounded backface-hidden">
+            <img src="img/carta3.png"
+                 alt="Parte delantera de la carta"
+                 class="delante absolute inset-0 w-full h-full object-cover rounded backface-hidden rotate-y-180">
+          </div>
+        </button>
+
+      </main>
+    </div>
+
+    <!-- Derecha: Botón de reinicio -->
+    <div class="flex md:justify-end">
+      <button id="btn-reseteo"
+              type="button"
+              class="bg-red-600 hover:bg-red-700 text-white text-sm px-3.5 py-1.5 rounded cursor-pointer transition">
+        Reseteo
+      </button>
+    </div>
+
+  </div>
+
+</body>
+</html>
