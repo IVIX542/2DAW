@@ -6,30 +6,35 @@ import java.util.Optional;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.daw.gestion_alumnos.modelos.Alumno;
-import com.daw.gestion_alumnos.modelos.Asignatura;
-import com.daw.gestion_alumnos.modelos.Nota;
-import com.daw.gestion_alumnos.modelos.Perfil;
-import com.daw.gestion_alumnos.servicios.AlumnoService;
-import com.daw.gestion_alumnos.servicios.AsignaturaService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import com.daw.gestion_alumnos.modelos.Alumno;
+import com.daw.gestion_alumnos.modelos.Perfil;
+import com.daw.gestion_alumnos.servicios.AlumnoService;
+import com.daw.gestion_alumnos.servicios.PerfilService;
+
+import com.daw.gestion_alumnos.modelos.Asignatura;
+import com.daw.gestion_alumnos.modelos.Nota;
+import com.daw.gestion_alumnos.servicios.AsignaturaService;
 
 @Controller 
 @RequestMapping ("/alumno")
 public class AlumnoController {
 
     private final AlumnoService alumnoService;
+    private final PerfilService perfilService;
     private final AsignaturaService asignaturaService;
 
     public AlumnoController(AlumnoService alumnoService,
-        AsignaturaService asignaturaService) {
+        AsignaturaService asignaturaService,
+        PerfilService perfilService) {
         this.alumnoService = alumnoService;
         this.asignaturaService = asignaturaService;
+        this.perfilService = perfilService;
     }
 
     /* EndPoints */
@@ -125,6 +130,62 @@ public class AlumnoController {
 
         return "matriculas_alumnos";
     }
+
+    /* PERFIL */
+
+    // Obtener perfil de un alumno mediante su id
+    @GetMapping("/perfil/{id}")
+    public String verPerfil(@PathVariable Long id, Model modelo) {
+        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
+
+        // Si no hay un alumno con ese id
+        if (alumno.isEmpty() || alumno.get().getPerfil() == null) {
+            return "redirect:/alumno";
+        }
+
+        // el alumno con ese id existe, lo añadimos al modelo
+        modelo.addAttribute("alumno", alumno.get());
+
+        return "perfil_alumno";
+    }
+
+    // Nuevo perfil
+    @GetMapping("/perfil/nuevo")
+    public String nuevoPerfil(@RequestParam(required = false) Long id_alumno, Model modelo) {
+        Perfil perfil = new Perfil();
+
+        modelo.addAttribute("perfil", perfil);
+        modelo.addAttribute("id_alumno", id_alumno);
+
+        return "form_perfil";
+    }
+
+    // Guardar perfil
+    @PostMapping("/perfil/guardar")
+    public String guardarPerfil(@ModelAttribute Perfil perfil,
+        @RequestParam("id_alumno") Long id_alumno
+    ) {
+        
+        Alumno alumno = this.alumnoService.buscarPorId(id_alumno).get();
+
+        // Asignamos el perfil al alumno
+        alumno.setPerfil(perfil);
+
+        // Asignamos el alumno al perfil
+        perfil.setAlumno(alumno);
+
+        // Guardamos el alumno, no el perfil
+        this.alumnoService.guardar(alumno);
+        
+        return "redirect:/alumno";
+    }
+
+    // Modificar perfil
+
+    
+    // Eliminar perfil de un alumno mediante su id
+
+
 
     /* Pruebas */
     // De prueba
