@@ -45,3 +45,17 @@ print("\n--- Caracteres en índices impares ---")
 for i in range(1, len(contrasena), 2):
     print(contrasena[i])
 
+print("---------- Ejercicio 4 ----------")
+
+datos = [10, 25, -5, 40, 15, 80, 5, -20]
+
+for i in range(len(datos)):
+    if datos[i] < 0:
+        print("Saltando número negativo")
+        continue
+    elif datos[i] > 50:
+        print("Valor límite (50) alcanzado. Deteniendo")
+        break
+    else:
+        print(datos[i] * 2)
+
