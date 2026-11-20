@@ -152,6 +152,11 @@ public class AlumnoController {
     // Nuevo perfil
     @GetMapping("/perfil/nuevo")
     public String nuevoPerfil(@RequestParam(required = false) Long id_alumno, Model modelo) {
+        // Sin alumno asociado no se puede crear el perfil
+        if (id_alumno == null) {
+            return "redirect:/alumno";
+        }
+
         Perfil perfil = new Perfil();
 
         modelo.addAttribute("perfil", perfil);
@@ -160,32 +165,63 @@ public class AlumnoController {
         return "form_perfil";
     }
 
-    // Guardar perfil
+    // Guardar perfil (crear o modificar)
     @PostMapping("/perfil/guardar")
     public String guardarPerfil(@ModelAttribute Perfil perfil,
         @RequestParam("id_alumno") Long id_alumno
     ) {
-        
-        Alumno alumno = this.alumnoService.buscarPorId(id_alumno).get();
+        Optional<Alumno> alumnoOpt = this.alumnoService.buscarPorId(id_alumno);
 
-        // Asignamos el perfil al alumno
-        alumno.setPerfil(perfil);
+        if (alumnoOpt.isEmpty()) {
+            return "redirect:/alumno";
+        }
 
-        // Asignamos el alumno al perfil
-        perfil.setAlumno(alumno);
+        Alumno alumno = alumnoOpt.get();
+        Perfil perfilActual = alumno.getPerfil();
 
-        // Guardamos el alumno, no el perfil
-        this.alumnoService.guardar(alumno);
-        
-        return "redirect:/alumno";
+        if (perfilActual == null) {
+            // Perfil nuevo: lo asignamos al alumno
+            alumno.setPerfil(perfil);
+        } else {
+            // Perfil existente: conservamos su id para actualizarlo
+            perfil.setId_perfil(perfilActual.getId_perfil());
+            perfil.setAlumno(alumno);
+        }
+
+        // El perfil es el lado propietario de la relación, lo guardamos
+        this.perfilService.guardar(perfil);
+
+        return "redirect:/alumno/perfil/" + id_alumno;
     }
 
     // Modificar perfil
+    @GetMapping("/perfil/editar/{id}")
+    public String editarPerfil(@PathVariable Long id, Model modelo) {
+        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
 
-    
+        if (alumno.isEmpty() || alumno.get().getPerfil() == null) {
+            return "redirect:/alumno";
+        }
+
+        modelo.addAttribute("perfil", alumno.get().getPerfil());
+        modelo.addAttribute("id_alumno", id);
+
+        return "form_perfil";
+    }
+
     // Eliminar perfil de un alumno mediante su id
+    @GetMapping("/perfil/eliminar/{id}")
+    public String eliminarPerfil(@PathVariable Long id) {
+        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
 
+        if (alumno.isEmpty() || alumno.get().getPerfil() == null) {
+            return "redirect:/alumno";
+        }
 
+        this.perfilService.eliminar(alumno.get().getPerfil().getId_perfil());
+
+        return "redirect:/alumno";
+    }
 
     /* Pruebas */
     // De prueba

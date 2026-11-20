@@ -105,7 +105,9 @@ public class Alumno {
 
     public void setPerfil(Perfil perfil) {
         this.perfil = perfil;
-        perfil.setAlumno(this); // mantenemos sincronía
+        if (perfil != null) {
+            perfil.setAlumno(this); // mantenemos sincronía
+        }
     }
 
     public Set<Asignatura> getAsignaturas() { return asignaturas; }

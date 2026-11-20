@@ -40,6 +40,11 @@ public class Perfil {
     public String getFoto_url() { return foto_url; }
     public Alumno getAlumno() { return alumno; }
 
+    public void setId_perfil(Long id_perfil) { this.id_perfil = id_perfil; }
+    public void setDireccion(String direccion) { this.direccion = direccion; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+    public void setFoto_url(String foto_url) { this.foto_url = foto_url; }
+
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
     }

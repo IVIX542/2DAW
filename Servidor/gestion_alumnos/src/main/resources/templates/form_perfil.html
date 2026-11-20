@@ -23,7 +23,7 @@
 
                     <!-- Campos ID ocultos para editar -->
                     <input type="hidden" th:field="*{id_perfil}">
-                    <input  type="hidden" th:value="${id_alumno}">
+                    <input type="hidden" name="id_alumno" th:value="${id_alumno}">
 
                     <!-- Dirección -->
                     <div class="mb-3">
@@ -40,8 +40,8 @@
                     <!-- Foto del perfil -->
                     <div class="mb-3">
                         <label for="foto" class="form-label fw-bold">Foto de Perfil</label>
-                        <input type="file" id="foto" class="form-control" th:field="*{foto_url}" disabled>
-                        <p class="form-text">La subida de imágenes no está disponible en este momento.</p>
+                        <input type="text" id="foto" class="form-control" th:field="*{foto_url}" placeholder="Ej. foto-perfil.jpg">
+                        <p class="form-text">Introduce el nombre del archivo alojado en /static.</p>
                     </div>
 
                     <!-- Botones -->
