@@ -40,5 +40,23 @@ public class Asignatura {
     public String getCurso() { return curso; }
     public Set<Alumno> getAlumnos() { return alumnos; }
 
+    public void setId_asignatura(Long id_asignatura) {
+        this.id_asignatura = id_asignatura;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public void setAlumnos(Set<Alumno> alumnos) {
+        this.alumnos = alumnos;
+    }
+
+    
+
 
 }
