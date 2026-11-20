@@ -32,6 +32,16 @@ print(f"El número {num_usuario} es correcto!")
     
 print("---------- Ejercicio 3 ----------")
 contrasena = "Pyth0n_1nCr3íBl3"
-for i in contrasena:
-    if(i in('a', 'e', 'i', 'o', 'u')):
-        print(i)
+vocales = "aeiouAEIOUáéíóúÁÉÍÓÚ"
+
+# 1. Recorrido simple: imprime cada vocal encontrada en la cadena
+print("--- Vocales en la contraseña ---")
+for caracter in contrasena:
+    if caracter in vocales:
+        print(caracter)
+
+# 2. Recorrido con range(): imprime caracteres en índices impares (1, 3, 5, ...)
+print("\n--- Caracteres en índices impares ---")
+for i in range(1, len(contrasena), 2):
+    print(contrasena[i])
+
