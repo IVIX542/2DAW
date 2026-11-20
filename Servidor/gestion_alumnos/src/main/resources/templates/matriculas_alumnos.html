@@ -29,6 +29,13 @@
                             <tr th:each="asignatura: ${alumno.asignaturas}">
                                 <td>[[${asignatura.nombre}]]</td>
                                 <td>[[${asignatura.curso}]]</td>
+                                <td>
+                                    <a th:href="@{/alumno/matricula/eliminar/{idAlumno}/{idAsignatura}(idAlumno=${alumno.id_alumno}, idAsignatura=${asignatura.id_asignatura})}"
+                                        class="btn btn-sm btn-outline-danger"
+                                        onclick="return confirm('¿Seguro que quieres eliminar esta matrícula?');">
+                                        Eliminar
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -42,14 +49,11 @@
                 <div class="col-3 text-center">
                     <a th:href="@{/alumno}" class="btn btn-secondary">Volver</a>
                 </div>
-                 <!--
+                 
                 <div class="col-3 text-center">
                     <a th:href="@{/alumno/editar/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Modificar</a>
                 </div>
-                <div class="col-3 text-center">
-                    <a th:href="@{/alumno/eliminar/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Eliminar</a>
-                </div>
-            -->
+            
                 <div class="col-3 text-center">
                     <a th:href="@{/alumno/matricula/nueva/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Nueva matricula</a>
                 </div>

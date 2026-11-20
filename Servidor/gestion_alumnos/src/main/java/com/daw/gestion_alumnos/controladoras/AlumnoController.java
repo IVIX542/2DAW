@@ -238,36 +238,59 @@ public class AlumnoController {
     @GetMapping("/matricula/nueva/{id}")
     public String nuevaMatricula(@PathVariable Long id, Model modelo) {
         Optional<Alumno> alumnoOpt = this.alumnoService.buscarPorId(id);
-    
+
         if (alumnoOpt.isEmpty()) {
             return "redirect:/alumno";
         }
-    
+
         modelo.addAttribute("alumno", alumnoOpt.get());
         modelo.addAttribute("listaAsignaturas", this.asignaturaService.listarTodas());
-    
+
         return "form_matricula";
     }
-    
+
     // Guardar la nueva matrícula
     @PostMapping("/matricula/guardar")
     public String guardarMatricula(@RequestParam("id_alumno") Long idAlumno,  @RequestParam("id_asignatura") Long idAsignatura) {
         Optional<Alumno> alumnoOpt = this.alumnoService.buscarPorId(idAlumno);
         Optional<Asignatura> asignaturaOpt = this.asignaturaService.buscarPorId(idAsignatura);
-    
+
         if (alumnoOpt.isEmpty() || asignaturaOpt.isEmpty()) {
             return "redirect:/alumno";
         }
-    
+
         Alumno alumno = alumnoOpt.get();
         Asignatura asignatura = asignaturaOpt.get();
-    
+
         // Reutiliza el método de relación N:N que ya tienes en Alumno
         alumno.matricularEn(asignatura);
         this.alumnoService.guardar(alumno);
-    
+
         return "redirect:/alumno/matriculas/" + idAlumno;
     }
+
+    // Eliminar (desmatricular) una asignatura de un alumno
+    @GetMapping("/matricula/eliminar/{idAlumno}/{idAsignatura}")
+    public String eliminarMatricula(@PathVariable Long idAlumno,  @PathVariable Long idAsignatura) {
+        Optional<Alumno> alumnoOpt = this.alumnoService.buscarPorId(idAlumno);
+        Optional<Asignatura> asignaturaOpt = this.asignaturaService.buscarPorId(idAsignatura);
+
+        if (alumnoOpt.isEmpty() || asignaturaOpt.isEmpty()) {
+            return "redirect:/alumno";
+        }
+
+        Alumno alumno = alumnoOpt.get();
+        Asignatura asignatura = asignaturaOpt.get();
+
+        alumno.desmatricularDe(asignatura);
+        this.alumnoService.guardar(alumno);
+
+        return "redirect:/alumno/matriculas/" + idAlumno;
+    }
+
+
+
+
 
     /* Pruebas */
     // De prueba
