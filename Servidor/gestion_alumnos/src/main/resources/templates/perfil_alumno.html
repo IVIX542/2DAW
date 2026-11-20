@@ -39,7 +39,7 @@
                     <a th:href="@{/alumno/perfil/editar/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Modificar</a>
                 </div>
                 <div class="col-3 text-center">
-                    <a th:href="@{/alumno/perfil/eliminar/{id}(id=${alumno.id_alumno})}" class="btn btn-secondary">Eliminar</a>
+                    <a th:href="@{/alumno/perfil/eliminar/{id}(id=${alumno.id_alumno})}" class="btn btn-outline-danger" onclick="return confirm('¿Seguro que quieres eliminar el perfil?')">Eliminar</a>
                 </div>
             </div>
         </div>

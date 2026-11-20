@@ -212,15 +212,25 @@ public class AlumnoController {
     // Eliminar perfil de un alumno mediante su id
     @GetMapping("/perfil/eliminar/{id}")
     public String eliminarPerfil(@PathVariable Long id) {
-        Optional<Alumno> alumno = this.alumnoService.buscarPorId(id);
+        Optional<Alumno> alumnoOpt = this.alumnoService.buscarPorId(id);
 
-        if (alumno.isEmpty() || alumno.get().getPerfil() == null) {
+        if (alumnoOpt.isEmpty() || alumnoOpt.get().getPerfil() == null) {
             return "redirect:/alumno";
         }
 
-        this.perfilService.eliminar(alumno.get().getPerfil().getId_perfil());
+        // Creamos un alumno y un perfil
+        Alumno alumno = alumnoOpt.get();
+        Perfil perfil = alumno.getPerfil();
 
-        return "redirect:/alumno";
+        // Desvinculamos ambos lados de la relación
+        alumno.setPerfil(null);
+        perfil.setAlumno(null);
+
+        // Guardamos el alumno para actualizar la referencia y borramos el perfil
+        this.alumnoService.guardar(alumno);
+        this.perfilService.eliminar(perfil.getId_perfil());
+
+        return "redirect:/alumno/";
     }
 
     /* Pruebas */
