@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario asignatura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <div th:replace="~{fragmentos/fragmento :: barra_nav}"></div>
+
+    <div class="container mt-5 pt-3">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 col-md-5 col-lg-4">
+
+                <h1 class="display-6 text-center mb-4">Datos de la asignatura</h1>
+
+                <form th:action="@{/asignatura/guardar}" th:object="${asignatura}" method="post">
+                    <input type="hidden" th:field="*{id_asignatura}">
+
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label fw-bold">Nombre</label>
+                        <input type="text" id="nombre" class="form-control" th:field="*{nombre}" placeholder="Ej. Acceso a Datos" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="curso" class="form-label fw-bold">Curso</label>
+                        <input type="text" id="curso" class="form-control" th:field="*{curso}" placeholder="Ej. 2º DAW">
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a th:href="@{/asignatura}" class="btn btn-outline-secondary">Volver</a>
+                        <button type="submit" class="btn btn-secondary">Guardar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
