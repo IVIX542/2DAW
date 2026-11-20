@@ -49,7 +49,7 @@ print("---------- Ejercicio 4 ----------")
 
 datos = [10, 25, -5, 40, 15, 80, 5, -20]
 
-for i in range(len(datos)):
+for i in range(len(datos)): # Recorrer la longitud del array, no lo que contiene
     if datos[i] < 0:
         print("Saltando número negativo")
         continue
@@ -59,3 +59,16 @@ for i in range(len(datos)):
     else:
         print(datos[i] * 2)
 
+print("---------- Ejercicio 5 ----------")
+tareas = ["Conectar", "Autenticar", "Procesar_Lote_1", "Procesar_Lote_2", "Finalizar"]
+
+tareas_iter = iter(tareas)
+
+print(next(tareas_iter))
+print(next(tareas_iter))
+print("---Pausando procesamiento---")
+print(next(tareas_iter))
+print(next(tareas_iter))
+print(next(tareas_iter))
+
+# print(next(tareas_iter)) # Salta excepción StopIteration, no hay más iteraciones disponibles
