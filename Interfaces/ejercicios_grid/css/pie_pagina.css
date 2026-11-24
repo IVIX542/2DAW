@@ -1,13 +1,9 @@
 * {
-    padding: 0;
-
     margin: 0;
-
+    padding: 0;
     box-sizing: border-box;
-
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-    color: #fff;
+    color: #FFF;
 }
 
 body {
@@ -25,9 +21,11 @@ a {
 a:hover {
     color: #4da1fa;
 }
+
 footer {
     background: #222;
     padding: 50px 100px;
+    display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 20px;
 }
@@ -37,4 +35,52 @@ footer h2 {
     font-weight: 400;
     letter-spacing: 1px;
     margin: 15px 0;
+}
+
+/* RRSS */
+
+.sociales {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.sociales a {
+    width: 50px;
+    height: 50px;
+    background: #555;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: grid;
+    place-items: center;
+    transition: all .5s;
+}
+
+.sociales a:hover {
+    background: #333;
+}
+
+/* li */
+li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+/* Contacto */
+.contacto div {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin: 10px 0;
+}
+
+.copy {
+    background: #111;
+    height: 50px;
+    display: grid;
+    place-items: center;
 }
