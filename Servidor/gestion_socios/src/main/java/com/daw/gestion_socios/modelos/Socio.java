@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -19,6 +20,9 @@ public class Socio {
 
     @OneToMany (mappedBy = "socio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Cuota> cuotas;
+
+    @OneToOne (mappedBy = "socio", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Carnet carnet;
 
     @Id 
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -42,11 +46,29 @@ public class Socio {
     @Column (nullable = false)
     private LocalDate fecha_alta;
 
+    /* CONSTRUCTORES */
+    public Socio(List<Cuota> cuotas, Carnet carnet, Long id, String nombre, String apellidos, String dni,
+            String telefono, String email, LocalDate fecha_alta) {
+        this.cuotas = cuotas;
+        this.carnet = carnet;
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.email = email;
+        this.fecha_alta = fecha_alta;
+    }
+
+    public Socio() {
+    }
+    
     /* GETTERS Y SETTERS */
 
     public List<Cuota> getCuotas() {
         return cuotas;
     }
+
 
     public void setCuotas(List<Cuota> cuotas) {
         this.cuotas = cuotas;

@@ -44,6 +44,17 @@ public class Cuota {
     @Column
     private LocalDate fecha_pago;
 
+    /* CONSTRUCTORES */
+    public Cuota(Socio socio, Long id, Integer anio, Float importe, LocalDate fecha_pago) {
+        this.socio = socio;
+        this.id = id;
+        this.anio = anio;
+        this.importe = importe;
+        this.fecha_pago = fecha_pago;
+    }
+
+    public Cuota() {
+    }
 
     /* GETTERS Y SETTERS */
 

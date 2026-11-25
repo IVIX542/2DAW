@@ -32,11 +32,24 @@ public class Carnet {
     @Column (nullable = false)
     private LocalDate fecha_caducidad;
 
+    /* CONSTRUCTORES */
+    public Carnet() {
+    }
+    
+    public Carnet(Socio socio, Long id, String numero, LocalDate fecha_emision, LocalDate fecha_caducidad) {
+        this.socio = socio;
+        this.id = id;
+        this.numero = numero;
+        this.fecha_emision = fecha_emision;
+        this.fecha_caducidad = fecha_caducidad;
+    }
+
     /* GETTERS Y SETTERS */
 
     public Socio getSocio() {
         return socio;
     }
+
 
     public void setSocio(Socio socio) {
         this.socio = socio;
