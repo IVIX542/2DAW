@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tablero de tareas</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="js/tablero.js" defer></script>
+</head>
+<body class="bg-slate-100 p-6 text-slate-900">
+    <main class="mx-auto max-w-5xl">
+        <h1 class="mb-6 text-3xl font-bold">Tablero de tareas</h1>
+        <div class="grid gap-4 md:grid-cols-3">
+            <section id="parahacer" class="columna min-h-64 rounded-lg bg-slate-200 p-4">
+                <h2 class="mb-4 text-xl font-semibold">Pendientes</h2>
+                <div id="tarea-1" draggable="true"
+                     class="tarea mb-2 cursor-grab rounded bg-white p-3 shadow">
+                    Estudiar eventos
+                </div>
+                <div id="tarea-2" draggable="true"
+                     class="tarea mb-2 cursor-grab rounded bg-white p-3 shadow">
+                    Hacer la compra
+                </div>
+            </section>
+            <section id="enproceso" class="columna min-h-64 rounded-lg bg-slate-200 p-4">
+                <h2 class="mb-4 text-xl font-semibold">En proceso</h2>
+            </section>
+            <section id="finalizadas" class="columna min-h-64 rounded-lg bg-slate-200 p-4">
+                <h2 class="mb-4 text-xl font-semibold">Terminado</h2>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
