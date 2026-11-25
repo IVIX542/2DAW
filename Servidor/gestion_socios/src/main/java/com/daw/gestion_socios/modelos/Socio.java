@@ -1,5 +1,7 @@
 package com.daw.gestion_socios.modelos;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,7 +26,13 @@ public class Socio {
     @Column (nullable = false, length = 10, unique = true)
     private String dni;
 
-    @Column
+    @Column (length = 15)
+    private String telefono;
 
+    @Column (length = 100)
+    private String email;
+
+    @Column (nullable = false)
+    private LocalDate fecha_alta;
 
 }
