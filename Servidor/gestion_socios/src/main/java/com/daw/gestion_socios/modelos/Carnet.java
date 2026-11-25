@@ -32,4 +32,49 @@ public class Carnet {
     @Column (nullable = false)
     private LocalDate fecha_caducidad;
 
+    /* GETTERS Y SETTERS */
+
+    public Socio getSocio() {
+        return socio;
+    }
+
+    public void setSocio(Socio socio) {
+        this.socio = socio;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public LocalDate getFecha_emision() {
+        return fecha_emision;
+    }
+
+    public void setFecha_emision(LocalDate fecha_emision) {
+        this.fecha_emision = fecha_emision;
+    }
+
+    public LocalDate getFecha_caducidad() {
+        return fecha_caducidad;
+    }
+
+    public void setFecha_caducidad(LocalDate fecha_caducidad) {
+        this.fecha_caducidad = fecha_caducidad;
+    }
+
+
+
+    
 }
