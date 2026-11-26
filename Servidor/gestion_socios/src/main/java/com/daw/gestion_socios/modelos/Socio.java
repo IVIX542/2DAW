@@ -1,7 +1,9 @@
 package com.daw.gestion_socios.modelos;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -10,6 +12,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -24,9 +29,17 @@ public class Socio {
     @OneToOne (mappedBy = "socio", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Carnet carnet;
 
+    @ManyToMany 
+    @JoinTable (
+        name = "socios_actividades",
+        joinColumns = @JoinColumn (name = "socio_id"),
+        inverseJoinColumns = @JoinColumn (name = "actividad_id")
+    )
+    private Set<Actividad> actividades = new HashSet<>();
+
     @Id 
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long socio_id;
 
     @Column (nullable = false, length = 100)
     private String nombre;
@@ -47,11 +60,11 @@ public class Socio {
     private LocalDate fecha_alta;
 
     /* CONSTRUCTORES */
-    public Socio(List<Cuota> cuotas, Carnet carnet, Long id, String nombre, String apellidos, String dni,
+    public Socio(List<Cuota> cuotas, Carnet carnet, Long socio_id, String nombre, String apellidos, String dni,
             String telefono, String email, LocalDate fecha_alta) {
         this.cuotas = cuotas;
         this.carnet = carnet;
-        this.id = id;
+        this.socio_id = socio_id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.dni = dni;
@@ -75,11 +88,11 @@ public class Socio {
     }
 
     public Long getId() {
-        return id;
+        return socio_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long socio_id) {
+        this.socio_id = socio_id;
     }
 
     public String getNombre() {
