@@ -15,4 +15,8 @@ apellidos = apellidos.title()
 nombre = nombre.strip()
 apellidos = apellidos.strip()
 
-print("Nombre:", nombre, apellidos)
+nombre_completo = nombre + " " + apellidos
+
+longitud_nombre_completo = len(nombre_completo)
+
+print("Longitud nombre completo:", longitud_nombre_completo)
