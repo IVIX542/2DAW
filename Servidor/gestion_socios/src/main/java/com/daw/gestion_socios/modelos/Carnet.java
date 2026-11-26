@@ -21,7 +21,7 @@ public class Carnet {
 
     @Id 
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long carnet_id;
 
     @Column (length = 20, unique = true, nullable = false)
     private String numero;
@@ -36,9 +36,9 @@ public class Carnet {
     public Carnet() {
     }
     
-    public Carnet(Socio socio, Long id, String numero, LocalDate fecha_emision, LocalDate fecha_caducidad) {
+    public Carnet(Socio socio, Long carnet_id, String numero, LocalDate fecha_emision, LocalDate fecha_caducidad) {
         this.socio = socio;
-        this.id = id;
+        this.carnet_id = carnet_id;
         this.numero = numero;
         this.fecha_emision = fecha_emision;
         this.fecha_caducidad = fecha_caducidad;
@@ -56,11 +56,11 @@ public class Carnet {
     }
 
     public Long getId() {
-        return id;
+        return carnet_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long carnet_id) {
+        this.carnet_id = carnet_id;
     }
 
     public String getNumero() {
