@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/fragments :: head('Formulario de actividad')}"></head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+    <div th:replace="~{fragments/fragments :: barra_nav}"></div>
+    <main class="mx-auto max-w-2xl px-6 py-10">
+        <div class="mb-8">
+            <p class="text-sm font-semibold uppercase tracking-wider text-blue-700">Actividades</p>
+            <h1 class="mt-1 text-3xl font-bold"
+                th:text="${actividad.id == null ? 'Nueva actividad' : 'Editar actividad'}"></h1>
+        </div>
+
+        <form class="space-y-5 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
+              th:action="@{/actividad/guardar}" th:object="${actividad}" method="post">
+            <input type="hidden" th:field="*{id}">
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="nombre">Nombre</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3"
+                       id="nombre" th:field="*{nombre}" required>
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="descripcion">Descripción</label>
+                <textarea class="w-full rounded-xl border border-slate-300 px-4 py-3"
+                          id="descripcion" th:field="*{descripcion}" rows="4"></textarea>
+            </div>
+
+            <div class="flex justify-end gap-3 pt-2">
+                <a class="rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50"
+                   th:href="@{/actividad}">Cancelar</a>
+                <button class="rounded-xl bg-blue-700 px-5 py-3 font-semibold text-white hover:bg-blue-800"
+                        type="submit">Guardar</button>
+            </div>
+        </form>
+    </main>
+    <div th:replace="~{fragments/fragments :: pie_pagina}"></div>
+</body>
+</html>

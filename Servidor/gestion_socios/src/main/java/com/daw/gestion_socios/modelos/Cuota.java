@@ -21,7 +21,7 @@ public class Cuota {
 
     // Relación N a 0
     @ManyToOne
-    @JoinColumn (name = "socio_id", unique = true) // Clave foránea
+    @JoinColumn (name = "socio_id", nullable = false, unique = true) // NOTE: DEJARLO ASÍ
     private Socio socio;
 
     /**
@@ -33,7 +33,7 @@ public class Cuota {
     private Long id;
 
     // Año
-    @Column (nullable = false, unique = true)
+    @Column (nullable = false, unique = true ) // NOTE: DEJARLO ASÍ
     private Integer anio;
 
     // Importe

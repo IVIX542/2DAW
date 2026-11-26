@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/fragments :: head('Ficha del socio')}"></head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+    <div th:replace="~{fragments/fragments :: barra_nav}"></div>
+    <main class="mx-auto max-w-5xl px-6 py-10">
+        <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <div>
+                <p class="text-sm font-semibold uppercase tracking-wider text-blue-700">Ficha del socio</p>
+                <h1 class="mt-1 text-3xl font-bold"
+                    th:text="${socio.nombre + ' ' + socio.apellidos}"></h1>
+            </div>
+            <a class="rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-white"
+               th:href="@{/socio}">Volver a socios</a>
+        </div>
+
+        <section class="mb-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 class="mb-4 text-xl font-bold">Datos personales</h2>
+            <dl class="grid gap-4 sm:grid-cols-2">
+                <div>
+                    <dt class="text-sm text-slate-500">DNI</dt>
+                    <dd class="font-medium" th:text="${socio.dni}"></dd>
+                </div>
+                <div>
+                    <dt class="text-sm text-slate-500">Teléfono</dt>
+                    <dd class="font-medium" th:text="${socio.telefono ?: 'No indicado'}"></dd>
+                </div>
+                <div>
+                    <dt class="text-sm text-slate-500">Email</dt>
+                    <dd class="font-medium" th:text="${socio.email ?: 'No indicado'}"></dd>
+                </div>
+                <div>
+                    <dt class="text-sm text-slate-500">Fecha de alta</dt>
+                    <dd class="font-medium" th:text="${socio.fecha_alta}"></dd>
+                </div>
+            </dl>
+        </section>
+
+        <div class="grid gap-6 lg:grid-cols-2">
+            <section class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+                <h2 class="mb-4 text-xl font-bold">Cuotas</h2>
+                <ul class="space-y-3">
+                    <li th:each="cuota : ${socio.cuotas}"
+                        class="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-slate-50 px-4 py-3">
+                        <span class="font-medium" th:text="${cuota.anio}"></span>
+                        <span th:text="${cuota.importe + ' EUR'}"></span>
+                        <span class="rounded-full px-3 py-1 text-sm"
+                              th:classappend="${cuota.fecha_pago == null} ? ' bg-amber-100 text-amber-800' : ' bg-emerald-100 text-emerald-800'"
+                              th:text="${cuota.fecha_pago == null ? 'Pendiente' : 'Pagada'}"></span>
+                    </li>
+                    <li th:if="${socio.cuotas.isEmpty()}" class="text-slate-500">
+                        Este socio todavía no tiene cuotas.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+                <h2 class="mb-4 text-xl font-bold">Carnet</h2>
+                <p th:if="${socio.carnet == null}" class="mb-4 text-slate-500">Sin carnet emitido.</p>
+                <div th:if="${socio.carnet != null}" class="space-y-4">
+                    <p class="font-medium" th:text="${'Número: ' + socio.carnet.numero}"></p>
+                    <form class="space-y-4"
+                          th:action="@{/carnet/renovar/{id}(id=${socio.carnet.id})}" method="post">
+                        <div>
+                            <label class="mb-1 block text-sm font-semibold" for="fechaEmision">Fecha de emisión</label>
+                            <input class="w-full rounded-xl border border-slate-300 px-4 py-3"
+                                   id="fechaEmision" name="fechaEmision" type="date"
+                                   th:value="${socio.carnet.fecha_emision}" required>
+                        </div>
+                        <div>
+                            <label class="mb-1 block text-sm font-semibold" for="fechaCaducidad">Fecha de caducidad</label>
+                            <input class="w-full rounded-xl border border-slate-300 px-4 py-3"
+                                   id="fechaCaducidad" name="fechaCaducidad" type="date"
+                                   th:value="${socio.carnet.fecha_caducidad}" required>
+                        </div>
+                        <button class="rounded-xl bg-blue-700 px-5 py-3 font-semibold text-white hover:bg-blue-800"
+                                type="submit">Renovar carnet</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+            <h2 class="mb-4 text-xl font-bold">Actividades</h2>
+            <div class="flex flex-wrap gap-2">
+                <span th:each="actividad : ${socio.actividades}"
+                      class="rounded-full bg-blue-50 px-4 py-2 font-medium text-blue-800"
+                      th:text="${actividad.nombre}"></span>
+                <p th:if="${socio.actividades.isEmpty()}" class="text-slate-500">
+                    Este socio no participa en actividades.
+                </p>
+            </div>
+        </section>
+    </main>
+    <div th:replace="~{fragments/fragments :: pie_pagina}"></div>
+</body>
+</html>

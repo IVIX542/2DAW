@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/fragments :: head('Socios')}"></head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+    <div th:replace="~{fragments/fragments :: barra_nav}"></div>
+    <main class="mx-auto max-w-7xl px-6 py-10">
+        <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <div>
+                <p class="text-sm font-semibold uppercase tracking-wider text-blue-700">Club</p>
+                <h1 class="mt-1 text-3xl font-bold">Socios</h1>
+            </div>
+            <a class="rounded-xl bg-blue-700 px-5 py-3 font-semibold text-white shadow hover:bg-blue-800"
+               th:href="@{/socio/nuevo}">
+                Nuevo socio
+            </a>
+        </div>
+
+        <p th:if="${param.error != null}"
+           class="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-800">
+            No se puede eliminar el socio porque tiene cuotas, carnet o actividades asociadas.
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+            <table class="w-full text-left text-sm">
+                <thead class="bg-slate-100 text-xs uppercase tracking-wider text-slate-600">
+                    <tr>
+                        <th class="px-6 py-4">Nombre</th>
+                        <th class="px-6 py-4">DNI</th>
+                        <th class="px-6 py-4">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr th:each="socio : ${socios}" class="hover:bg-slate-50">
+                        <td class="px-6 py-4 font-medium"
+                            th:text="${socio.nombre + ' ' + socio.apellidos}"></td>
+                        <td class="px-6 py-4 text-slate-600" th:text="${socio.dni}"></td>
+                        <td class="px-6 py-4">
+                            <div class="flex flex-wrap gap-2">
+                                <a class="rounded-lg bg-slate-100 px-3 py-2 font-medium hover:bg-slate-200"
+                                   th:href="@{/socio/{id}(id=${socio.id})}">Ficha</a>
+                                <a class="rounded-lg bg-blue-50 px-3 py-2 font-medium text-blue-800 hover:bg-blue-100"
+                                   th:href="@{/socio/editar/{id}(id=${socio.id})}">Editar</a>
+                                <form th:action="@{/socio/eliminar/{id}(id=${socio.id})}" method="post">
+                                    <button class="rounded-lg bg-red-50 px-3 py-2 font-medium text-red-700 hover:bg-red-100"
+                                            type="submit">Eliminar</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr th:if="${socios.isEmpty()}">
+                        <td class="px-6 py-10 text-center text-slate-500" colspan="3">
+                            Todavía no hay socios registrados.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <div th:replace="~{fragments/fragments :: pie_pagina}"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/fragments :: head('Nueva cuota')}"></head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+    <div th:replace="~{fragments/fragments :: barra_nav}"></div>
+    <main class="mx-auto max-w-2xl px-6 py-10">
+        <div class="mb-8">
+            <p class="text-sm font-semibold uppercase tracking-wider text-blue-700">Cuotas</p>
+            <h1 class="mt-1 text-3xl font-bold">Crear cuota anual</h1>
+        </div>
+
+        <p th:if="${param.error != null}"
+           class="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-800">
+            Ya existe una cuota para ese socio y año.
+        </p>
+
+        <form class="space-y-5 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
+              th:action="@{/cuota/guardar}" method="post">
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="socioId">Socio</label>
+                <select class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3"
+                        id="socioId" name="socioId" required>
+                    <option value="" selected disabled>Selecciona un socio</option>
+                    <option th:each="socio : ${socios}" th:value="${socio.id}"
+                            th:text="${socio.nombre + ' ' + socio.apellidos}"></option>
+                </select>
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="anio">Año</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3"
+                       id="anio" name="anio" type="number" required>
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="importe">Importe</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3"
+                       id="importe" name="importe" type="number" step="0.01" min="0" required>
+            </div>
+
+            <div class="flex justify-end gap-3 pt-2">
+                <a class="rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50"
+                   th:href="@{/cuota}">Cancelar</a>
+                <button class="rounded-xl bg-blue-700 px-5 py-3 font-semibold text-white hover:bg-blue-800"
+                        type="submit">Crear cuota</button>
+            </div>
+        </form>
+    </main>
+    <div th:replace="~{fragments/fragments :: pie_pagina}"></div>
+</body>
+</html>

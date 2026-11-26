@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/fragments :: head('Emitir carnet')}"></head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+    <div th:replace="~{fragments/fragments :: barra_nav}"></div>
+    <main class="mx-auto max-w-2xl px-6 py-10">
+        <div class="mb-8">
+            <p class="text-sm font-semibold uppercase tracking-wider text-blue-700">Carnets</p>
+            <h1 class="mt-1 text-3xl font-bold">Emitir carnet</h1>
+        </div>
+
+        <p th:if="${param.error != null and param.error[0] == 'socio-con-carnet'}"
+           class="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-800">
+            El socio ya tiene carnet.
+        </p>
+        <p th:if="${param.error != null and param.error[0] == 'numero-duplicado'}"
+           class="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-800">
+            El número de carnet ya está registrado.
+        </p>
+
+        <form class="space-y-5 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
+              th:action="@{/carnet/guardar}" method="post">
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="socioId">Socio</label>
+                <select class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3"
+                        id="socioId" name="socioId" required>
+                    <option value="" selected disabled>Selecciona un socio</option>
+                    <option th:each="socio : ${socios}" th:value="${socio.id}"
+                            th:text="${socio.nombre + ' ' + socio.apellidos}"
+                            th:disabled="${socio.carnet != null}"></option>
+                </select>
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="numero">Número</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3"
+                       id="numero" name="numero" required>
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="fechaEmision">Fecha de emisión</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3"
+                       id="fechaEmision" name="fechaEmision" type="date" required>
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="fechaCaducidad">Fecha de caducidad</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3"
+                       id="fechaCaducidad" name="fechaCaducidad" type="date" required>
+            </div>
+
+            <div class="flex justify-end gap-3 pt-2">
+                <a class="rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50"
+                   th:href="@{/socio}">Cancelar</a>
+                <button class="rounded-xl bg-blue-700 px-5 py-3 font-semibold text-white hover:bg-blue-800"
+                        type="submit">Emitir carnet</button>
+            </div>
+        </form>
+    </main>
+    <div th:replace="~{fragments/fragments :: pie_pagina}"></div>
+</body>
+</html>

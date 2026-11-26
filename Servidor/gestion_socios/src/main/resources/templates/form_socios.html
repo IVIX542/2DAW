@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/fragments :: head('Formulario de socio')}"></head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+    <div th:replace="~{fragments/fragments :: barra_nav}"></div>
+    <main class="mx-auto max-w-3xl px-6 py-10">
+        <div class="mb-8">
+            <p class="text-sm font-semibold uppercase tracking-wider text-blue-700">Socios</p>
+            <h1 class="mt-1 text-3xl font-bold"
+                th:text="${socio.id == null ? 'Nuevo socio' : 'Editar socio'}"></h1>
+        </div>
+
+        <p th:if="${param.error != null}"
+           class="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-800">
+            El DNI ya está registrado.
+        </p>
+
+        <form class="space-y-5 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200"
+              th:action="@{/socio/guardar}" th:object="${socio}" method="post">
+            <input type="hidden" th:field="*{id}">
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="nombre">Nombre</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-600 focus:outline-none"
+                       id="nombre" th:field="*{nombre}" required>
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="apellidos">Apellidos</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-600 focus:outline-none"
+                       id="apellidos" th:field="*{apellidos}" required>
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="dni">DNI</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-600 focus:outline-none"
+                       id="dni" th:field="*{dni}" required>
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="telefono">Teléfono</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-600 focus:outline-none"
+                       id="telefono" th:field="*{telefono}">
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="email">Email</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-600 focus:outline-none"
+                       id="email" th:field="*{email}" type="email">
+            </div>
+
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="fecha_alta">Fecha de alta</label>
+                <input class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-blue-600 focus:outline-none"
+                       id="fecha_alta" th:field="*{fecha_alta}" type="date" required>
+            </div>
+
+            <div class="flex justify-end gap-3 pt-2">
+                <a class="rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50"
+                   th:href="@{/socio}">Cancelar</a>
+                <button class="rounded-xl bg-blue-700 px-5 py-3 font-semibold text-white hover:bg-blue-800"
+                        type="submit">Guardar</button>
+            </div>
+        </form>
+    </main>
+    <div th:replace="~{fragments/fragments :: pie_pagina}"></div>
+</body>
+</html>

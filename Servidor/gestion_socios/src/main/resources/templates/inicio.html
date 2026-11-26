@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/fragments :: head('Inicio')}"></head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+    <div th:replace="~{fragments/fragments :: barra_nav}"></div>
+    <main class="mx-auto max-w-7xl px-6 py-16">
+        <section class="rounded-3xl bg-gradient-to-br from-blue-950 to-slate-800 px-8 py-16 text-white shadow-xl md:px-14">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-200">Administración del club</p>
+            <h1 class="max-w-2xl text-4xl font-bold leading-tight md:text-5xl">Gestión de socios, cuotas y actividades</h1>
+            <p class="mt-5 max-w-2xl text-lg text-slate-200">
+                Consulta los socios y organiza sus cuotas, carnets y actividades desde un solo lugar.
+            </p>
+            <a class="mt-8 inline-flex rounded-xl bg-white px-5 py-3 font-semibold text-blue-950 shadow hover:bg-blue-50"
+               th:href="@{/socio}">
+                Ver socios
+            </a>
+        </section>
+    </main>
+    <div th:replace="~{fragments/fragments :: pie_pagina}"></div>
+</body>
+</html>

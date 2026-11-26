@@ -28,4 +28,39 @@ public class Actividad {
     @Column (length = 255)
     private String descripcion;
 
+    public Actividad() {
+    }
+
+    public Long getId() {
+        return actividad_id;
+    }
+
+    public void setId(Long actividad_id) {
+        this.actividad_id = actividad_id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Set<Socio> getSocios() {
+        return socios;
+    }
+
+    public void setSocios(Set<Socio> socios) {
+        this.socios = socios;
+    }
+
 }

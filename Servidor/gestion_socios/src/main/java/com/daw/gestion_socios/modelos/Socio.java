@@ -87,6 +87,22 @@ public class Socio {
         this.cuotas = cuotas;
     }
 
+    public Carnet getCarnet() {
+        return carnet;
+    }
+
+    public void setCarnet(Carnet carnet) {
+        this.carnet = carnet;
+    }
+
+    public Set<Actividad> getActividades() {
+        return actividades;
+    }
+
+    public void setActividades(Set<Actividad> actividades) {
+        this.actividades = actividades;
+    }
+
     public Long getId() {
         return socio_id;
     }

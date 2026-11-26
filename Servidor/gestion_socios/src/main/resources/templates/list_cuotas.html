@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/fragments :: head('Cuotas')}"></head>
+<body class="min-h-screen bg-slate-50 text-slate-800">
+    <div th:replace="~{fragments/fragments :: barra_nav}"></div>
+    <main class="mx-auto max-w-7xl px-6 py-10">
+        <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <div>
+                <p class="text-sm font-semibold uppercase tracking-wider text-blue-700">Gestión económica</p>
+                <h1 class="mt-1 text-3xl font-bold">Cuotas</h1>
+            </div>
+            <a class="rounded-xl bg-blue-700 px-5 py-3 font-semibold text-white shadow hover:bg-blue-800"
+               th:href="@{/cuota/nuevo}">Nueva cuota</a>
+        </div>
+
+        <form class="mb-6 flex flex-wrap items-end gap-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200"
+              th:action="@{/cuota}" method="get">
+            <div>
+                <label class="mb-1 block text-sm font-semibold" for="anio">Año</label>
+                <input class="rounded-xl border border-slate-300 px-4 py-3"
+                       id="anio" type="number" name="anio" th:value="${anio}">
+            </div>
+            <label class="flex items-center gap-2 pb-3 font-medium">
+                <input class="h-4 w-4 accent-blue-700" type="checkbox" name="pendientes"
+                       value="true" th:checked="${pendientes}">
+                Solo pendientes
+            </label>
+            <button class="rounded-xl bg-slate-800 px-5 py-3 font-semibold text-white hover:bg-slate-700"
+                    type="submit">Consultar</button>
+        </form>
+
+        <div class="overflow-x-auto rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+            <table class="w-full text-left text-sm">
+                <thead class="bg-slate-100 text-xs uppercase tracking-wider text-slate-600">
+                    <tr>
+                        <th class="px-6 py-4">Socio</th>
+                        <th class="px-6 py-4">Año</th>
+                        <th class="px-6 py-4">Importe</th>
+                        <th class="px-6 py-4">Estado</th>
+                        <th class="px-6 py-4">Registrar pago</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr th:each="cuota : ${cuotas}" class="hover:bg-slate-50">
+                        <td class="px-6 py-4 font-medium"
+                            th:text="${cuota.socio.nombre + ' ' + cuota.socio.apellidos}"></td>
+                        <td class="px-6 py-4" th:text="${cuota.anio}"></td>
+                        <td class="px-6 py-4" th:text="${cuota.importe + ' EUR'}"></td>
+                        <td class="px-6 py-4">
+                            <span class="rounded-full px-3 py-1 text-xs font-semibold"
+                                  th:classappend="${cuota.fecha_pago == null} ? ' bg-amber-100 text-amber-800' : ' bg-emerald-100 text-emerald-800'"
+                                  th:text="${cuota.fecha_pago == null ? 'Pendiente' : 'Pagada'}"></span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <form th:if="${cuota.fecha_pago == null}"
+                                  th:action="@{/cuota/pagar/{id}(id=${cuota.id})}" method="post"
+                                  class="flex flex-wrap items-center gap-2">
+                                <input class="rounded-lg border border-slate-300 px-3 py-2"
+                                       type="date" name="fechaPago" required>
+                                <button class="rounded-lg bg-emerald-700 px-3 py-2 font-semibold text-white hover:bg-emerald-800"
+                                        type="submit">Pagar</button>
+                            </form>
+                            <span th:if="${cuota.fecha_pago != null}"
+                                  class="text-slate-500" th:text="${cuota.fecha_pago}"></span>
+                        </td>
+                    </tr>
+                    <tr th:if="${cuotas.isEmpty()}">
+                        <td class="px-6 py-10 text-center text-slate-500" colspan="5">
+                            No hay cuotas para los filtros seleccionados.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <div th:replace="~{fragments/fragments :: pie_pagina}"></div>
+</body>
+</html>
