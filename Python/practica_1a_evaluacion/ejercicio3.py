@@ -26,7 +26,7 @@ if nombre_existe:
 else:
     print(f"El alumno '{nombre}' no existe")
 
-print("---------------------------------- Apartado B ----------------------------------")
+print("-------------------------------- Apartado B y C --------------------------------")
 # Recorrer el diccionario de estudiantes para calcular su media
 
 # Declarar variables
@@ -45,4 +45,18 @@ for nombre, notas in estudiantes.items():
     media = suma / len(notas)
     
     # Imprimir el nombre junto a la media
-    print(f"{nombre}: {media}")
+    # print(f"{nombre}: {media}")
+    
+    # Apartado C - Clasificar a los estudiantes según su nota media
+    if media < 5:
+        calificacion = "Suspenso"
+    if media >= 5 and media < 7:
+        calificacion = "Aprobado"
+    if media >= 7 and media < 9:
+        calificacion = "Notable"
+    if media >= 9 and media < 10:
+        calificacion = "Sobresaliente"
+    
+    # Imprimir nombre, media y calificación
+    print(f"{nombre}: {media} - {calificacion}")
+    
