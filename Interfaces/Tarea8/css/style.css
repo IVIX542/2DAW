@@ -1,0 +1,75 @@
+/* @author: Iván López Benítez */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+
+    height: 100vh;
+
+    padding-top: 80px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 0.4fr 2fr 0.5fr;
+    grid-template-areas:
+    'header   header   header'
+    'nav      nav      nav   '
+    'main     main     aside '
+    'footer   footer   footer';
+}
+
+div {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 10px;
+}
+
+.cabecera {
+    grid-area: header;
+
+    background: #ADD8E6;
+
+    border: 5px solid black;
+}
+
+.menu {
+    grid-area: nav;
+
+    background: #32CD32;
+
+    border: 5px solid black;
+}
+
+.barra-lateral {
+    grid-area: aside;
+
+    background: #684D42;
+
+    border: 5px solid black;
+}
+
+.contenido {
+    grid-area: main;
+    
+    background: #FFA07A;
+
+    border: 5px solid black;
+}
+
+.pie-pagina {
+    grid-area: footer;
+    
+    background: #D3D3D3;
+    
+    border: 5px solid black;
+}

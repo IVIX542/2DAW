@@ -1,0 +1,68 @@
+/* Define variables globales reutilizables en toda la hoja de estilos */
+:root {
+    --color-fondo: #0dcaf0; /* Color principal de fondo de la barra de navegación */
+    --color-fondo-hover: rgba(0, 0, 0, 0.1); /* Color de fondo al pasar el cursor sobre un enlace */
+    --alto-fondo: 45px; /* Altura de la barra de navegación */
+    --ancho-fondo: 100%; /* Ancho total de la barra de navegación */
+
+    --color-icono: rgba(255, 255, 255, 0.5); /* Color semitransparente para los iconos en estado normal */
+    --color-icono-hover: #FFFFFF; /* Color blanco sólido para los iconos al pasar el cursor */
+    --ancho-icono: 30px; /* Dimensión base (ancho y alto) del contenedor de cada icono */
+    --tamaño-icono-fuente: 20px; /* Tamaño de fuente del icono */
+    --margen-icono: 50px; /* Espacio horizontal exterior a cada lado del icono */
+    --radio-icono: 50%; /* Redondeo completo para hacer circular el contenedor del icono */
+    --sombra-icono: 0 0 10px 5px rgba(0, 0, 0, 0.1); /* Sombra definida para los iconos (actualmente sin aplicar) */
+}
+
+/* Selector (nota: suele escribirse '*' para el reseteo universal) */
+* {
+    margin: 0; /* Elimina los márgenes exteriores por defecto */
+    padding: 0; /* Elimina los rellenos interiores por defecto */
+
+    box-sizing: border-box; /* Incluye el padding y el borde dentro del ancho y alto total */
+}
+
+/* Estilos para el contenedor principal de navegación */
+nav {
+    background: var(--color-fondo); /* Aplica el color de fondo definido en las variables */
+
+    width: var(--ancho-fondo); /* Ocupa el ancho configurado */
+    height: var(--alto-fondo); /* Ocupa el alto configurado */
+
+    display: flex; /* Activa el modelo de caja flexible */
+    align-items:center; /* Centra los elementos hijos verticalmente */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+}
+
+/* Estilos para los enlaces directos dentro de la navegación */
+nav>a {
+    margin: 0 var(--margen-icono) 0  var(--margen-icono); /* Aplica margen izquierdo y derecho usando la variable */
+
+    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+
+    height: var(--ancho-icono); /* Define la altura del enlace */
+    width: var(--ancho-icono); /* Define el ancho del enlace */
+
+    text-align: center; /* Centra el texto horizontalmente */
+
+    border-radius: var(--radio-icono); /* Aplica bordes redondeados para darle forma circular */
+
+    font-size: var(--tamaño-icono-fuente); /* Establece el tamaño del icono o texto */
+    line-height: var(--ancho-icono); /* Iguala la altura de línea al alto del contenedor */
+
+    color: var(--color-icono); /* Aplica el color inicial del icono */
+
+    display: flex; /* Usa flexbox para centrar el contenido interno del enlace */
+    align-items:center; /* Centra el icono verticalmente dentro del círculo */
+    justify-content: center; /* Centra el icono horizontalmente dentro del círculo */
+
+    transition: all .5s; /* Suaviza cualquier cambio de propiedades durante 0.5 segundos */
+}
+
+/* Estilos cuando el usuario pasa el cursor por encima de un enlace */
+nav>a:hover {
+    box-shadow: var(--sombra-icono); /* Aplica al elemento la sombra definida en la variable --sombra-icono */
+
+    background: var(--color-fondo-hover); /* Cambia el fondo del círculo al color hover */
+    color: var(--color-icono-hover); /* Cambia el color del icono a blanco sólido */
+}
