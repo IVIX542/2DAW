@@ -1,5 +1,62 @@
 :root {
-    --color-fondo: #0DCAF0;
-    --color-icono: #86E4F7;
+    --color-fondo: #0dcaf0;
+    --color-fondo-hover: rgba(0, 0, 0, 0.1);
+    --alto-fondo: 45px;
+    --ancho-fondo: 100%;
+
+    --color-icono: rgba(255, 255, 255, 0.5);
     --color-icono-hover: #FFFFFF;
+    --ancho-icono: 30px;
+    --tamaño-icono-fuente: 20px;
+    --margen-icono: 50px;
+    --radio-icono: 50%;
+    --sombra-icono: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+nav {
+    background: var(--color-fondo);
+
+    width: var(--ancho-fondo);
+    height: var(--alto-fondo);
+
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+nav>a {
+    margin: 0 var(--margen-icono) 0  var(--margen-icono);
+
+    text-decoration: none;
+
+    height: var(--ancho-icono);
+    width: var(--ancho-icono);
+
+    text-align: center;
+
+    border-radius: var(--radio-icono);
+
+    font-size: var(--tamaño-icono-fuente);
+    line-height: var(--ancho-icono);
+
+    color: var(--color-icono);
+
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+    transition: all .5s;
+}
+
+nav>a:hover {
+    background: var(--color-fondo-hover);
+    color: var(--color-icono-hover);
 }
