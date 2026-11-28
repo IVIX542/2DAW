@@ -37,6 +37,10 @@ div {
     align-items: center;
     justify-content: center;
 
+    font-weight: bold;
+    color: #FFF;
+    font-size: large;
+
     border-radius: 10px;
     padding: 10px;
 }
@@ -44,8 +48,6 @@ div {
 div>div {
     width: 20%;
     height: 80%;
-
-    font-weight: bold;
 
 }
 
@@ -98,6 +100,54 @@ div>div {
 .principal {
     grid-area: main;
     background: green;
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    'dest'
+    'reji'
+    'asim'
+    ;
+}
+.principal>div {
+    width: 100%;
+    
+}
+
+.principal>.destacado {
+    grid-area: dest;
+    background: #514fb777;
+}
+
+.principal>.rejilla {
+    grid-area: reji;
+    background: #000;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.principal>.rejilla>div {
+    background: #010;
+    width: 90%;
+}
+
+.principal>.rejilla>.elemento3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+}
+.principal>.rejilla>.elemento3>div {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.13);
+    font-size: medium;
+}
+
+.principal>.asimetrico {
+    grid-area: asim;
+    background: #514fb777;
 }
 
 /* LATERAL */
