@@ -81,7 +81,6 @@ div>div {
 /* NAVEGACIÓN */
 .navegacion {
     grid-area: nav;
-    background: yellow;
     
     display: flex;
     align-items: center;
